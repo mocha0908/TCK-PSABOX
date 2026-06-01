@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>TCK-PSABOX 買取検索</title>
+  <title>トレカキングダム 買取一覧</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
@@ -29,32 +29,37 @@
     .filter-scroll::-webkit-scrollbar { display: none; }
     .chip { padding: 0 16px; border-radius: 24px; background: #fff; border: 1px solid var(--border); font-size: 14px; height: 44px; display: flex; align-items: center; cursor: pointer; flex-shrink: 0; font-weight: 500; }
     .chip.active { background: var(--primary); color: #fff; }
-    .chip select, .chip input { border: none; background: transparent; color: inherit; font: inherit; outline: none; }
 
     .card-grid { display: grid; gap: 16px; }
     .card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 100px 1fr; position: relative; }
-    .card-img { width: 100px; height: 130px; background: #fafafa; display: flex; align-items: center; justify-content: center; }
+    .card-img { width: 100px; height: 140px; background: #fafafa; display: flex; align-items: center; justify-content: center; }
     .card-img img { width: 100%; height: 100%; object-fit: contain; padding: 4px; cursor: zoom-in; }
     .card-body { padding: 12px 16px; display: flex; flex-direction: column; gap: 4px; justify-content: center; }
-    .card-title { font-size: 14px; font-weight: 700; line-height: 1.4; padding-right: 45px; }
+    .card-title { font-size: 14px; font-weight: 700; line-height: 1.4; padding-right: 45px; color: #111; }
     .status-tag { position: absolute; top: 12px; right: 16px; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; background: #2ecc71; color: white; }
     .status-tag.stop { background: #e74c3c; }
     .card-meta { font-size: 11px; color: var(--text-sub); }
     
-    .king-prices { background: var(--primary-light); padding: 8px 12px; border-radius: 8px; margin-top: 4px; display: flex; align-items: center; justify-content: space-between; }
-    .kp-label { font-size: 11px; color: var(--primary); font-weight: bold; }
-    .kp-val { font-size: 16px; font-weight: 900; color: #333; }
+    .king-prices { background: var(--primary-light); padding: 8px 12px; border-radius: 8px; margin-top: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: center; }
+    .kp-block { display: flex; flex-direction: column; }
+    .kp-label { font-size: 9px; color: var(--primary); font-weight: bold; }
+    .kp-val { font-size: 14px; font-weight: 900; color: #222; }
     
+    .card-reduce-row { grid-column: 1 / -1; border-top: 1px dashed #ddd; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; background: #fffbfc; font-size: 12px; }
+    .card-reduce-val { font-weight: bold; color: var(--accent); }
+
     .desktop-table-wrap { display: none; }
     
     @media (min-width: 768px) {
       .card-grid { display: none; }
-      .desktop-table-wrap { display: block; background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid #border; box-shadow: var(--shadow); }
+      .desktop-table-wrap { display: block; background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
       table { width: 100%; border-collapse: collapse; }
       th { background: #f8f9fa; padding: 15px; border-bottom: 2px solid #eee; white-space: nowrap; font-size: 14px; color: var(--text-sub); }
       td { padding: 12px; text-align: center; border-bottom: 1px solid #eee; font-size: 14px; }
       .td-left { text-align: left; font-weight: bold; }
-      .table-price { font-weight: 900; color: #222; font-size: 16px; }
+      .table-price-max { font-weight: 900; color: #0066cc; font-size: 16px; }
+      .table-price-reduce { color: #888; font-size: 12px; }
+      .table-price-after { font-weight: 900; color: var(--accent); font-size: 16px; background: var(--accent-bg); }
       .table-status { font-weight: bold; color: #2ecc71; }
       .table-status.stop { color: #e74c3c; }
     }
@@ -66,7 +71,7 @@
 <body>
 
 <header>
-  <h1>TCK-PSABOX <span>買取価格一覧</span></h1>
+  <h1>トレカキングダム <span>買取価格比較サイト</span></h1>
 </header>
 
 <div class="search-sticky">
@@ -83,11 +88,6 @@
     <div class="chip active" id="tab-psa" onclick="switchTab('psa')">PSA鑑定品</div>
     <div class="chip" id="tab-box" onclick="switchTab('box')">未開封BOX</div>
     <div class="chip" onclick="toggleSort()">⇅ <span id="sortLabel">標準順</span></div>
-    <div class="chip" id="groupFilterChip">📂 
-      <select id="groupSelect" onchange="applyLocalFilter()">
-        <option value="">全グループ</option>
-      </select>
-    </div>
   </div>
   
   <div class="filter-scroll" id="initialBar"></div>
@@ -113,15 +113,11 @@
     document.getElementById('keyword').addEventListener('input', () => applyLocalFilter());
   });
 
-  // data.jsonをGitHubから読み込む
   async function loadAllData() {
     try {
       const response = await fetch('data.json');
       if (!response.ok) throw new Error('データが読み込めません');
       database = await response.json();
-      
-      // グループセレクトボックスの生成
-      updateGroupOptions();
       
       document.getElementById('spinner').style.display = 'none';
       document.getElementById('result-container').style.display = 'block';
@@ -132,14 +128,11 @@
     }
   }
 
-  // タブ切り替え（PSA ⇄ BOX）
   function switchTab(tabName) {
     state.currentTab = tabName;
     document.getElementById('tab-psa').classList.toggle('active', tabName === 'psa');
     document.getElementById('tab-box').classList.toggle('active', tabName === 'box');
     
-    // タブが変わったらグループフィルターの中身も更新
-    updateGroupOptions();
     state.initialKey = 'ALL';
     buildInitialBar();
     document.getElementById('keyword').value = '';
@@ -147,26 +140,8 @@
     applyLocalFilter();
   }
 
-  // 掲載グループの選択肢を動的に生成
-  function updateGroupOptions() {
-    const sel = document.getElementById('groupSelect');
-    sel.innerHTML = '<option value="">全グループ</option>';
-    
-    const currentData = database[state.currentTab] || [];
-    // 重複のないグループリストを作成
-    const groups = [...new Set(currentData.map(item => item.group).filter(Boolean))];
-    
-    groups.forEach(g => {
-      const opt = document.createElement('option');
-      opt.value = opt.text = g;
-      sel.appendChild(opt);
-    });
-  }
-
-  // フィルタリング処理のコア
   function applyLocalFilter() {
     const kw = document.getElementById('keyword').value.toLowerCase().trim();
-    const selectedGroup = document.getElementById('groupSelect').value;
     const currentData = database[state.currentTab] || [];
 
     state.filteredRows = currentData.filter(item => {
@@ -174,13 +149,10 @@
       const code = String(item.code || "");
       const id = String(item.id || "");
       
-      // 1. グループフィルター
-      if (selectedGroup && item.group !== selectedGroup) return false;
-      
-      // 2. キーワード検索（名前・型番・マスタID）
+      // 1. キーワード検索（名前・型番・マスタID）
       if (kw && !name.toLowerCase().includes(kw) && !code.toLowerCase().includes(kw) && !id.toLowerCase().includes(kw)) return false;
       
-      // 3. 五十音フィルター
+      // 2. 五十音フィルター
       if (state.initialKey !== 'ALL' && getInitialGroup(name) !== state.initialKey) return false;
       
       return true;
@@ -189,12 +161,8 @@
     // ソート処理
     state.filteredRows.sort((a, b) => {
       if (state.sortByPrice) {
-        // 価格文字列（"¥1,200,000"など）を数値に変換して比較
-        const priceA = Number(String(a.price || "").replace(/[^0-9]/g, "")) || 0;
-        const priceB = Number(String(b.price || "").replace(/[^0-9]/g, "")) || 0;
-        return priceB - priceA; // 高い順
+        return b.price_max - a.price_max; // 上限価格の高い順
       } else {
-        // 標準順（名前順）
         return String(a.name).localeCompare(String(b.name), 'ja');
       }
     });
@@ -202,7 +170,6 @@
     render();
   }
 
-  // 画面のレンダリング
   function render() {
     const mobileContainer = document.getElementById('cardView');
     const desktopContainer = document.getElementById('tableView');
@@ -218,21 +185,31 @@
     mobileContainer.innerHTML = state.filteredRows.map(item => {
       const isLive = item.status === "掲載";
       const badgeClass = isLive ? "status-tag" : "status-tag stop";
-      const imgSrc = item.img ? item.img : 'https://via.placeholder.com/100x130?text=No+Image';
+      const imgSrc = item.img ? item.img : 'https://via.placeholder.com/100x140?text=No+Image';
       
       return `
       <div class="card">
         <span class="${badgeClass}">${item.status || '未掲載'}</span>
         <div class="card-img">
-          <img src="${imgSrc}" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/100x130?text=No+Image'">
+          <img src="${imgSrc}" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/100x140?text=No+Image'">
         </div>
         <div class="card-body">
           <div class="card-title">${item.name}</div>
           <div class="card-meta">型番: ${item.code || '-'} | 種別: ${item.spec || '-'}</div>
           <div class="king-prices">
-            <span class="kp-label">強化買取金額</span>
-            <span class="kp-val">${item.price || '¥0'}</span>
+            <div class="kp-block">
+              <span class="kp-label">上限買取金額</span>
+              <span class="kp-val">¥${item.price_max.toLocaleString()}</span>
+            </div>
+            <div class="kp-block">
+              <span class="kp-label">減額後の金額</span>
+              <span class="kp-val" style="color:var(--accent);">¥${item.price_after.toLocaleString()}</span>
+            </div>
           </div>
+        </div>
+        <div class="card-reduce-row">
+          <span style="color:#666; font-weight:bold;">📉 減額幅</span>
+          <span class="card-reduce-val">-¥${item.price_reduce.toLocaleString()}</span>
         </div>
       </div>`;
     }).join('');
@@ -242,12 +219,13 @@
       <thead>
         <tr>
           <th>掲載状況</th>
-          <th>グループ</th>
           <th>マスタID</th>
           <th style="text-align:left;">商品名 / カード名</th>
           <th>型番 / 種別</th>
           <th>画像</th>
-          <th>強化買取金額</th>
+          <th>上限買取金額</th>
+          <th>減額幅</th>
+          <th>減額後の金額</th>
         </tr>
       </thead>
       <tbody>${state.filteredRows.map(item => {
@@ -258,20 +236,18 @@
         return `
         <tr>
           <td class="${statusClass}">${item.status || '-'}</td>
-          <td>${item.group || '-'}</td>
           <td>${item.id || '-'}</td>
           <td class="td-left">${item.name}</td>
           <td>${item.code || '-'} <br><small style="color:#888">${item.spec || ''}</small></td>
           <td><img src="${imgSrc}" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/50?text=No+Image'"></td>
-          <td class="table-price">${item.price || '¥0'}</td>
+          <td class="table-price-max">¥${item.price_max.toLocaleString()}</td>
+          <td class="table-price-reduce">-¥${item.price_reduce.toLocaleString()}</td>
+          <td class="table-price-after">¥${item.price_after.toLocaleString()}</td>
         </tr>`}).join('')}
       </tbody></table>`;
   }
 
-  // 頭文字から五十音のグループを判定する関数
   function getInitialGroup(name){
-    const c = (name || "").trim().charAt(0);
-    // 【状態A】などの文字を考慮し、ブラケットを外した最初の文字を見る
     const cleanName = name.replace(/^【[^】]+】/, "").trim();
     const firstChar = cleanName.charAt(0);
 
@@ -288,20 +264,17 @@
     return 'ALL';
   }
 
-  // 五十音バーの生成
   function buildInitialBar(){
     const bar = document.getElementById('initialBar');
     bar.innerHTML = INITIALS.map(i => `<div class="chip ${state.initialKey===i.k?'active':''}" onclick="state.initialKey='${i.k}';buildInitialBar();applyLocalFilter();">${i.l}</div>`).join('');
   }
 
-  // ソート順の切り替え
   function toggleSort(){
     state.sortByPrice = !state.sortByPrice;
     document.getElementById('sortLabel').innerText = state.sortByPrice ? "価格順" : "標準順";
     applyLocalFilter();
   }
 
-  // モーダル表示
   function showModal(src){ 
     if(!src || src.includes('via.placeholder')) return; 
     document.getElementById('modalImage').src = src; 
