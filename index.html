@@ -1,115 +1,312 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCK-PSABOX 買取検索サイト</title>
-    <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h1 { text-align: center; color: #2c3e50; margin-bottom: 30px; }
-        .tabs { display: flex; justify-content: center; margin-bottom: 20px; gap: 10px; }
-        .tab-btn { padding: 12px 24px; font-size: 16px; border: none; background: #ddd; cursor: pointer; border-radius: 4px; transition: 0.3s; font-weight: bold; }
-        .tab-btn.active { background: #3498db; color: white; }
-        .search-box { display: flex; gap: 10px; margin-bottom: 30px; }
-        .search-box input { flex: 1; padding: 14px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; }
-        .card img { max-width: 140px; height: 180px; margin-bottom: 15px; border-radius: 4px; object-fit: contain; background: #f9f9f9; padding: 5px; }
-        .card h3 { margin: 10px 0 5px 0; font-size: 15px; color: #2c3e50; line-height: 1.4; height: 42px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-        .card-meta { font-size: 12px; color: #7f8c8d; margin-bottom: 10px; }
-        .price { font-size: 20px; font-weight: bold; color: #e74c3c; margin-top: auto; padding-top: 10px; }
-        .status-badge { position: absolute; top: 10px; left: 10px; padding: 4px 8px; font-size: 11px; border-radius: 3px; font-weight: bold; background: #2ecc71; color: white; }
-        .status-badge.stop { background: #e74c3c; }
-        .link-btn { display: inline-block; margin-top: 12px; padding: 6px 12px; background: #34495e; color: white; text-decoration: none; border-radius: 4px; font-size: 12px; width: 80%; transition: 0.2s; }
-        .link-btn:hover { background: #2c3e50; }
-    </style>
+  <meta charset="UTF-8">
+  <title>TCK-PSABOX 買取検索</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0066cc; --primary-light: #e6f0ff; --accent: #e60012; --accent-bg: #fff0f0;
+      --bg: #f0f2f5; --card-bg: #ffffff; --text: #222; --text-sub: #555;
+      --border: #dfe3e8; --radius: 12px; --shadow: 0 2px 8px rgba(0,0,0,0.06);
+      --search-height: 76px;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); padding-bottom: 80px; }
+    header { background: #fff; padding: 20px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    h1 { margin: 0; font-size: 22px; color: var(--primary); font-weight: 900; }
+    h1 span { color: var(--text); font-size: 14px; font-weight: normal; margin-left: 8px; display: block; }
+    
+    .search-sticky { position: sticky; top: 0; z-index: 100; background: rgba(240, 242, 245, 0.95); backdrop-filter: blur(10px); padding: 12px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); height: var(--search-height); display: flex; align-items: center; }
+    .search-bar { display: flex; gap: 8px; width: 100%; max-width: 900px; margin: 0 auto; }
+    .input-wrapper { position: relative; flex: 1; display: flex; align-items: center; background: #fff; border-radius: 50px; border: 1px solid var(--border); padding-right: 6px; }
+    .input-wrapper input { border: none; background: transparent; padding: 12px 20px; font-size: 16px; flex: 1; outline: none; width: 100%; }
+    .btn-search { width: 48px; height: 48px; border-radius: 50%; border: none; background: var(--primary); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    
+    .controls-area { max-width: 1200px; margin: 0 auto; padding: 16px; }
+    .filter-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+    .filter-scroll::-webkit-scrollbar { display: none; }
+    .chip { padding: 0 16px; border-radius: 24px; background: #fff; border: 1px solid var(--border); font-size: 14px; height: 44px; display: flex; align-items: center; cursor: pointer; flex-shrink: 0; font-weight: 500; }
+    .chip.active { background: var(--primary); color: #fff; }
+    .chip select, .chip input { border: none; background: transparent; color: inherit; font: inherit; outline: none; }
+
+    .card-grid { display: grid; gap: 16px; }
+    .card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 100px 1fr; position: relative; }
+    .card-img { width: 100px; height: 130px; background: #fafafa; display: flex; align-items: center; justify-content: center; }
+    .card-img img { width: 100%; height: 100%; object-fit: contain; padding: 4px; cursor: zoom-in; }
+    .card-body { padding: 12px 16px; display: flex; flex-direction: column; gap: 4px; justify-content: center; }
+    .card-title { font-size: 14px; font-weight: 700; line-height: 1.4; padding-right: 45px; }
+    .status-tag { position: absolute; top: 12px; right: 16px; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; background: #2ecc71; color: white; }
+    .status-tag.stop { background: #e74c3c; }
+    .card-meta { font-size: 11px; color: var(--text-sub); }
+    
+    .king-prices { background: var(--primary-light); padding: 8px 12px; border-radius: 8px; margin-top: 4px; display: flex; align-items: center; justify-content: space-between; }
+    .kp-label { font-size: 11px; color: var(--primary); font-weight: bold; }
+    .kp-val { font-size: 16px; font-weight: 900; color: #333; }
+    
+    .desktop-table-wrap { display: none; }
+    
+    @media (min-width: 768px) {
+      .card-grid { display: none; }
+      .desktop-table-wrap { display: block; background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid #border; box-shadow: var(--shadow); }
+      table { width: 100%; border-collapse: collapse; }
+      th { background: #f8f9fa; padding: 15px; border-bottom: 2px solid #eee; white-space: nowrap; font-size: 14px; color: var(--text-sub); }
+      td { padding: 12px; text-align: center; border-bottom: 1px solid #eee; font-size: 14px; }
+      .td-left { text-align: left; font-weight: bold; }
+      .table-price { font-weight: 900; color: #222; font-size: 16px; }
+      .table-status { font-weight: bold; color: #2ecc71; }
+      .table-status.stop { color: #e74c3c; }
+    }
+    
+    #modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; }
+    #modal img { max-width: 90%; max-height: 90%; object-fit: contain; }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>TCK-PSABOX 買取検索</h1>
-    
-    <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('psa')">PSA鑑定品</button>
-        <button class="tab-btn" onclick="switchTab('box')">未開封BOX</button>
-    </div>
+<header>
+  <h1>TCK-PSABOX <span>買取価格一覧</span></h1>
+</header>
 
-    <div class="search-box">
-        <input type="text" id="searchInput" oninput="filterData()" placeholder="カード名、商品名、型番などで検索...">
+<div class="search-sticky">
+  <div class="search-bar">
+    <div class="input-wrapper">
+      <input type="text" id="keyword" placeholder="カード名・商品名・型番を入力..." enterkeyhint="search">
     </div>
-
-    <div class="grid" id="resultGrid">読み込み中...</div>
+    <button class="btn-search" onclick="applyLocalFilter()">🔍</button>
+  </div>
 </div>
 
+<div class="controls-area">
+  <div class="filter-scroll">
+    <div class="chip active" id="tab-psa" onclick="switchTab('psa')">PSA鑑定品</div>
+    <div class="chip" id="tab-box" onclick="switchTab('box')">未開封BOX</div>
+    <div class="chip" onclick="toggleSort()">⇅ <span id="sortLabel">標準順</span></div>
+    <div class="chip" id="groupFilterChip">📂 
+      <select id="groupSelect" onchange="applyLocalFilter()">
+        <option value="">全グループ</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="filter-scroll" id="initialBar"></div>
+
+  <div id="spinner" style="text-align:center; padding:40px; color:#666; font-weight: bold;">データを取得中...</div>
+
+  <div id="result-container" style="display: none;">
+    <div id="cardView" class="card-grid"></div>
+    <div id="tableView" class="desktop-table-wrap"></div>
+  </div>
+</div>
+
+<div id="modal" onclick="this.style.display='none'"><img id="modalImage" src=""></div>
+
 <script>
-let database = { psa: [], box: [] };
-let currentTab = 'psa';
+  let database = { psa: [], box: [] };
+  const state = { currentTab: 'psa', filteredRows: [], sortByPrice: false, initialKey: 'ALL' };
+  const INITIALS = [{k:'ALL',l:'全て'}, {k:'A',l:'あ'}, {k:'K',l:'か'}, {k:'S',l:'さ'}, {k:'T',l:'た'}, {k:'N',l:'な'}, {k:'H',l:'は'}, {k:'M',l:'ま'}, {k:'Y',l:'や'}, {k:'R',l:'ら'}, {k:'W',l:'わ'}];
 
-// ページ起動時にGitHub上のdata.jsonを自動読み込み
-window.onload = async function() {
+  document.addEventListener('DOMContentLoaded', () => {
+    buildInitialBar();
+    loadAllData();
+    document.getElementById('keyword').addEventListener('input', () => applyLocalFilter());
+  });
+
+  // data.jsonをGitHubから読み込む
+  async function loadAllData() {
     try {
-        const response = await fetch('data.json');
-        if (!response.ok) throw new Error('ネットワーク応答が正常ではありません');
-        database = await response.json();
-        renderData(database.psa);
-    } catch (error) {
-        console.error("データの読み込みに失敗しました:", error);
-        document.getElementById('resultGrid').innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: red;">データの読み込みに失敗しました。時間をおいて再度お試しください。</p>';
+      const response = await fetch('data.json');
+      if (!response.ok) throw new Error('データが読み込めません');
+      database = await response.json();
+      
+      // グループセレクトボックスの生成
+      updateGroupOptions();
+      
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('result-container').style.display = 'block';
+      applyLocalFilter();
+    } catch (e) { 
+      console.error(e); 
+      document.getElementById('spinner').innerText = "データの読み込みに失敗しました。";
     }
-};
+  }
 
-function switchTab(tabName) {
-    currentTab = tabName;
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-    document.getElementById('searchInput').value = '';
-    renderData(database[currentTab] || []);
-}
-
-function renderData(data) {
-    const grid = document.getElementById('resultGrid');
-    grid.innerHTML = '';
+  // タブ切り替え（PSA ⇄ BOX）
+  function switchTab(tabName) {
+    state.currentTab = tabName;
+    document.getElementById('tab-psa').classList.toggle('active', tabName === 'psa');
+    document.getElementById('tab-box').classList.toggle('active', tabName === 'box');
     
-    if(!data || data.length === 0) {
-        grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">該当するデータが見つかりません。</p>';
-        return;
+    // タブが変わったらグループフィルターの中身も更新
+    updateGroupOptions();
+    state.initialKey = 'ALL';
+    buildInitialBar();
+    document.getElementById('keyword').value = '';
+    
+    applyLocalFilter();
+  }
+
+  // 掲載グループの選択肢を動的に生成
+  function updateGroupOptions() {
+    const sel = document.getElementById('groupSelect');
+    sel.innerHTML = '<option value="">全グループ</option>';
+    
+    const currentData = database[state.currentTab] || [];
+    // 重複のないグループリストを作成
+    const groups = [...new Set(currentData.map(item => item.group).filter(Boolean))];
+    
+    groups.forEach(g => {
+      const opt = document.createElement('option');
+      opt.value = opt.text = g;
+      sel.appendChild(opt);
+    });
+  }
+
+  // フィルタリング処理のコア
+  function applyLocalFilter() {
+    const kw = document.getElementById('keyword').value.toLowerCase().trim();
+    const selectedGroup = document.getElementById('groupSelect').value;
+    const currentData = database[state.currentTab] || [];
+
+    state.filteredRows = currentData.filter(item => {
+      const name = String(item.name || "");
+      const code = String(item.code || "");
+      const id = String(item.id || "");
+      
+      // 1. グループフィルター
+      if (selectedGroup && item.group !== selectedGroup) return false;
+      
+      // 2. キーワード検索（名前・型番・マスタID）
+      if (kw && !name.toLowerCase().includes(kw) && !code.toLowerCase().includes(kw) && !id.toLowerCase().includes(kw)) return false;
+      
+      // 3. 五十音フィルター
+      if (state.initialKey !== 'ALL' && getInitialGroup(name) !== state.initialKey) return false;
+      
+      return true;
+    });
+
+    // ソート処理
+    state.filteredRows.sort((a, b) => {
+      if (state.sortByPrice) {
+        // 価格文字列（"¥1,200,000"など）を数値に変換して比較
+        const priceA = Number(String(a.price || "").replace(/[^0-9]/g, "")) || 0;
+        const priceB = Number(String(b.price || "").replace(/[^0-9]/g, "")) || 0;
+        return priceB - priceA; // 高い順
+      } else {
+        // 標準順（名前順）
+        return String(a.name).localeCompare(String(b.name), 'ja');
+      }
+    });
+
+    render();
+  }
+
+  // 画面のレンダリング
+  function render() {
+    const mobileContainer = document.getElementById('cardView');
+    const desktopContainer = document.getElementById('tableView');
+    
+    if (state.filteredRows.length === 0) {
+      const noDataHtml = '<div style="text-align:center; padding:40px; color:#999; grid-column:1/-1;">該当するデータが見つかりません。</div>';
+      mobileContainer.innerHTML = noDataHtml;
+      desktopContainer.innerHTML = noDataHtml;
+      return;
     }
 
-    data.forEach(item => {
+    // モバイル用（カード表示）
+    mobileContainer.innerHTML = state.filteredRows.map(item => {
+      const isLive = item.status === "掲載";
+      const badgeClass = isLive ? "status-tag" : "status-tag stop";
+      const imgSrc = item.img ? item.img : 'https://via.placeholder.com/100x130?text=No+Image';
+      
+      return `
+      <div class="card">
+        <span class="${badgeClass}">${item.status || '未掲載'}</span>
+        <div class="card-img">
+          <img src="${imgSrc}" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/100x130?text=No+Image'">
+        </div>
+        <div class="card-body">
+          <div class="card-title">${item.name}</div>
+          <div class="card-meta">型番: ${item.code || '-'} | 種別: ${item.spec || '-'}</div>
+          <div class="king-prices">
+            <span class="kp-label">強化買取金額</span>
+            <span class="kp-val">${item.price || '¥0'}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+    // デスクトップ用（テーブル表示）
+    desktopContainer.innerHTML = `<table>
+      <thead>
+        <tr>
+          <th>掲載状況</th>
+          <th>グループ</th>
+          <th>マスタID</th>
+          <th style="text-align:left;">商品名 / カード名</th>
+          <th>型番 / 種別</th>
+          <th>画像</th>
+          <th>強化買取金額</th>
+        </tr>
+      </thead>
+      <tbody>${state.filteredRows.map(item => {
         const isLive = item.status === "掲載";
-        const badgeClass = isLive ? "status-badge" : "status-badge stop";
-        const imgSrc = item.img ? item.img : 'https://via.placeholder.com/140x180?text=No+Image';
+        const statusClass = isLive ? "table-status" : "table-status stop";
+        const imgSrc = item.img ? item.img : 'https://via.placeholder.com/50?text=No+Image';
         
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <span class="${badgeClass}">${item.status || '未掲載'}</span>
-            <img src="${imgSrc}" alt="${item.name}">
-            <h3>${item.name}</h3>
-            <div class="card-meta">${item.code || ''} ${item.spec ? `| ${item.spec}` : ''}</div>
-            <div class="price">${item.price || '¥0'}</div>
-            ${item.img ? `<a href="${item.img}" target="_blank" class="link-btn">画像を拡大表示</a>` : ''}
-        `;
-        grid.appendChild(card);
-    });
-}
+        return `
+        <tr>
+          <td class="${statusClass}">${item.status || '-'}</td>
+          <td>${item.group || '-'}</td>
+          <td>${item.id || '-'}</td>
+          <td class="td-left">${item.name}</td>
+          <td>${item.code || '-'} <br><small style="color:#888">${item.spec || ''}</small></td>
+          <td><img src="${imgSrc}" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/50?text=No+Image'"></td>
+          <td class="table-price">${item.price || '¥0'}</td>
+        </tr>`}).join('')}
+      </tbody></table>`;
+  }
 
-function filterData() {
-    const query = document.getElementById('searchInput').value.toLowerCase().trim();
-    if (!query) {
-        renderData(database[currentTab]);
-        return;
-    }
-    
-    const filtered = (database[currentTab] || []).filter(item => {
-        const nameMatch = item.name ? item.name.toLowerCase().includes(query) : false;
-        const codeMatch = item.code ? item.code.toLowerCase().includes(query) : false;
-        const idMatch = item.id ? String(item.id).toLowerCase().includes(query) : false;
-        return nameMatch || codeMatch || idMatch;
-    });
-    renderData(filtered);
-}
+  // 頭文字から五十音のグループを判定する関数
+  function getInitialGroup(name){
+    const c = (name || "").trim().charAt(0);
+    // 【状態A】などの文字を考慮し、ブラケットを外した最初の文字を見る
+    const cleanName = name.replace(/^【[^】]+】/, "").trim();
+    const firstChar = cleanName.charAt(0);
+
+    if(/[あ-おア-オ]/.test(firstChar)) return 'A'; 
+    if(/[か-ごカ-ゴ]/.test(firstChar)) return 'K'; 
+    if(/[さ-ぞサ-ゾ]/.test(firstChar)) return 'S'; 
+    if(/[た-どタ-ド]/.test(firstChar)) return 'T'; 
+    if(/[な-のナ-ノ]/.test(firstChar)) return 'N'; 
+    if(/[は-ぽハ-ポ]/.test(firstChar)) return 'H'; 
+    if(/[ま-もマ-モ]/.test(firstChar)) return 'M'; 
+    if(/[や-よヤ-ヨ]/.test(firstChar)) return 'Y'; 
+    if(/[ら-ろラ-ロ]/.test(firstChar)) return 'R'; 
+    if(/[わ-んワ-ン]/.test(firstChar)) return 'W'; 
+    return 'ALL';
+  }
+
+  // 五十音バーの生成
+  function buildInitialBar(){
+    const bar = document.getElementById('initialBar');
+    bar.innerHTML = INITIALS.map(i => `<div class="chip ${state.initialKey===i.k?'active':''}" onclick="state.initialKey='${i.k}';buildInitialBar();applyLocalFilter();">${i.l}</div>`).join('');
+  }
+
+  // ソート順の切り替え
+  function toggleSort(){
+    state.sortByPrice = !state.sortByPrice;
+    document.getElementById('sortLabel').innerText = state.sortByPrice ? "価格順" : "標準順";
+    applyLocalFilter();
+  }
+
+  // モーダル表示
+  function showModal(src){ 
+    if(!src || src.includes('via.placeholder')) return; 
+    document.getElementById('modalImage').src = src; 
+    document.getElementById('modal').style.display='flex'; 
+  }
 </script>
 </body>
 </html>
