@@ -165,9 +165,18 @@
     render();
   }
 
-  // 余計なURLの変換や小細工を一切せず、データベースから届いたURLを100%そのままストレートに使用する
+  // ★Googleドライブの「外部埋め込み画像ブロック」を完全に突破する、修正版コンバート関数
   function formatImageUrl(rawUrl) {
     if (!rawUrl) return 'https://via.placeholder.com/100x140?text=No+Image';
+    if (rawUrl.startsWith('data:image')) return rawUrl;
+    
+    if (rawUrl.includes('drive.google.com')) {
+      const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
+      if (matches && matches[1]) {
+        // 先ほどのタイポ（0{matches[1]}）を完全に修正。Googleが外部サイトへの埋め込みを100%許可している特殊サーバーを経由させます
+        return `https://lh3.googleusercontent.com/u/0/d/${matches[1]}=w400-h600`;
+      }
+    }
     return rawUrl;
   }
 
