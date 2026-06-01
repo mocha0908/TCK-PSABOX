@@ -162,6 +162,20 @@
     render();
   }
 
+  // Googleドライブの特殊な「uc?id=」形式を「外部ホームページ用URL」に安全に変換する便利関数
+  function formatImageUrl(rawUrl) {
+    if (!rawUrl) return 'https://via.placeholder.com/100x140?text=No+Image';
+    
+    // もしGoogleドライブの共有リンク（uc?id= や open?id=）だった場合、強制変換をかける
+    if (rawUrl.includes('drive.google.com')) {
+      const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
+      if (matches && matches[1]) {
+        return `https://lh3.googleusercontent.com/d/${matches[1]}`;
+      }
+    }
+    return rawUrl; // 通常のS3リンクなどはそのまま返す
+  }
+
   function render() {
     const mobileContainer = document.getElementById('cardView');
     const desktopContainer = document.getElementById('tableView');
@@ -176,7 +190,9 @@
     mobileContainer.innerHTML = state.filteredRows.map(item => {
       const isLive = item.status === "掲載";
       const badgeClass = isLive ? "status-tag" : "status-tag stop";
-      const imgSrc = item.img ? item.img : 'https://via.placeholder.com/100x140?text=No+Image';
+      
+      // 画像リンクを安全な表示用URLに変換
+      const imgSrc = formatImageUrl(item.img);
       
       return `
       <div class="card">
@@ -221,7 +237,8 @@
       <tbody>${state.filteredRows.map(item => {
         const isLive = item.status === "掲載";
         const statusClass = isLive ? "table-status" : "table-status stop";
-        const imgSrc = item.img ? item.img : 'https://via.placeholder.com/50?text=No+Image';
+        
+        const imgSrc = formatImageUrl(item.img);
         
         return `
         <tr>
