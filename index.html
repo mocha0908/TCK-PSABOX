@@ -114,6 +114,7 @@
 
   async function loadAllData() {
     try {
+      // 確実に「data.json」を最新の状態で読み込む設定
       const response = await fetch('data.json?v=' + new Date().getTime());
       if (!response.ok) throw new Error('データが読み込めません');
       database = await response.json();
@@ -167,7 +168,6 @@
 
   function formatImageUrl(rawUrl) {
     if (!rawUrl) return 'https://via.placeholder.com/100x140?text=No+Image';
-    // セル内直貼り画像データ(base64形式)はそのまま返す
     if (rawUrl.startsWith('data:image')) return rawUrl;
     
     if (rawUrl.includes('drive.google.com')) {
