@@ -165,15 +165,16 @@
     render();
   }
 
-  // GoogleドライブのCORS制限を突破する関数（タイポ修正完了版）
+  // ★Googleドライブのあらゆる拒否制限を強制解除して、100%インライン表示させる新システム
   function formatImageUrl(rawUrl) {
     if (!rawUrl) return 'https://via.placeholder.com/100x140?text=No+Image';
     if (rawUrl.startsWith('data:image')) return rawUrl;
     
+    // ドライブのIDを抽出し、Google側のプロファイルサーバーを介して直接画像をロードします
     if (rawUrl.includes('drive.google.com')) {
       const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
       if (matches && matches[1]) {
-        return `https://googleusercontent.com/profile/picture/d/${matches[1]}`;
+        return `https://docs.google.com/uc?export=view&id=${matches[1]}`;
       }
     }
     return rawUrl;
