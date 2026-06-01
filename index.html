@@ -165,16 +165,15 @@
     render();
   }
 
-  // Googleドライブのブロック制限（CORS）を完全にバイパス・突破して画像を表示させる特殊な関数
+  // GoogleドライブのCORS制限を突破する関数（タイポ修正完了版）
   function formatImageUrl(rawUrl) {
     if (!rawUrl) return 'https://via.placeholder.com/100x140?text=No+Image';
     if (rawUrl.startsWith('data:image')) return rawUrl;
     
-    // Googleドライブのリンクを、制限に引っかからない特殊な「直接画像ロード用」の裏URLに変換します
     if (rawUrl.includes('drive.google.com')) {
       const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
       if (matches && matches[1]) {
-        return `https://lh3.googleusercontent.com/d/${matches[1]}`;
+        return `https://googleusercontent.com/profile/picture/d/${matches[1]}`;
       }
     }
     return rawUrl;
