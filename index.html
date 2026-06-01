@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCK-PSABOX 買取検索サイト</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 30px; }
+        .tabs { display: flex; justify-content: center; margin-bottom: 20px; gap: 10px; }
+        .tab-btn { padding: 12px 24px; font-size: 16px; border: none; background: #ddd; cursor: pointer; border-radius: 4px; transition: 0.3s; font-weight: bold; }
+        .tab-btn.active { background: #3498db; color: white; }
+        .search-box { display: flex; gap: 10px; margin-bottom: 30px; }
+        .search-box input { flex: 1; padding: 14px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; }
+        .card img { max-width: 140px; height: 180px; margin-bottom: 15px; border-radius: 4px; object-fit: contain; background: #f9f9f9; padding: 5px; }
+        .card h3 { margin: 10px 0 5px 0; font-size: 15px; color: #2c3e50; line-height: 1.4; height: 42px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .card-meta { font-size: 12px; color: #7f8c8d; margin-bottom: 10px; }
+        .price { font-size: 20px; font-weight: bold; color: #e74c3c; margin-top: auto; padding-top: 10px; }
+        .status-badge { position: absolute; top: 10px; left: 10px; padding: 4px 8px; font-size: 11px; border-radius: 3px; font-weight: bold; background: #2ecc71; color: white; }
+        .status-badge.stop { background: #e74c3c; }
+        .link-btn { display: inline-block; margin-top: 12px; padding: 6px 12px; background: #34495e; color: white; text-decoration: none; border-radius: 4px; font-size: 12px; width: 80%; transition: 0.2s; }
+        .link-btn:hover { background: #2c3e50; }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>TCK-PSABOX 買取検索</h1>
+    
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('psa')">PSA鑑定品</button>
+        <button class="tab-btn" onclick="switchTab('box')">未開封BOX</button>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" oninput="filterData()" placeholder="カード名、商品名、型番などで検索...">
+    </div>
+
+    <div class="grid" id="resultGrid">読み込み中...</div>
+</div>
+
+<script>
+let database = { psa: [], box: [] };
+let currentTab = 'psa';
+
+// ページ起動時にGitHub上のdata.jsonを自動読み込み
+window.onload = async function() {
+    try {
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('ネットワーク応答が正常ではありません');
+        database = await response.json();
+        renderData(database.psa);
+    } catch (error) {
+        console.error("データの読み込みに失敗しました:", error);
+        document.getElementById('resultGrid').innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: red;">データの読み込みに失敗しました。時間をおいて再度お試しください。</p>';
+    }
+};
+
+function switchTab(tabName) {
+    currentTab = tabName;
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('searchInput').value = '';
+    renderData(database[currentTab] || []);
+}
+
+function renderData(data) {
+    const grid = document.getElementById('resultGrid');
+    grid.innerHTML = '';
+    
+    if(!data || data.length === 0) {
+        grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">該当するデータが見つかりません。</p>';
+        return;
+    }
+
+    data.forEach(item => {
+        const isLive = item.status === "掲載";
+        const badgeClass = isLive ? "status-badge" : "status-badge stop";
+        const imgSrc = item.img ? item.img : 'https://via.placeholder.com/140x180?text=No+Image';
+        
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <span class="${badgeClass}">${item.status || '未掲載'}</span>
+            <img src="${imgSrc}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <div class="card-meta">${item.code || ''} ${item.spec ? `| ${item.spec}` : ''}</div>
+            <div class="price">${item.price || '¥0'}</div>
+            ${item.img ? `<a href="${item.img}" target="_blank" class="link-btn">画像を拡大表示</a>` : ''}
+        `;
+        grid.appendChild(card);
+    });
+}
+
+function filterData() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    if (!query) {
+        renderData(database[currentTab]);
+        return;
+    }
+    
+    const filtered = (database[currentTab] || []).filter(item => {
+        const nameMatch = item.name ? item.name.toLowerCase().includes(query) : false;
+        const codeMatch = item.code ? item.code.toLowerCase().includes(query) : false;
+        const idMatch = item.id ? String(item.id).toLowerCase().includes(query) : false;
+        return nameMatch || codeMatch || idMatch;
+    });
+    renderData(filtered);
+}
+</script>
+</body>
+</html>
