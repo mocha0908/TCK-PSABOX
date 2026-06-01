@@ -91,7 +91,6 @@
   </div>
   
   <div class="filter-scroll" id="initialBar"></div>
-
   <div id="spinner" style="text-align:center; padding:40px; color:#666; font-weight: bold;">データを取得中...</div>
 
   <div id="result-container" style="display: none;">
@@ -115,7 +114,8 @@
 
   async function loadAllData() {
     try {
-      const response = await fetch('data.json');
+      // キャッシュを回避するためにランダムな文字列を付与して読み込み
+      const response = await fetch('data.json?v=' + new Date().getTime());
       if (!response.ok) throw new Error('データが読み込めません');
       database = await response.json();
       
@@ -132,11 +132,9 @@
     state.currentTab = tabName;
     document.getElementById('tab-psa').classList.toggle('active', tabName === 'psa');
     document.getElementById('tab-box').classList.toggle('active', tabName === 'box');
-    
     state.initialKey = 'ALL';
     buildInitialBar();
     document.getElementById('keyword').value = '';
-    
     applyLocalFilter();
   }
 
@@ -149,19 +147,14 @@
       const code = String(item.code || "");
       const id = String(item.id || "");
       
-      // 1. キーワード検索（名前・型番・マスタID）
       if (kw && !name.toLowerCase().includes(kw) && !code.toLowerCase().includes(kw) && !id.toLowerCase().includes(kw)) return false;
-      
-      // 2. 五十音フィルター
       if (state.initialKey !== 'ALL' && getInitialGroup(name) !== state.initialKey) return false;
-      
       return true;
     });
 
-    // ソート処理
     state.filteredRows.sort((a, b) => {
       if (state.sortByPrice) {
-        return b.price_max - a.price_max; // 上限価格の高い順
+        return b.price_max - a.price_max;
       } else {
         return String(a.name).localeCompare(String(b.name), 'ja');
       }
@@ -181,7 +174,6 @@
       return;
     }
 
-    // モバイル用（カード表示）
     mobileContainer.innerHTML = state.filteredRows.map(item => {
       const isLive = item.status === "掲載";
       const badgeClass = isLive ? "status-tag" : "status-tag stop";
@@ -214,7 +206,6 @@
       </div>`;
     }).join('');
 
-    // デスクトップ用（テーブル表示）
     desktopContainer.innerHTML = `<table>
       <thead>
         <tr>
@@ -236,7 +227,7 @@
         return `
         <tr>
           <td class="${statusClass}">${item.status || '-'}</td>
-          <td>${item.id || '-'}</td>
+          <td>${id || '-'}</td>
           <td class="td-left">${item.name}</td>
           <td>${item.code || '-'} <br><small style="color:#888">${item.spec || ''}</small></td>
           <td><img src="${imgSrc}" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/50?text=No+Image'"></td>
@@ -250,7 +241,6 @@
   function getInitialGroup(name){
     const cleanName = name.replace(/^【[^】]+】/, "").trim();
     const firstChar = cleanName.charAt(0);
-
     if(/[あ-おア-オ]/.test(firstChar)) return 'A'; 
     if(/[か-ごカ-ゴ]/.test(firstChar)) return 'K'; 
     if(/[さ-ぞサ-ゾ]/.test(firstChar)) return 'S'; 
@@ -275,6 +265,7 @@
     applyLocalFilter();
   }
 
+  // Google Driveなどの画像リンクも引き込めるように拡大モーダルを設定
   function showModal(src){ 
     if(!src || src.includes('via.placeholder')) return; 
     document.getElementById('modalImage').src = src; 
