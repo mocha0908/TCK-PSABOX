@@ -167,6 +167,9 @@
 
   function formatImageUrl(rawUrl) {
     if (!rawUrl) return 'https://via.placeholder.com/100x140?text=No+Image';
+    // セル内直貼り画像データ(base64形式)はそのまま返す
+    if (rawUrl.startsWith('data:image')) return rawUrl;
+    
     if (rawUrl.includes('drive.google.com')) {
       const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
       if (matches && matches[1]) {
@@ -187,7 +190,6 @@
       return;
     }
 
-    // --- スマホ用グリッド表示 ---
     if (state.currentTab === 'sotai') {
       mobileContainer.innerHTML = state.filteredRows.map(item => {
         const imgSrc = formatImageUrl(item.img);
@@ -249,7 +251,6 @@
       }).join('');
     }
 
-    // --- PC用テーブル表示 ---
     if (state.currentTab === 'sotai') {
       desktopContainer.innerHTML = `<table>
         <thead>
