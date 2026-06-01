@@ -165,7 +165,7 @@
     render();
   }
 
-  // ★Googleドライブのブロックを完全にすり抜けるURL変換（今度こそバグ完全修正版）
+  // ★リダイレクトループ（チカチカ）を起こさない、クリーンな高解像度サムネイル変換
   function formatImageUrl(rawUrl) {
     if (!rawUrl) return 'https://via.placeholder.com/100x140?text=No+Image';
     if (rawUrl.startsWith('data:image')) return rawUrl;
@@ -173,8 +173,8 @@
     if (rawUrl.includes('drive.google.com')) {
       const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
       if (matches && matches[1]) {
-        // $マークを付与し、Googleが100%外部表示を許可しているサムネイル表示サーバーに完全接続させます
-        return `https://googleusercontent.com/profile/picture/d/${matches[1]}=w400-h600`;
+        // 転送を挟まずにHTML側が直接画像をロードできる、Google公式の確実なサムネイルサーバーURLです
+        return `https://drive.google.com/thumbnail?sz=w500&id=${matches[1]}`;
       }
     }
     return rawUrl;
