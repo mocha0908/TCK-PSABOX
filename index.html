@@ -159,13 +159,14 @@
       return true;
     });
 
-    state.filteredRows.sort((a, b) => {
-      if (state.sortByPrice) {
-        return (b.sort_price || 0) - (a.sort_price || 0);
-      } else {
-        return String(a.name).localeCompare(String(b.name), 'ja');
-      }
-    });
+    // ★ 未開封BOXタブのときだけ、標準順のソート（名前あいうえお順）をスキップします
+    if (state.sortByPrice) {
+      state.filteredRows.sort((a, b) => (b.sort_price || 0) - (a.sort_price || 0));
+    } else if (state.currentTab !== 'box') {
+      // BOX以外のタブ（PSA・素体）は、標準順のときはこれまで通り名前のあいうえお順で並び替えます
+      state.filteredRows.sort((a, b) => String(a.name).localeCompare(String(b.name), 'ja'));
+    } // BOXタブで標準順の場合は、何もせずスプレッドシートに登録された順番（元の配列のまま）にします
+
     render();
   }
 
@@ -225,8 +226,6 @@
         const isLive = item.status === "掲載";
         const badgeClass = isLive ? "status-tag" : "status-tag stop";
         const imgSrc = formatImageUrl(item.img);
-        
-        // 画面用の減額表示テキスト
         const isFixed = item.price_reduce === "定額設定";
         const reduceText = isFixed ? "（定額設定適用）" : item.price_reduce;
 
@@ -283,7 +282,6 @@
           </tr>`}).join('')}
         </tbody></table>`;
     } else {
-      // ★ テーブル表示側にも「上限」カラムヘッダーおよびデータを追加しました
       desktopContainer.innerHTML = `<table>
         <thead>
           <tr>
