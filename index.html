@@ -118,7 +118,6 @@
       if (!response.ok) throw new Error('データが読み込めません');
       database = await response.json();
       
-      // 素体のデータキーがなければ空配列を用意
       if (!database.sotai) database.sotai = [];
 
       document.getElementById('spinner').style.display = 'none';
@@ -147,10 +146,10 @@
 
     state.filteredRows = currentData.filter(item => {
       const name = String(item.name || "");
-      const code = String(item.code || item.code_rarity || "");
-      const id = String(item.id || "");
+      const code = String(item.code || "");
+      const rarity = String(item.rarity || "");
       
-      if (kw && !name.toLowerCase().includes(kw) && !code.toLowerCase().includes(kw) && !id.toLowerCase().includes(kw)) return false;
+      if (kw && !name.toLowerCase().includes(kw) && !code.toLowerCase().includes(kw) && !rarity.toLowerCase().includes(kw)) return false;
       if (state.initialKey !== 'ALL' && getInitialGroup(name) !== state.initialKey) return false;
       return true;
     });
@@ -199,7 +198,7 @@
           </div>
           <div class="card-body">
             <div class="card-title">${item.name}</div>
-            <div class="card-meta">型番/レア: ${item.code_rarity}</div>
+            <div class="card-meta">型番: ${item.code} | レア: ${item.rarity}</div>
             <div class="sotai-prices">
               <div class="kp-block">
                 <span class="kp-label" style="color:#2ecc71;">状態A</span>
@@ -218,7 +217,6 @@
         </div>`;
       }).join('');
     } else {
-      // PSA, BOX用
       mobileContainer.innerHTML = state.filteredRows.map(item => {
         const isLive = item.status === "掲載";
         const badgeClass = isLive ? "status-tag" : "status-tag stop";
@@ -257,7 +255,7 @@
         <thead>
           <tr>
             <th style="text-align:left; padding-left:20px;">カード名</th>
-            <th>型番とレアリティ</th>
+            <th>型番 / レアリティ</th>
             <th>画像</th>
             <th>状態A 買取</th>
             <th>状態A- 買取</th>
@@ -269,7 +267,7 @@
           return `
           <tr>
             <td class="td-left" style="padding-left:20px;">${item.name}</td>
-            <td>${item.code_rarity}</td>
+            <td>${item.code} <br><small style="color:#888">${item.rarity}</small></td>
             <td><img src="${imgSrc}" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/50?text=No+Image'"></td>
             <td style="font-weight:bold; color:#2ecc71;">${item.price_a}</td>
             <td style="font-weight:bold; color:#f39c12;">${item.price_a_minus}</td>
@@ -277,7 +275,6 @@
           </tr>`}).join('')}
         </tbody></table>`;
     } else {
-      // PSA, BOX用
       desktopContainer.innerHTML = `<table>
         <thead>
           <tr>
@@ -304,7 +301,7 @@
             <td><img src="${imgSrc}" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/50?text=No+Image'"></td>
             <td class="table-price-max">${item.price_max}</td>
             <td class="table-price-reduce">${item.price_reduce}</td>
-            <td class="table-price-after">${item.table_price_after || item.price_after}</td>
+            <td class="table-price-after">${item.price_after}</td>
           </tr>`}).join('')}
         </tbody></table>`;
     }
