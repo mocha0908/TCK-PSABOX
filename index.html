@@ -71,7 +71,7 @@
 <body>
 
 <header>
-  <h1>トレカキングダム <span>買取価格比較サイト</span></h1>
+  <h1>トレカキングダム <span>買取価格一覧</span></h1>
 </header>
 
 <div class="search-sticky">
@@ -114,7 +114,6 @@
 
   async function loadAllData() {
     try {
-      // キャッシュを回避するためにランダムな文字列を付与して読み込み
       const response = await fetch('data.json?v=' + new Date().getTime());
       if (!response.ok) throw new Error('データが読み込めません');
       database = await response.json();
@@ -191,17 +190,17 @@
           <div class="king-prices">
             <div class="kp-block">
               <span class="kp-label">上限買取金額</span>
-              <span class="kp-val">¥${item.price_max.toLocaleString()}</span>
+              <span class="kp-val">¥${(item.price_max || 0).toLocaleString()}</span>
             </div>
             <div class="kp-block">
               <span class="kp-label">減額後の金額</span>
-              <span class="kp-val" style="color:var(--accent);">¥${item.price_after.toLocaleString()}</span>
+              <span class="kp-val" style="color:var(--accent);">¥${(item.price_after || 0).toLocaleString()}</span>
             </div>
           </div>
         </div>
         <div class="card-reduce-row">
           <span style="color:#666; font-weight:bold;">📉 減額幅</span>
-          <span class="card-reduce-val">-¥${item.price_reduce.toLocaleString()}</span>
+          <span class="card-reduce-val">-¥${(item.price_reduce || 0).toLocaleString()}</span>
         </div>
       </div>`;
     }).join('');
@@ -227,13 +226,13 @@
         return `
         <tr>
           <td class="${statusClass}">${item.status || '-'}</td>
-          <td>${id || '-'}</td>
+          <td>${item.id || '-'}</td>
           <td class="td-left">${item.name}</td>
           <td>${item.code || '-'} <br><small style="color:#888">${item.spec || ''}</small></td>
           <td><img src="${imgSrc}" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/50?text=No+Image'"></td>
-          <td class="table-price-max">¥${item.price_max.toLocaleString()}</td>
-          <td class="table-price-reduce">-¥${item.price_reduce.toLocaleString()}</td>
-          <td class="table-price-after">¥${item.price_after.toLocaleString()}</td>
+          <td class="table-price-max">¥${(item.price_max || 0).toLocaleString()}</td>
+          <td class="table-price-reduce">-¥${(item.price_reduce || 0).toLocaleString()}</td>
+          <td class="table-price-after">¥${(item.price_after || 0).toLocaleString()}</td>
         </tr>`}).join('')}
       </tbody></table>`;
   }
@@ -265,7 +264,6 @@
     applyLocalFilter();
   }
 
-  // Google Driveなどの画像リンクも引き込めるように拡大モーダルを設定
   function showModal(src){ 
     if(!src || src.includes('via.placeholder')) return; 
     document.getElementById('modalImage').src = src; 
