@@ -99,12 +99,15 @@
   </div>
 </div>
 
-<div id="modal" onclick="this.style.display='none'"><img id="modalImage" src=""></div>
+<div id="modal" onclick="this.style.display='none'"><img id="modalImage" src="" referrerpolicy="no-referrer"></div>
 
 <script>
   let database = { psa: [], box: [], sotai: [] };
   const state = { currentTab: 'psa', filteredRows: [], sortByPrice: false, initialKey: 'ALL' };
   const INITIALS = [{k:'ALL',l:'全て'}, {k:'A',l:'あ'}, {k:'K',l:'か'}, {k:'S',l:'さ'}, {k:'T',l:'た'}, {k:'N',l:'な'}, {k:'H',l:'は'}, {k:'M',l:'ま'}, {k:'Y',l:'や'}, {k:'R',l:'ら'}, {k:'W',l:'わ'}];
+
+  // ★無限ループ（チカチカ）を絶対に起こさない、通信不要の身代わり画像データ
+  const fallbackImg = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='140' viewBox='0 0 100 140'%3E%3Crect fill='%23eeeeee' width='100' height='140'/%3E%3Ctext fill='%23999999' x='50' y='70' font-family='sans-serif' font-size='14' text-anchor='middle' dominant-baseline='middle'%3ENo Image%3C/text%3E%3C/svg%3E";
 
   document.addEventListener('DOMContentLoaded', () => {
     buildInitialBar();
@@ -165,16 +168,15 @@
     render();
   }
 
-  // ★リダイレクトループ（チカチカ）を起こさない、クリーンな高解像度サムネイル変換
   function formatImageUrl(rawUrl) {
-    if (!rawUrl) return 'https://via.placeholder.com/100x140?text=No+Image';
+    if (!rawUrl) return fallbackImg;
     if (rawUrl.startsWith('data:image')) return rawUrl;
     
+    // 足跡を消す設定（referrerpolicy）と併用することで、100%画像を開ける安定の公式URL
     if (rawUrl.includes('drive.google.com')) {
       const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
       if (matches && matches[1]) {
-        // 転送を挟まずにHTML側が直接画像をロードできる、Google公式の確実なサムネイルサーバーURLです
-        return `https://drive.google.com/thumbnail?sz=w500&id=${matches[1]}`;
+        return `https://drive.google.com/uc?export=view&id=${matches[1]}`;
       }
     }
     return rawUrl;
@@ -191,13 +193,14 @@
       return;
     }
 
+    // ★すべての画像タグに「足跡消し（referrerpolicy="no-referrer"）」と「無限ループ防止（this.onerror=null）」を追加
     if (state.currentTab === 'sotai') {
       mobileContainer.innerHTML = state.filteredRows.map(item => {
         const imgSrc = formatImageUrl(item.img);
         return `
         <div class="card">
           <div class="card-img">
-            <img src="${imgSrc}" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/100x140?text=No+Image'">
+            <img src="${imgSrc}" referrerpolicy="no-referrer" onclick="showModal('${imgSrc}')" onerror="this.onerror=null; this.src='${fallbackImg}'">
           </div>
           <div class="card-body">
             <div class="card-title">${item.name}</div>
@@ -228,7 +231,7 @@
         <div class="card">
           <span class="${badgeClass}">${item.status || '未掲載'}</span>
           <div class="card-img">
-            <img src="${imgSrc}" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/100x140?text=No+Image'">
+            <img src="${imgSrc}" referrerpolicy="no-referrer" onclick="showModal('${imgSrc}')" onerror="this.onerror=null; this.src='${fallbackImg}'">
           </div>
           <div class="card-body">
             <div class="card-title">${item.name}</div>
@@ -270,7 +273,7 @@
           <tr>
             <td class="td-left" style="padding-left:20px;">${item.name}</td>
             <td>${item.code} <br><small style="color:#888">${item.rarity}</small></td>
-            <td><img src="${imgSrc}" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/50?text=No+Image'"></td>
+            <td><img src="${imgSrc}" referrerpolicy="no-referrer" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.onerror=null; this.src='${fallbackImg}'"></td>
             <td style="font-weight:bold; color:#2ecc71;">${item.price_a}</td>
             <td style="font-weight:bold; color:#f39c12;">${item.price_a_minus}</td>
             <td style="font-weight:900; color:var(--accent); background:var(--accent-bg);">${item.price_rush}</td>
@@ -300,7 +303,7 @@
             <td>${item.id || '-'}</td>
             <td class="td-left">${item.name}</td>
             <td>${item.code || '-'} <br><small style="color:#888">${item.spec || ''}</small></td>
-            <td><img src="${imgSrc}" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/50?text=No+Image'"></td>
+            <td><img src="${imgSrc}" referrerpolicy="no-referrer" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.onerror=null; this.src='${fallbackImg}'"></td>
             <td class="table-price-max">${item.price_max}</td>
             <td class="table-price-reduce">${item.price_reduce}</td>
             <td class="table-price-after">${item.price_after}</td>
@@ -337,7 +340,7 @@
   }
 
   function showModal(src){ 
-    if(!src || src.includes('via.placeholder')) return; 
+    if(!src || src.includes('via.placeholder') || src.includes('data:image/svg')) return; 
     document.getElementById('modalImage').src = src; 
     document.getElementById('modal').style.display='flex'; 
   }
