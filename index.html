@@ -91,6 +91,9 @@
   </div>
   
   <div class="filter-scroll" id="initialBar"></div>
+  
+  <div class="filter-scroll" id="rarityBar" style="display: none; margin-top: -4px;"></div>
+  
   <div id="spinner" style="text-align:center; padding:40px; color:#666; font-weight: bold;">データを取得中...</div>
 
   <div id="result-container" style="display: none;">
@@ -103,10 +106,10 @@
 
 <script>
   let database = { psa: [], box: [], sotai: [] };
-  const state = { currentTab: 'psa', filteredRows: [], sortByPrice: false, initialKey: 'ALL' };
+  // 状態管理に「rarityKey」を追加
+  const state = { currentTab: 'psa', filteredRows: [], sortByPrice: false, initialKey: 'ALL', rarityKey: 'ALL' };
   const INITIALS = [{k:'ALL',l:'全て'}, {k:'A',l:'あ'}, {k:'K',l:'か'}, {k:'S',l:'さ'}, {k:'T',l:'た'}, {k:'N',l:'な'}, {k:'H',l:'は'}, {k:'M',l:'ま'}, {k:'Y',l:'や'}, {k:'R',l:'ら'}, {k:'W',l:'わ'}];
 
-  // 万が一エラーになった時のNo Imageデータ
   const fallbackImg = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='140' viewBox='0 0 100 140'%3E%3Crect fill='%23eeeeee' width='100' height='140'/%3E%3Ctext fill='%23999999' x='50' y='70' font-family='sans-serif' font-size='14' text-anchor='middle' dominant-baseline='middle'%3ENo Image%3C/text%3E%3C/svg%3E";
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -125,6 +128,8 @@
 
       document.getElementById('spinner').style.display = 'none';
       document.getElementById('result-container').style.display = 'block';
+      
+      buildRarityBar(); // データ読み込み後にレアリティバーを生成
       applyLocalFilter();
     } catch (e) { 
       console.error(e); 
@@ -137,8 +142,14 @@
     document.getElementById('tab-psa').classList.toggle('active', tabName === 'psa');
     document.getElementById('tab-box').classList.toggle('active', tabName === 'box');
     document.getElementById('tab-sotai').classList.toggle('active', tabName === 'sotai');
+    
+    // タブ切り替え時に絞り込み状態をリセット
     state.initialKey = 'ALL';
+    state.rarityKey = 'ALL';
+    
     buildInitialBar();
+    buildRarityBar(); // レアリティバーの表示・非表示を切り替え
+    
     document.getElementById('keyword').value = '';
     applyLocalFilter();
   }
@@ -152,8 +163,17 @@
       const code = String(item.code || "");
       const rarity = String(item.rarity || "");
       
+      // 1. 検索キーワード絞り込み
       if (kw && !name.toLowerCase().includes(kw) && !code.toLowerCase().includes(kw) && !rarity.toLowerCase().includes(kw)) return false;
+      
+      // 2. あいうえお絞り込み
       if (state.initialKey !== 'ALL' && getInitialGroup(name) !== state.initialKey) return false;
+      
+      // 3. レアリティ絞り込み（素体タブのときのみ）
+      if (state.currentTab === 'sotai' && state.rarityKey !== 'ALL') {
+        if (rarity !== state.rarityKey) return false;
+      }
+      
       return true;
     });
 
@@ -168,7 +188,6 @@
     render();
   }
 
-  // ★ここでK列のURLを、Googleのブロックを突破できる「サムネイル用URL」にすり替えます！
   function formatImageUrl(rawUrl) {
     if (!rawUrl) return fallbackImg;
     if (rawUrl.startsWith('data:image')) return rawUrl;
@@ -176,7 +195,6 @@
     if (rawUrl.includes('drive.google.com')) {
       const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
       if (matches && matches[1]) {
-        // uc?id= ではなく、外部サイトへの表示が許可されている thumbnail?id= を使用します
         return `https://drive.google.com/thumbnail?id=${matches[1]}`;
       }
     }
@@ -331,6 +349,31 @@
   function buildInitialBar(){
     const bar = document.getElementById('initialBar');
     bar.innerHTML = INITIALS.map(i => `<div class="chip ${state.initialKey===i.k?'active':''}" onclick="state.initialKey='${i.k}';buildInitialBar();applyLocalFilter();">${i.l}</div>`).join('');
+  }
+
+  // ★データベースの中にあるレアリティを自動で抽出してボタンを作る機能
+  function buildRarityBar(){
+    const bar = document.getElementById('rarityBar');
+    
+    // 素体タブ以外、またはデータがない場合は隠す
+    if (state.currentTab !== 'sotai' || database.sotai.length === 0) {
+      bar.style.display = 'none';
+      return;
+    }
+    
+    bar.style.display = 'flex';
+    
+    // 存在するレアリティを重複なしでリストアップし、アルファベット順に並び替え
+    const rarities = [...new Set(database.sotai.map(item => item.rarity))].filter(r => r && r !== '-').sort();
+
+    // 絞り込みボタンを生成
+    let html = `<div class="chip ${state.rarityKey === 'ALL' ? 'active' : ''}" onclick="state.rarityKey='ALL';buildRarityBar();applyLocalFilter();">全レアリティ</div>`;
+    
+    rarities.forEach(r => {
+      html += `<div class="chip ${state.rarityKey === r ? 'active' : ''}" onclick="state.rarityKey='${r}';buildRarityBar();applyLocalFilter();">${r}</div>`;
+    });
+    
+    bar.innerHTML = html;
   }
 
   function toggleSort(){
