@@ -5848,8 +5848,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/duel_masters/b945ebde-e7b0-4617-b174-96f26bb7f17c.png",
       "is_ask": false,
       "price_max": "¥7,500",
-      "price_reduce": "-",
-      "price_after": "¥7,500",
+      "price_reduce": "¥7,000",
+      "price_after": "¥500",
       "sort_price": 7500
     },
     {
@@ -5861,8 +5861,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/duel_masters/c8a24045-8046-494e-8f26-17f2585e6c7a.jpg",
       "is_ask": false,
       "price_max": "¥20,000",
-      "price_reduce": "-",
-      "price_after": "¥20,000",
+      "price_reduce": "¥20,000",
+      "price_after": "¥0",
       "sort_price": 20000
     },
     {
@@ -5874,8 +5874,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/duel_masters/dfc846a2-cf71-439d-9a1f-d6feca1542f6.png",
       "is_ask": false,
       "price_max": "¥5,400",
-      "price_reduce": "-",
-      "price_after": "¥5,400",
+      "price_reduce": "¥5,000",
+      "price_after": "¥400",
       "sort_price": 5400
     },
     {
@@ -5887,8 +5887,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/4913ca86-f72e-43f9-bd65-12b49d1d0aed.jpg",
       "is_ask": false,
       "price_max": "¥7,000",
-      "price_reduce": "-",
-      "price_after": "¥7,000",
+      "price_reduce": "15%",
+      "price_after": "¥5,950",
       "sort_price": 7000
     },
     {
@@ -5900,8 +5900,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/9de73d24-130a-48b6-bf70-22274ebc354a.jpg",
       "is_ask": false,
       "price_max": "¥6,800",
-      "price_reduce": "-",
-      "price_after": "¥6,800",
+      "price_reduce": "15%",
+      "price_after": "¥5,780",
       "sort_price": 6800
     },
     {
@@ -5913,8 +5913,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/eb45ef68-bf6b-4732-a5ad-2c3e867f54a2.jpg",
       "is_ask": false,
       "price_max": "¥5,200",
-      "price_reduce": "-",
-      "price_after": "¥5,200",
+      "price_reduce": "15%",
+      "price_after": "¥4,420",
       "sort_price": 5200
     },
     {
@@ -5926,8 +5926,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/597eebd7-733b-4025-9cc4-d07cf5e97e8a.jpg",
       "is_ask": false,
       "price_max": "¥5,800",
-      "price_reduce": "-",
-      "price_after": "¥5,800",
+      "price_reduce": "15%",
+      "price_after": "¥4,930",
       "sort_price": 5800
     },
     {
@@ -5939,8 +5939,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/09059578-6bc2-4b5e-8dd4-02b5c1bb2616.jpg",
       "is_ask": false,
       "price_max": "¥6,100",
-      "price_reduce": "-",
-      "price_after": "¥6,100",
+      "price_reduce": "15%",
+      "price_after": "¥5,185",
       "sort_price": 6100
     },
     {
@@ -5952,8 +5952,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/6c9ce21a-1010-434f-9788-b6dff89e6ac0.jpg",
       "is_ask": false,
       "price_max": "¥4,800",
-      "price_reduce": "-",
-      "price_after": "¥4,800",
+      "price_reduce": "15%",
+      "price_after": "¥4,080",
       "sort_price": 4800
     },
     {
@@ -5965,8 +5965,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/fe0609c2-9be7-48d7-966d-321bfd75110e.jpg",
       "is_ask": false,
       "price_max": "¥5,500",
-      "price_reduce": "-",
-      "price_after": "¥5,500",
+      "price_reduce": "15%",
+      "price_after": "¥4,675",
       "sort_price": 5500
     },
     {
@@ -5978,8 +5978,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/988ff97f-238b-4037-a740-a342b623144e.jpg",
       "is_ask": false,
       "price_max": "¥8,500",
-      "price_reduce": "-",
-      "price_after": "¥8,500",
+      "price_reduce": "15%",
+      "price_after": "¥7,225",
       "sort_price": 8500
     },
     {
@@ -5991,8 +5991,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/f2178fd6-f0d4-4685-b523-a2ef5ffd08b9.jpg",
       "is_ask": false,
       "price_max": "¥5,200",
-      "price_reduce": "-",
-      "price_after": "¥5,200",
+      "price_reduce": "15%",
+      "price_after": "¥4,420",
       "sort_price": 5200
     },
     {
@@ -6004,8 +6004,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/ac2fd0e4-2408-46c1-ac92-137c3ad363d1.jpg",
       "is_ask": false,
       "price_max": "¥5,700",
-      "price_reduce": "-",
-      "price_after": "¥5,700",
+      "price_reduce": "15%",
+      "price_after": "¥4,845",
       "sort_price": 5700
     },
     {
@@ -6017,8 +6017,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/c0b39a5f-3ad7-4057-aea4-e7be221d37a0.png",
       "is_ask": false,
       "price_max": "¥4,800",
-      "price_reduce": "-",
-      "price_after": "¥4,800",
+      "price_reduce": "15%",
+      "price_after": "¥4,080",
       "sort_price": 4800
     },
     {
@@ -6030,8 +6030,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/3b94aadb-64de-4258-841e-3443f0c2c8ed.png",
       "is_ask": false,
       "price_max": "¥7,000",
-      "price_reduce": "-",
-      "price_after": "¥7,000",
+      "price_reduce": "15%",
+      "price_after": "¥5,950",
       "sort_price": 7000
     },
     {
@@ -6043,8 +6043,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/1eda1939-dc8c-4375-a805-6c8ec678db53.jpg",
       "is_ask": false,
       "price_max": "¥4,700",
-      "price_reduce": "-",
-      "price_after": "¥4,700",
+      "price_reduce": "15%",
+      "price_after": "¥3,995",
       "sort_price": 4700
     },
     {
@@ -6056,8 +6056,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/97440b9d-a1bc-43e0-acf5-6468e911360e.png",
       "is_ask": false,
       "price_max": "¥4,700",
-      "price_reduce": "-",
-      "price_after": "¥4,700",
+      "price_reduce": "15%",
+      "price_after": "¥3,995",
       "sort_price": 4700
     },
     {
@@ -6069,8 +6069,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/dbe9448b-3473-42e5-a6e7-687f912897b8.png",
       "is_ask": false,
       "price_max": "¥3,000",
-      "price_reduce": "-",
-      "price_after": "¥3,000",
+      "price_reduce": "15%",
+      "price_after": "¥2,550",
       "sort_price": 3000
     },
     {
@@ -6082,8 +6082,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/45d80126-14a7-42bc-86f3-0741af34609c.png",
       "is_ask": false,
       "price_max": "¥5,000",
-      "price_reduce": "-",
-      "price_after": "¥5,000",
+      "price_reduce": "15%",
+      "price_after": "¥4,250",
       "sort_price": 5000
     },
     {
@@ -6095,8 +6095,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/ws_tcg/df016ff2-0baa-4272-b175-56a64f4cc57a.png",
       "is_ask": false,
       "price_max": "¥5,000",
-      "price_reduce": "-",
-      "price_after": "¥5,000",
+      "price_reduce": "15%",
+      "price_after": "¥4,250",
       "sort_price": 5000
     },
     {
@@ -6108,8 +6108,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/mtg/c8f15a17-4cd9-4270-9566-01059a1d817a.png",
       "is_ask": false,
       "price_max": "¥33,000",
-      "price_reduce": "-",
-      "price_after": "¥33,000",
+      "price_reduce": "10%",
+      "price_after": "¥29,700",
       "sort_price": 33000
     },
     {
@@ -6121,8 +6121,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/mtg/6d8590a7-993c-4450-b98a-cc225da9580f.png",
       "is_ask": false,
       "price_max": "¥20,000",
-      "price_reduce": "-",
-      "price_after": "¥20,000",
+      "price_reduce": "10%",
+      "price_after": "¥18,000",
       "sort_price": 20000
     },
     {
@@ -6186,8 +6186,8 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/mtg/0cdf0143-13d5-4085-97e1-1d5b00bc95e9.jpg",
       "is_ask": false,
       "price_max": "¥12,000",
-      "price_reduce": "-",
-      "price_after": "¥12,000",
+      "price_reduce": "10%",
+      "price_after": "¥10,800",
       "sort_price": 12000
     },
     {
