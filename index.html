@@ -58,7 +58,7 @@
       td { padding: 12px; text-align: center; border-bottom: 1px solid #eee; font-size: 14px; }
       .td-left { text-align: left; font-weight: bold; }
       .table-price-max { font-weight: 900; color: #0066cc; font-size: 16px; }
-      .table-price-reduce { color: #888; font-size: 12px; }
+      .table-price-reduce { color: #888; font-size: 12px; font-weight: 500; }
       .table-price-after { font-weight: 900; color: var(--accent); font-size: 16px; background: var(--accent-bg); }
       .table-status { font-weight: bold; color: #2ecc71; }
       .table-status.stop { color: #e74c3c; }
@@ -153,7 +153,7 @@
 
     state.filteredRows.sort((a, b) => {
       if (state.sortByPrice) {
-        return b.price_max - a.price_max;
+        return (b.sort_price || 0) - (a.sort_price || 0);
       } else {
         return String(a.name).localeCompare(String(b.name), 'ja');
       }
@@ -162,18 +162,15 @@
     render();
   }
 
-  // Googleドライブの特殊な「uc?id=」形式を「外部ホームページ用URL」に安全に変換する便利関数
   function formatImageUrl(rawUrl) {
     if (!rawUrl) return 'https://via.placeholder.com/100x140?text=No+Image';
-    
-    // もしGoogleドライブの共有リンク（uc?id= や open?id=）だった場合、強制変換をかける
     if (rawUrl.includes('drive.google.com')) {
       const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
       if (matches && matches[1]) {
-        return `https://lh3.googleusercontent.com/d/${matches[1]}`;
+        return `https://docs.google.com/uc?export=view&id=${matches[1]}`;
       }
     }
-    return rawUrl; // 通常のS3リンクなどはそのまま返す
+    return rawUrl;
   }
 
   function render() {
@@ -190,8 +187,6 @@
     mobileContainer.innerHTML = state.filteredRows.map(item => {
       const isLive = item.status === "掲載";
       const badgeClass = isLive ? "status-tag" : "status-tag stop";
-      
-      // 画像リンクを安全な表示用URLに変換
       const imgSrc = formatImageUrl(item.img);
       
       return `
@@ -206,17 +201,17 @@
           <div class="king-prices">
             <div class="kp-block">
               <span class="kp-label">上限買取金額</span>
-              <span class="kp-val">¥${(item.price_max || 0).toLocaleString()}</span>
+              <span class="kp-val">${item.price_max}</span>
             </div>
             <div class="kp-block">
               <span class="kp-label">減額後の金額</span>
-              <span class="kp-val" style="color:var(--accent);">¥${(item.price_after || 0).toLocaleString()}</span>
+              <span class="kp-val" style="color:var(--accent);">${item.price_after}</span>
             </div>
           </div>
         </div>
         <div class="card-reduce-row">
           <span style="color:#666; font-weight:bold;">📉 減額幅</span>
-          <span class="card-reduce-val">-¥${(item.price_reduce || 0).toLocaleString()}</span>
+          <span class="card-reduce-val">${item.price_reduce}</span>
         </div>
       </div>`;
     }).join('');
@@ -237,7 +232,6 @@
       <tbody>${state.filteredRows.map(item => {
         const isLive = item.status === "掲載";
         const statusClass = isLive ? "table-status" : "table-status stop";
-        
         const imgSrc = formatImageUrl(item.img);
         
         return `
@@ -247,9 +241,9 @@
           <td class="td-left">${item.name}</td>
           <td>${item.code || '-'} <br><small style="color:#888">${item.spec || ''}</small></td>
           <td><img src="${imgSrc}" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.src='https://via.placeholder.com/50?text=No+Image'"></td>
-          <td class="table-price-max">¥${(item.price_max || 0).toLocaleString()}</td>
-          <td class="table-price-reduce">-¥${(item.price_reduce || 0).toLocaleString()}</td>
-          <td class="table-price-after">¥${(item.price_after || 0).toLocaleString()}</td>
+          <td class="table-price-max">${item.price_max}</td>
+          <td class="table-price-reduce">${item.price_reduce}</td>
+          <td class="table-price-after">${item.price_after}</td>
         </tr>`}).join('')}
       </tbody></table>`;
   }
@@ -281,6 +275,7 @@
     applyLocalFilter();
   }
 
+  // Google Driveへの参照形式を変更
   function showModal(src){ 
     if(!src || src.includes('via.placeholder')) return; 
     document.getElementById('modalImage').src = src; 
