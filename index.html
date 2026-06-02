@@ -110,6 +110,17 @@
 
   const fallbackImg = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='140' viewBox='0 0 100 140'%3E%3Crect fill='%23eeeeee' width='100' height='140'/%3E%3Ctext fill='%23999999' x='50' y='70' font-family='sans-serif' font-size='14' text-anchor='middle' dominant-baseline='middle'%3ENo Image%3C/text%3E%3C/svg%3E";
 
+  // ★ 追加：検索用の文字列正規化関数
+  // 大文字小文字、全角半角、ひらがなカタカナを統一します
+  function normalizeText(text) {
+    if (!text) return "";
+    let normalized = String(text).normalize('NFKC').toLowerCase();
+    normalized = normalized.replace(/[\u3041-\u3096]/g, function(match) {
+      return String.fromCharCode(match.charCodeAt(0) + 0x60);
+    });
+    return normalized;
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     buildInitialBar();
     loadAllData();
@@ -145,27 +156,39 @@
     applyLocalFilter();
   }
 
+  // ★ 置き換え：表記ゆれ＆複数ワードAND検索対応フィルター関数
   function applyLocalFilter() {
-    const kw = document.getElementById('keyword').value.toLowerCase().trim();
+    const rawKw = document.getElementById('keyword').value.trim();
+    const kwArray = normalizeText(rawKw).split(/\s+/).filter(k => k !== "");
+    
     const currentData = database[state.currentTab] || [];
 
     state.filteredRows = currentData.filter(item => {
-      const name = String(item.name || "");
-      const code = String(item.code || "");
-      const rarity = String(item.rarity || "");
-      if (kw && !name.toLowerCase().includes(kw) && !code.toLowerCase().includes(kw) && !rarity.toLowerCase().includes(kw)) return false;
-      if (state.initialKey !== 'ALL' && getInitialGroup(name) !== state.initialKey) return false;
-      if (state.currentTab === 'sotai' && state.rarityKey !== 'ALL' && rarity !== state.rarityKey) return false;
+      const name = normalizeText(item.name);
+      const code = normalizeText(item.code);
+      const rarity = normalizeText(item.rarity);
+      
+      if (kwArray.length > 0) {
+        const isMatch = kwArray.every(kw => 
+          name.includes(kw) || code.includes(kw) || rarity.includes(kw)
+        );
+        if (!isMatch) return false;
+      }
+
+      const originalName = String(item.name || "");
+      const originalRarity = String(item.rarity || "");
+      
+      if (state.initialKey !== 'ALL' && getInitialGroup(originalName) !== state.initialKey) return false;
+      if (state.currentTab === 'sotai' && state.rarityKey !== 'ALL' && originalRarity !== state.rarityKey) return false;
+      
       return true;
     });
 
-    // ★ 未開封BOXタブのときだけ、標準順のソート（名前あいうえお順）をスキップします
     if (state.sortByPrice) {
       state.filteredRows.sort((a, b) => (b.sort_price || 0) - (a.sort_price || 0));
     } else if (state.currentTab !== 'box') {
-      // BOX以外のタブ（PSA・素体）は、標準順のときはこれまで通り名前のあいうえお順で並び替えます
       state.filteredRows.sort((a, b) => String(a.name).localeCompare(String(b.name), 'ja'));
-    } // BOXタブで標準順の場合は、何もせずスプレッドシートに登録された順番（元の配列のまま）にします
+    }
 
     render();
   }
