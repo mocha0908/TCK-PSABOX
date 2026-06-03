@@ -106,11 +106,11 @@
       "name": "グルーシャ 【SAR】{095/071}[SV2P]",
       "code": "095/071",
       "rarity": "SAR",
-      "price_a": "¥4,000",
-      "price_a_minus": "¥2,600",
-      "price_rush": "¥4,000",
+      "price_a": "¥3,500",
+      "price_a_minus": "¥2,200",
+      "price_rush": "¥3,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/41829.webp",
-      "sort_price": 4000
+      "sort_price": 3500
     },
     {
       "name": "オモダカ 【SAR】{137/108}[SV3]",
@@ -126,11 +126,11 @@
       "name": "ポピー 【SAR】{138/108}[SV3]",
       "code": "138/108",
       "rarity": "SAR",
-      "price_a": "¥900",
-      "price_a_minus": "¥580",
-      "price_rush": "¥900",
+      "price_a": "¥1,000",
+      "price_a_minus": "¥650",
+      "price_rush": "¥1,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/45929.webp",
-      "sort_price": 900
+      "sort_price": 1000
     },
     {
       "name": "チリ 【SAR】{088/062}[SV3a]",
@@ -236,11 +236,11 @@
       "name": "ベルのまごころ 【SAR】{097/071}[SV5M]",
       "code": "097/071",
       "rarity": "SAR",
-      "price_a": "¥5,500",
-      "price_a_minus": "¥4,200",
-      "price_rush": "¥6,500",
+      "price_a": "¥5,100",
+      "price_a_minus": "¥3,900",
+      "price_rush": "¥6,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/53327.webp",
-      "sort_price": 5500
+      "sort_price": 5100
     },
     {
       "name": "スグリ 【SAR】{129/101}[SV6]",
@@ -296,11 +296,11 @@
       "name": "スグリ 【SAR】{230/187}[SV8a]",
       "code": "230/187",
       "rarity": "SAR",
-      "price_a": "¥900",
-      "price_a_minus": "¥580",
-      "price_rush": "¥900",
+      "price_a": "¥1,000",
+      "price_a_minus": "¥650",
+      "price_rush": "¥1,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62031.webp",
-      "sort_price": 900
+      "sort_price": 1000
     },
     {
       "name": "ネリネ 【SAR】{232/187}[SV8a]",
@@ -336,11 +336,11 @@
       "name": "Nの筋書き 【SAR】{173/086}[SV11B]",
       "code": "173/086",
       "rarity": "SAR",
-      "price_a": "¥5,100",
-      "price_a_minus": "¥3,900",
-      "price_rush": "¥6,000",
+      "price_a": "¥4,900",
+      "price_a_minus": "¥3,700",
+      "price_rush": "¥5,800",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67342.webp",
-      "sort_price": 5100
+      "sort_price": 4900
     },
     {
       "name": "マチスの取引 【SAR】{090/063}[M1L]",
@@ -416,21 +416,21 @@
       "name": "グラジオの決戦 【SAR】{116/081}[M5]",
       "code": "116/081",
       "rarity": "SAR",
-      "price_a": "¥1,500",
-      "price_a_minus": "¥970",
-      "price_rush": "¥1,500",
+      "price_a": "¥1,700",
+      "price_a_minus": "¥1,100",
+      "price_rush": "¥1,700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81473.webp",
-      "sort_price": 1500
+      "sort_price": 1700
     },
     {
       "name": "ムク 【SAR】{117/081}[M5]",
       "code": "117/081",
       "rarity": "SAR",
-      "price_a": "¥9,000",
-      "price_a_minus": "¥5,800",
-      "price_rush": "¥9,000",
+      "price_a": "¥8,500",
+      "price_a_minus": "¥5,500",
+      "price_rush": "¥8,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81474.webp",
-      "sort_price": 9000
+      "sort_price": 8500
     },
     {
       "name": "トウキ 【SR】{084/070}[S5a]",
@@ -816,11 +816,11 @@
       "name": "トウコ 【SR】{166/086}[SV11W]",
       "code": "166/086",
       "rarity": "SR",
-      "price_a": "¥2,100",
-      "price_a_minus": "¥1,300",
-      "price_rush": "¥2,000",
+      "price_a": "¥1,900",
+      "price_a_minus": "¥1,200",
+      "price_rush": "¥1,900",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67575.webp",
-      "sort_price": 2100
+      "sort_price": 1900
     },
     {
       "name": "リーリエの決心 【SR】{086/063}[M1L]",
@@ -841,6 +841,16 @@
       "price_rush": "¥450",
       "img": "https://files.cardrush.media/pokemon/ocha_products/71708.webp",
       "sort_price": 350
+    },
+    {
+      "name": "ヒカリ 【SR】{106/080}[M2]",
+      "code": "106/080",
+      "rarity": "SR",
+      "price_a": "¥1,300",
+      "price_a_minus": "¥1,000",
+      "price_rush": "¥1,600",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/71709.webp",
+      "sort_price": 1300
     },
     {
       "name": "ひふきやろう 【SR】{107/080}[M2]",
@@ -896,11 +906,11 @@
       "name": "ムク 【SR】{111/081}[M5]",
       "code": "111/081",
       "rarity": "SR",
-      "price_a": "¥3,000",
-      "price_a_minus": "¥1,900",
-      "price_rush": "¥3,000",
+      "price_a": "¥3,200",
+      "price_a_minus": "¥2,000",
+      "price_rush": "¥3,200",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81492.webp",
-      "sort_price": 3000
+      "sort_price": 3200
     },
     {
       "name": "エンテイV 【SAR】{213/172}[S12a]",
@@ -916,11 +926,11 @@
       "name": "グレイシアVSTAR 【SAR】{217/172}[S12a]",
       "code": "217/172",
       "rarity": "SAR",
-      "price_a": "¥4,500",
-      "price_a_minus": "¥3,400",
-      "price_rush": "¥5,300",
+      "price_a": "¥4,600",
+      "price_a_minus": "¥3,500",
+      "price_rush": "¥5,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38397.webp",
-      "sort_price": 4500
+      "sort_price": 4600
     },
     {
       "name": "ザシアンV 【SAR】{225/172}[S12a]",
@@ -936,11 +946,11 @@
       "name": "スイクンV 【SAR】{215/172}[S12a]",
       "code": "215/172",
       "rarity": "SAR",
-      "price_a": "¥3,400",
-      "price_a_minus": "¥2,600",
-      "price_rush": "¥4,000",
+      "price_a": "¥3,600",
+      "price_a_minus": "¥2,700",
+      "price_rush": "¥4,300",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38395.webp",
-      "sort_price": 3400
+      "sort_price": 3600
     },
     {
       "name": "ゼラオラVSTAR 【SAR】{220/172}[S12a]",
@@ -956,11 +966,11 @@
       "name": "ダークライVSTAR 【SAR】{228/172}[S12a]",
       "code": "228/172",
       "rarity": "SAR",
-      "price_a": "¥6,300",
-      "price_a_minus": "¥4,800",
-      "price_rush": "¥7,500",
+      "price_a": "¥5,900",
+      "price_a_minus": "¥4,500",
+      "price_rush": "¥7,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38408.webp",
-      "sort_price": 6300
+      "sort_price": 5900
     },
     {
       "name": "デオキシスVMAX 【SAR】{222/172}[S12a]",
@@ -976,11 +986,11 @@
       "name": "デオキシスVSTAR 【SAR】{223/172}[S12a]",
       "code": "223/172",
       "rarity": "SAR",
-      "price_a": "¥3,100",
-      "price_a_minus": "¥2,400",
-      "price_rush": "¥3,700",
+      "price_a": "¥2,500",
+      "price_a_minus": "¥1,900",
+      "price_rush": "¥3,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38403.webp",
-      "sort_price": 3100
+      "sort_price": 2500
     },
     {
       "name": "ドラピオンV 【SAR】{227/172}[S12a]",
@@ -1006,11 +1016,11 @@
       "name": "バオッキーVSTAR 【SAR】{214/172}[S12a]",
       "code": "214/172",
       "rarity": "SAR",
-      "price_a": "¥3,300",
-      "price_a_minus": "¥2,100",
-      "price_rush": "¥3,300",
+      "price_a": "¥3,500",
+      "price_a_minus": "¥2,200",
+      "price_rush": "¥3,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38394.webp",
-      "sort_price": 3300
+      "sort_price": 3500
     },
     {
       "name": "ヒスイゾロアークVSTAR 【SAR】{234/172}[S12a]",
@@ -1046,21 +1056,21 @@
       "name": "ライコウV 【SAR】{218/172}[S12a]",
       "code": "218/172",
       "rarity": "SAR",
-      "price_a": "¥3,700",
-      "price_a_minus": "¥2,400",
-      "price_rush": "¥3,700",
+      "price_a": "¥4,000",
+      "price_a_minus": "¥2,600",
+      "price_rush": "¥4,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38398.webp",
-      "sort_price": 3700
+      "sort_price": 4000
     },
     {
       "name": "リーフィアVSTAR 【SAR】{210/172}[S12a]",
       "code": "210/172",
       "rarity": "SAR",
-      "price_a": "¥6,200",
-      "price_a_minus": "¥4,000",
-      "price_rush": "¥6,200",
+      "price_a": "¥6,500",
+      "price_a_minus": "¥4,200",
+      "price_rush": "¥6,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38390.webp",
-      "sort_price": 6200
+      "sort_price": 6500
     },
     {
       "name": "リザードンV 【SAR】{211/172}[S12a]",
@@ -1076,11 +1086,11 @@
       "name": "リザードンVSTAR 【SAR】{212/172}[S12a]",
       "code": "212/172",
       "rarity": "SAR",
-      "price_a": "¥16,000",
-      "price_a_minus": "¥10,000",
-      "price_rush": "¥16,000",
+      "price_a": "¥14,000",
+      "price_a_minus": "¥9,100",
+      "price_rush": "¥14,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38392.webp",
-      "sort_price": 16000
+      "sort_price": 14000
     },
     {
       "name": "ルカリオVSTAR 【SAR】{226/172}[S12a]",
@@ -1096,11 +1106,11 @@
       "name": "レジギガスVSTAR 【SAR】{233/172}[S12a]",
       "code": "233/172",
       "rarity": "SAR",
-      "price_a": "¥1,100",
-      "price_a_minus": "¥710",
-      "price_rush": "¥1,100",
+      "price_a": "¥1,200",
+      "price_a_minus": "¥780",
+      "price_rush": "¥1,200",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38413.webp",
-      "sort_price": 1100
+      "sort_price": 1200
     },
     {
       "name": "ウェーニバルex 【SAR】{098/073}[SV1a]",
@@ -1116,11 +1126,11 @@
       "name": "マスカーニャex 【SAR】{096/073}[SV1a]",
       "code": "096/073",
       "rarity": "SAR",
-      "price_a": "¥7,600",
-      "price_a_minus": "¥4,700",
-      "price_rush": "¥7,300",
+      "price_a": "¥6,800",
+      "price_a_minus": "¥4,200",
+      "price_rush": "¥6,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/40598.webp",
-      "sort_price": 7600
+      "sort_price": 6800
     },
     {
       "name": "ラウドボーンex 【SAR】{097/073}[SV1a]",
@@ -1136,11 +1146,11 @@
       "name": "コライドンex 【SAR】{103/078}[SV1S]",
       "code": "103/078",
       "rarity": "SAR",
-      "price_a": "¥6,300",
-      "price_a_minus": "¥3,900",
-      "price_rush": "¥6,000",
+      "price_a": "¥5,700",
+      "price_a_minus": "¥3,500",
+      "price_rush": "¥5,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/39524.webp",
-      "sort_price": 6300
+      "sort_price": 5700
     },
     {
       "name": "サーナイトex 【SAR】{101/078}[SV1S]",
@@ -1186,11 +1196,11 @@
       "name": "フーディンex 【SAR】{203/165}[SV2a]",
       "code": "203/165",
       "rarity": "SAR",
-      "price_a": "¥9,500",
-      "price_a_minus": "¥6,100",
-      "price_rush": "¥9,500",
+      "price_a": "¥8,500",
+      "price_a_minus": "¥5,500",
+      "price_rush": "¥8,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/43862.webp",
-      "sort_price": 9500
+      "sort_price": 8500
     },
     {
       "name": "フシギバナex 【SAR】{200/165}[SV2a]",
@@ -1211,6 +1221,26 @@
       "price_rush": "¥45,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/43864.webp",
       "sort_price": 47000
+    },
+    {
+      "name": "ミュウex 【SAR】{205/165}[SV2a]",
+      "code": "205/165",
+      "rarity": "SAR",
+      "price_a": "¥47,000",
+      "price_a_minus": "¥29,000",
+      "price_rush": "¥45,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/43864.webp",
+      "sort_price": 47000
+    },
+    {
+      "name": "リザードンex 【SAR】{201/165}[SV2a]",
+      "code": "201/165",
+      "rarity": "SAR",
+      "price_a": "¥71,000",
+      "price_a_minus": "¥44,000",
+      "price_rush": "¥68,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/43860.webp",
+      "sort_price": 71000
     },
     {
       "name": "リザードンex 【SAR】{201/165}[SV2a]",
@@ -1286,11 +1316,21 @@
       "name": "リザードンex 【SAR】{134/108}[SV3]",
       "code": "134/108",
       "rarity": "SAR",
-      "price_a": "¥52,000",
-      "price_a_minus": "¥32,000",
-      "price_rush": "¥50,000",
+      "price_a": "¥49,000",
+      "price_a_minus": "¥30,000",
+      "price_rush": "¥47,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/45925.webp",
-      "sort_price": 52000
+      "sort_price": 49000
+    },
+    {
+      "name": "リザードンex 【SAR】{134/108}[SV3]",
+      "code": "134/108",
+      "rarity": "SAR",
+      "price_a": "¥49,000",
+      "price_a_minus": "¥30,000",
+      "price_rush": "¥47,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/45925.webp",
+      "sort_price": 49000
     },
     {
       "name": "カプ・コケコex 【SAR】{086/062}[SV3a]",
@@ -1326,11 +1366,11 @@
       "name": "サーナイトex 【SAR】{348/190}[SV4a]",
       "code": "348/190",
       "rarity": "SAR",
-      "price_a": "¥15,000",
-      "price_a_minus": "¥9,700",
-      "price_rush": "¥15,000",
+      "price_a": "¥14,000",
+      "price_a_minus": "¥9,100",
+      "price_rush": "¥14,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/51077.webp",
-      "sort_price": 15000
+      "sort_price": 14000
     },
     {
       "name": "ミュウex 【SAR】{347/190}[SV4a]",
@@ -1341,6 +1381,26 @@
       "price_rush": "¥72,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/51076.webp",
       "sort_price": 75000
+    },
+    {
+      "name": "ミュウex 【SAR】{347/190}[SV4a]",
+      "code": "347/190",
+      "rarity": "SAR",
+      "price_a": "¥75,000",
+      "price_a_minus": "¥46,000",
+      "price_rush": "¥72,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/51076.webp",
+      "sort_price": 75000
+    },
+    {
+      "name": "リザードンex 【SAR】{349/190}[SV4a]",
+      "code": "349/190",
+      "rarity": "SAR",
+      "price_a": "¥45,000",
+      "price_a_minus": "¥27,000",
+      "price_rush": "¥43,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/51078.webp",
+      "sort_price": 45000
     },
     {
       "name": "リザードンex 【SAR】{349/190}[SV4a]",
@@ -1376,21 +1436,21 @@
       "name": "トドロクツキex 【SAR】{090/066}[SV4K]",
       "code": "090/066",
       "rarity": "SAR",
-      "price_a": "¥4,600",
-      "price_a_minus": "¥3,500",
-      "price_rush": "¥5,500",
+      "price_a": "¥4,200",
+      "price_a_minus": "¥3,200",
+      "price_rush": "¥5,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/49653.webp",
-      "sort_price": 4600
+      "sort_price": 4200
     },
     {
       "name": "チルタリスex 【SAR】{090/066}[SV4M]",
       "code": "090/066",
       "rarity": "SAR",
-      "price_a": "¥8,700",
-      "price_a_minus": "¥5,300",
-      "price_rush": "¥8,300",
+      "price_a": "¥7,800",
+      "price_a_minus": "¥4,800",
+      "price_rush": "¥7,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/49682.webp",
-      "sort_price": 8700
+      "sort_price": 7800
     },
     {
       "name": "テツノカイナex 【SAR】{088/066}[SV4M]",
@@ -1411,6 +1471,16 @@
       "price_rush": "¥3,200",
       "img": "https://files.cardrush.media/pokemon/ocha_products/49681.webp",
       "sort_price": 2700
+    },
+    {
+      "name": "ゲッコウガex 【SAR】{090/066}[SV5a]",
+      "code": "090/066",
+      "rarity": "SAR",
+      "price_a": "¥47,000",
+      "price_a_minus": "¥29,000",
+      "price_rush": "¥45,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/54810.webp",
+      "sort_price": 47000
     },
     {
       "name": "ゲッコウガex 【SAR】{090/066}[SV5a]",
@@ -1456,11 +1526,11 @@
       "name": "タケルライコex 【SAR】{095/071}[SV5K]",
       "code": "095/071",
       "rarity": "SAR",
-      "price_a": "¥6,300",
-      "price_a_minus": "¥3,900",
-      "price_rush": "¥6,000",
+      "price_a": "¥6,000",
+      "price_a_minus": "¥3,700",
+      "price_rush": "¥5,800",
       "img": "https://files.cardrush.media/pokemon/ocha_products/53296.webp",
-      "sort_price": 6300
+      "sort_price": 6000
     },
     {
       "name": "テツノイサハex 【SAR】{093/071}[SV5M]",
@@ -1593,14 +1663,24 @@
       "sort_price": 84000
     },
     {
+      "name": "ピカチュウex 【SAR】{132/106}[SV8]",
+      "code": "132/106",
+      "rarity": "SAR",
+      "price_a": "¥84,000",
+      "price_a_minus": "¥52,000",
+      "price_rush": "¥80,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/60257.webp",
+      "sort_price": 84000
+    },
+    {
       "name": "ミロカロスex 【SAR】{131/106}[SV8]",
       "code": "131/106",
       "rarity": "SAR",
-      "price_a": "¥9,300",
-      "price_a_minus": "¥7,100",
-      "price_rush": "¥11,000",
+      "price_a": "¥8,500",
+      "price_a_minus": "¥6,500",
+      "price_rush": "¥10,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/60256.webp",
-      "sort_price": 9300
+      "sort_price": 8500
     },
     {
       "name": "イーブイex 【SAR】{223/187}[SV8a]",
@@ -1616,11 +1696,11 @@
       "name": "イーブイex 【SAR】{224/187}[SV8a]",
       "code": "224/187",
       "rarity": "SAR",
-      "price_a": "¥5,100",
-      "price_a_minus": "¥3,900",
-      "price_rush": "¥6,000",
+      "price_a": "¥5,200",
+      "price_a_minus": "¥4,000",
+      "price_rush": "¥6,200",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62025.webp",
-      "sort_price": 5100
+      "sort_price": 5200
     },
     {
       "name": "イルカマンex 【SAR】{207/187}[SV8a]",
@@ -1636,11 +1716,11 @@
       "name": "エーフィex 【SAR】{211/187}[SV8a]",
       "code": "211/187",
       "rarity": "SAR",
-      "price_a": "¥8,900",
-      "price_a_minus": "¥5,500",
-      "price_rush": "¥8,500",
+      "price_a": "¥9,100",
+      "price_a_minus": "¥5,600",
+      "price_rush": "¥8,700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62012.webp",
-      "sort_price": 8900
+      "sort_price": 9100
     },
     {
       "name": "オーガポンいしずえのめんex 【SAR】{216/187}[SV8a]",
@@ -1686,11 +1766,11 @@
       "name": "グレイシアex 【SAR】{206/187}[SV8a]",
       "code": "206/187",
       "rarity": "SAR",
-      "price_a": "¥8,700",
-      "price_a_minus": "¥5,600",
-      "price_rush": "¥8,700",
+      "price_a": "¥8,500",
+      "price_a_minus": "¥5,500",
+      "price_rush": "¥8,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62007.webp",
-      "sort_price": 8700
+      "sort_price": 8500
     },
     {
       "name": "サーフゴーex 【SAR】{220/187}[SV8a]",
@@ -1706,11 +1786,11 @@
       "name": "サンダースex 【SAR】{209/187}[SV8a]",
       "code": "209/187",
       "rarity": "SAR",
-      "price_a": "¥8,000",
-      "price_a_minus": "¥5,200",
-      "price_rush": "¥8,000",
+      "price_a": "¥7,500",
+      "price_a_minus": "¥4,800",
+      "price_rush": "¥7,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62010.webp",
-      "sort_price": 8000
+      "sort_price": 7500
     },
     {
       "name": "シャワーズex 【SAR】{205/187}[SV8a]",
@@ -1726,11 +1806,11 @@
       "name": "タケルライコex 【SAR】{222/187}[SV8a]",
       "code": "222/187",
       "rarity": "SAR",
-      "price_a": "¥1,600",
-      "price_a_minus": "¥1,000",
-      "price_rush": "¥1,600",
+      "price_a": "¥1,700",
+      "price_a_minus": "¥1,100",
+      "price_rush": "¥1,700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62023.webp",
-      "sort_price": 1600
+      "sort_price": 1700
     },
     {
       "name": "テツノカシラex 【SAR】{214/187}[SV8a]",
@@ -1756,31 +1836,41 @@
       "name": "トドロクツキex 【SAR】{218/187}[SV8a]",
       "code": "218/187",
       "rarity": "SAR",
-      "price_a": "¥2,900",
-      "price_a_minus": "¥2,200",
-      "price_rush": "¥3,500",
+      "price_a": "¥3,100",
+      "price_a_minus": "¥2,400",
+      "price_rush": "¥3,700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62019.webp",
-      "sort_price": 2900
+      "sort_price": 3100
     },
     {
       "name": "ニンフィアex 【SAR】{212/187}[SV8a]",
       "code": "212/187",
       "rarity": "SAR",
-      "price_a": "¥18,000",
+      "price_a": "¥17,000",
       "price_a_minus": "¥11,000",
-      "price_rush": "¥18,000",
+      "price_rush": "¥17,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62013.webp",
-      "sort_price": 18000
+      "sort_price": 17000
     },
     {
       "name": "ブースターex 【SAR】{202/187}[SV8a]",
       "code": "202/187",
       "rarity": "SAR",
-      "price_a": "¥8,100",
-      "price_a_minus": "¥5,000",
-      "price_rush": "¥7,800",
+      "price_a": "¥7,800",
+      "price_a_minus": "¥4,800",
+      "price_rush": "¥7,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62003.webp",
-      "sort_price": 8100
+      "sort_price": 7800
+    },
+    {
+      "name": "ブラッキーex 【SAR】{217/187}[SV8a]",
+      "code": "217/187",
+      "rarity": "SAR",
+      "price_a": "¥57,000",
+      "price_a_minus": "¥35,000",
+      "price_rush": "¥55,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/62018.webp",
+      "sort_price": 57000
     },
     {
       "name": "ブラッキーex 【SAR】{217/187}[SV8a]",
@@ -1796,20 +1886,30 @@
       "name": "リーフィアex 【SAR】{200/187}[SV8a]",
       "code": "200/187",
       "rarity": "SAR",
-      "price_a": "¥9,300",
-      "price_a_minus": "¥6,000",
-      "price_rush": "¥9,300",
+      "price_a": "¥9,000",
+      "price_a_minus": "¥5,800",
+      "price_rush": "¥9,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/62001.webp",
-      "sort_price": 9300
+      "sort_price": 9000
     },
     {
       "name": "リーリエのピッピex 【SAR】{126/100}[SV9]",
       "code": "126/100",
       "rarity": "SAR",
-      "price_a": "¥29,000",
-      "price_a_minus": "¥18,000",
-      "price_rush": "¥29,000",
+      "price_a": "¥27,000",
+      "price_a_minus": "¥17,000",
+      "price_rush": "¥27,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/63635.webp",
+      "sort_price": 27000
+    },
+    {
+      "name": "シロナのガブリアスex 【SAR】{087/063}[SV9a]",
+      "code": "087/063",
+      "rarity": "SAR",
+      "price_a": "¥29,000",
+      "price_a_minus": "¥22,000",
+      "price_rush": "¥35,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/64586.webp",
       "sort_price": 29000
     },
     {
@@ -1836,11 +1936,11 @@
       "name": "ロケット団のクロバットex 【SAR】{127/098}[SV10]",
       "code": "127/098",
       "rarity": "SAR",
-      "price_a": "¥7,300",
-      "price_a_minus": "¥4,700",
-      "price_rush": "¥7,300",
+      "price_a": "¥7,000",
+      "price_a_minus": "¥4,500",
+      "price_rush": "¥7,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/65287.webp",
-      "sort_price": 7300
+      "sort_price": 7000
     },
     {
       "name": "ロケット団のファイヤーex 【SAR】{124/098}[SV10]",
@@ -1856,21 +1956,31 @@
       "name": "ロケット団のミュウツーex 【SAR】{125/098}[SV10]",
       "code": "125/098",
       "rarity": "SAR",
-      "price_a": "¥75,000",
-      "price_a_minus": "¥46,000",
-      "price_rush": "¥72,000",
+      "price_a": "¥73,000",
+      "price_a_minus": "¥45,000",
+      "price_rush": "¥70,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/65285.webp",
-      "sort_price": 75000
+      "sort_price": 73000
+    },
+    {
+      "name": "ロケット団のミュウツーex 【SAR】{125/098}[SV10]",
+      "code": "125/098",
+      "rarity": "SAR",
+      "price_a": "¥73,000",
+      "price_a_minus": "¥45,000",
+      "price_rush": "¥70,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/65285.webp",
+      "sort_price": 73000
     },
     {
       "name": "キュレムex 【SAR】{168/086}[SV11B]",
       "code": "168/086",
       "rarity": "SAR",
-      "price_a": "¥2,900",
-      "price_a_minus": "¥2,200",
-      "price_rush": "¥3,500",
+      "price_a": "¥3,100",
+      "price_a_minus": "¥2,400",
+      "price_rush": "¥3,700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67337.webp",
-      "sort_price": 2900
+      "sort_price": 3100
     },
     {
       "name": "ジャローダex 【SAR】{167/086}[SV11B]",
@@ -1966,11 +2076,11 @@
       "name": "メガアブソルex 【SAR】{089/063}[M1L]",
       "code": "089/063",
       "rarity": "SAR",
-      "price_a": "¥3,100",
-      "price_a_minus": "¥1,900",
-      "price_rush": "¥3,000",
+      "price_a": "¥2,800",
+      "price_a_minus": "¥1,700",
+      "price_rush": "¥2,700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/70048.webp",
-      "sort_price": 3100
+      "sort_price": 2800
     },
     {
       "name": "メガフシギバナex 【SAR】{087/063}[M1L]",
@@ -2043,14 +2153,24 @@
       "sort_price": 105000
     },
     {
+      "name": "メガリザードンXex 【SAR】{110/080}[M2]",
+      "code": "110/080",
+      "rarity": "SAR",
+      "price_a": "¥105,000",
+      "price_a_minus": "¥65,000",
+      "price_rush": "¥100,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/71713.webp",
+      "sort_price": 105000
+    },
+    {
       "name": "ロトムex 【SAR】{112/080}[M2]",
       "code": "112/080",
       "rarity": "SAR",
-      "price_a": "¥850",
-      "price_a_minus": "¥650",
-      "price_rush": "¥1,000",
+      "price_a": "¥900",
+      "price_a_minus": "¥710",
+      "price_rush": "¥1,100",
       "img": "https://files.cardrush.media/pokemon/ocha_products/71715.webp",
-      "sort_price": 850
+      "sort_price": 900
     },
     {
       "name": "Nのゾロアークex 【SAR】{242/193}[M2a]",
@@ -2076,21 +2196,31 @@
       "name": "ピカチュウex 【SAR】{234/193}[M2a]",
       "code": "234/193",
       "rarity": "SAR",
-      "price_a": "¥50,000",
-      "price_a_minus": "¥31,000",
-      "price_rush": "¥48,000",
+      "price_a": "¥47,000",
+      "price_a_minus": "¥29,000",
+      "price_rush": "¥45,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73731.webp",
-      "sort_price": 50000
+      "sort_price": 47000
+    },
+    {
+      "name": "ピカチュウex 【SAR】{234/193}[M2a]",
+      "code": "234/193",
+      "rarity": "SAR",
+      "price_a": "¥47,000",
+      "price_a_minus": "¥29,000",
+      "price_rush": "¥45,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/73731.webp",
+      "sort_price": 47000
     },
     {
       "name": "マリィのオーロンゲex 【SAR】{243/193}[M2a]",
       "code": "243/193",
       "rarity": "SAR",
-      "price_a": "¥4,500",
-      "price_a_minus": "¥3,400",
-      "price_rush": "¥5,300",
+      "price_a": "¥4,200",
+      "price_a_minus": "¥3,200",
+      "price_rush": "¥5,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73740.webp",
-      "sort_price": 4500
+      "sort_price": 4200
     },
     {
       "name": "メガカイリューex 【SAR】{246/193}[M2a]",
@@ -2106,21 +2236,41 @@
       "name": "メガゲンガーex 【SAR】{240/193}[M2a]",
       "code": "240/193",
       "rarity": "SAR",
-      "price_a": "¥68,000",
-      "price_a_minus": "¥42,000",
-      "price_rush": "¥65,000",
+      "price_a": "¥63,000",
+      "price_a_minus": "¥39,000",
+      "price_rush": "¥60,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73737.webp",
-      "sort_price": 68000
+      "sort_price": 63000
+    },
+    {
+      "name": "メガゲンガーex 【SAR】{240/193}[M2a]",
+      "code": "240/193",
+      "rarity": "SAR",
+      "price_a": "¥63,000",
+      "price_a_minus": "¥39,000",
+      "price_rush": "¥60,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/73737.webp",
+      "sort_price": 63000
     },
     {
       "name": "メガシビルドンex 【SAR】{235/193}[M2a]",
       "code": "235/193",
       "rarity": "SAR",
-      "price_a": "¥800",
-      "price_a_minus": "¥520",
-      "price_rush": "¥800",
+      "price_a": "¥900",
+      "price_a_minus": "¥580",
+      "price_rush": "¥900",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73732.webp",
-      "sort_price": 800
+      "sort_price": 900
+    },
+    {
+      "name": "メガズルズキンex 【SAR】{241/193}[M2a]",
+      "code": "241/193",
+      "rarity": "SAR",
+      "price_a": "¥1,000",
+      "price_a_minus": "¥780",
+      "price_rush": "¥1,200",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/73738.webp",
+      "sort_price": 1000
     },
     {
       "name": "メガユキメノコex 【SAR】{233/193}[M2a]",
@@ -2146,11 +2296,11 @@
       "name": "ロケット団のミュウツーex 【SAR】{237/193}[M2a]",
       "code": "237/193",
       "rarity": "SAR",
-      "price_a": "¥22,000",
-      "price_a_minus": "¥14,000",
-      "price_rush": "¥22,000",
+      "price_a": "¥20,000",
+      "price_a_minus": "¥13,000",
+      "price_rush": "¥20,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73734.webp",
-      "sort_price": 22000
+      "sort_price": 20000
     },
     {
       "name": "ニャースex 【SAR】{114/080}[M3]",
@@ -2186,11 +2336,21 @@
       "name": "チラチーノex 【SAR】{117/083}[M4]",
       "code": "117/083",
       "rarity": "SAR",
-      "price_a": "¥3,400",
+      "price_a": "¥4,200",
       "price_a_minus": "¥2,600",
       "price_rush": "¥4,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/79902.webp",
-      "sort_price": 3400
+      "sort_price": 4200
+    },
+    {
+      "name": "メガゲッコウガex 【SAR】{114/083}[M4]",
+      "code": "114/083",
+      "rarity": "SAR",
+      "price_a": "¥33,000",
+      "price_a_minus": "¥25,000",
+      "price_rush": "¥39,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/79899.webp",
+      "sort_price": 33000
     },
     {
       "name": "メガゲッコウガex 【SAR】{114/083}[M4]",
@@ -2226,41 +2386,51 @@
       "name": "メガシャンデラex 【SAR】{113/081}[M5]",
       "code": "113/081",
       "rarity": "SAR",
-      "price_a": "¥3,300",
-      "price_a_minus": "¥2,100",
-      "price_rush": "¥3,300",
+      "price_a": "¥3,500",
+      "price_a_minus": "¥2,200",
+      "price_rush": "¥3,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81470.webp",
-      "sort_price": 3300
+      "sort_price": 3500
     },
     {
       "name": "メガゼラオラex 【SAR】{112/081}[M5]",
       "code": "112/081",
       "rarity": "SAR",
-      "price_a": "¥5,000",
-      "price_a_minus": "¥3,200",
-      "price_rush": "¥5,000",
+      "price_a": "¥5,200",
+      "price_a_minus": "¥3,300",
+      "price_rush": "¥5,200",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81469.webp",
-      "sort_price": 5000
+      "sort_price": 5200
     },
     {
       "name": "メガダークライex 【SAR】{114/081}[M5]",
       "code": "114/081",
       "rarity": "SAR",
-      "price_a": "¥63,000",
+      "price_a": "¥62,000",
       "price_a_minus": "¥40,000",
-      "price_rush": "¥63,000",
+      "price_rush": "¥62,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81471.webp",
-      "sort_price": 63000
+      "sort_price": 62000
+    },
+    {
+      "name": "メガダークライex 【SAR】{114/081}[M5]",
+      "code": "114/081",
+      "rarity": "SAR",
+      "price_a": "¥60,000",
+      "price_a_minus": "¥39,000",
+      "price_rush": "¥60,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/81471.webp",
+      "sort_price": 60000
     },
     {
       "name": "モルペコex 【SAR】{115/081}[M5]",
       "code": "115/081",
       "rarity": "SAR",
-      "price_a": "¥6,000",
-      "price_a_minus": "¥3,900",
-      "price_rush": "¥6,000",
+      "price_a": "¥6,200",
+      "price_a_minus": "¥4,000",
+      "price_rush": "¥6,200",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81472.webp",
-      "sort_price": 6000
+      "sort_price": 6200
     },
     {
       "name": "ドンカラスGX 【SR】{102/095}[sm10]",
@@ -2281,16 +2451,6 @@
       "price_rush": "¥150",
       "img": "https://files.cardrush.media/pokemon/ocha_products/6014.webp",
       "sort_price": 150
-    },
-    {
-      "name": "基本鋼エネルギー 【SR】{209/173}[sm12a]",
-      "code": "209/173",
-      "rarity": "SR",
-      "price_a": "¥400",
-      "price_a_minus": "¥260",
-      "price_rush": "¥400",
-      "img": "https://files.cardrush.media/pokemon/ocha_products/6049.webp",
-      "sort_price": 400
     },
     {
       "name": "ゴリランダーV 【SR】{071/070}[s1a]",
@@ -2876,11 +3036,11 @@
       "name": "ゲンガーex 【SR】{088/071}[SV5K]",
       "code": "088/071",
       "rarity": "SR",
-      "price_a": "¥6,200",
-      "price_a_minus": "¥4,700",
-      "price_rush": "¥7,300",
+      "price_a": "¥5,900",
+      "price_a_minus": "¥4,500",
+      "price_rush": "¥7,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/53289.webp",
-      "sort_price": 6200
+      "sort_price": 5900
     },
     {
       "name": "テツノイワオex 【SR】{087/071}[SV5M]",
@@ -2956,11 +3116,11 @@
       "name": "ジャローダex 【SR】{159/086}[SV11B]",
       "code": "159/086",
       "rarity": "SR",
-      "price_a": "¥300",
-      "price_a_minus": "¥190",
-      "price_rush": "¥300",
+      "price_a": "¥400",
+      "price_a_minus": "¥260",
+      "price_rush": "¥400",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67328.webp",
-      "sort_price": 300
+      "sort_price": 400
     },
     {
       "name": "エルフーンex 【SR】{159/086}[SV11W]",
@@ -3076,41 +3236,41 @@
       "name": "メガシャンデラex 【SR】{097/081}[M5]",
       "code": "097/081",
       "rarity": "SR",
-      "price_a": "¥500",
-      "price_a_minus": "¥320",
-      "price_rush": "¥500",
+      "price_a": "¥400",
+      "price_a_minus": "¥260",
+      "price_rush": "¥400",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81478.webp",
-      "sort_price": 500
+      "sort_price": 400
     },
     {
       "name": "メガゼラオラex 【SR】{096/081}[M5]",
       "code": "096/081",
       "rarity": "SR",
-      "price_a": "¥700",
-      "price_a_minus": "¥450",
-      "price_rush": "¥700",
+      "price_a": "¥600",
+      "price_a_minus": "¥390",
+      "price_rush": "¥600",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81477.webp",
-      "sort_price": 700
+      "sort_price": 600
     },
     {
       "name": "メガダークライex 【SR】{099/081}[M5]",
       "code": "099/081",
       "rarity": "SR",
-      "price_a": "¥1,600",
-      "price_a_minus": "¥1,000",
-      "price_rush": "¥1,600",
+      "price_a": "¥1,700",
+      "price_a_minus": "¥1,100",
+      "price_rush": "¥1,700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81480.webp",
-      "sort_price": 1600
+      "sort_price": 1700
     },
     {
       "name": "メガドリュウズex 【SR】{101/081}[M5]",
       "code": "101/081",
       "rarity": "SR",
-      "price_a": "¥800",
-      "price_a_minus": "¥520",
-      "price_rush": "¥800",
+      "price_a": "¥700",
+      "price_a_minus": "¥450",
+      "price_rush": "¥700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81482.webp",
-      "sort_price": 800
+      "sort_price": 700
     },
     {
       "name": "モルペコex 【SR】{100/081}[M5]",
@@ -3236,11 +3396,11 @@
       "name": "ディアンシー 【AR】{186/172}[S12a]",
       "code": "186/172",
       "rarity": "AR",
-      "price_a": "¥200",
-      "price_a_minus": "¥160",
-      "price_rush": "¥250",
+      "price_a": "¥300",
+      "price_a_minus": "¥260",
+      "price_rush": "¥400",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38366.webp",
-      "sort_price": 200
+      "sort_price": 300
     },
     {
       "name": "ナエトル 【AR】{206/172}[S12a]",
@@ -3271,6 +3431,16 @@
       "price_rush": "¥200",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38380.webp",
       "sort_price": 150
+    },
+    {
+      "name": "ピカチュウ 【AR】{205/172}[S12a]",
+      "code": "205/172",
+      "rarity": "AR",
+      "price_a": "¥45,000",
+      "price_a_minus": "¥27,000",
+      "price_rush": "¥43,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/38385.webp",
+      "sort_price": 45000
     },
     {
       "name": "ピカチュウ 【AR】{205/172}[S12a]",
@@ -3356,11 +3526,11 @@
       "name": "ミュウ 【AR】{183/172}[S12a]",
       "code": "183/172",
       "rarity": "AR",
-      "price_a": "¥7,000",
-      "price_a_minus": "¥4,500",
-      "price_rush": "¥7,000",
+      "price_a": "¥6,000",
+      "price_a_minus": "¥3,900",
+      "price_rush": "¥6,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38363.webp",
-      "sort_price": 7000
+      "sort_price": 6000
     },
     {
       "name": "ミルタンク 【AR】{199/172}[S12a]",
@@ -3556,11 +3726,11 @@
       "name": "パピモッチ 【AR】{085/078}[SV1S]",
       "code": "085/078",
       "rarity": "AR",
-      "price_a": "¥800",
-      "price_a_minus": "¥520",
-      "price_rush": "¥800",
+      "price_a": "¥900",
+      "price_a_minus": "¥580",
+      "price_rush": "¥900",
       "img": "https://files.cardrush.media/pokemon/ocha_products/39506.webp",
-      "sort_price": 800
+      "sort_price": 900
     },
     {
       "name": "ヘイラッシャ 【AR】{082/078}[SV1S]",
@@ -3606,11 +3776,11 @@
       "name": "リオル 【AR】{086/078}[SV1S]",
       "code": "086/078",
       "rarity": "AR",
-      "price_a": "¥900",
+      "price_a": "¥1,100",
       "price_a_minus": "¥710",
       "price_rush": "¥1,100",
       "img": "https://files.cardrush.media/pokemon/ocha_products/39507.webp",
-      "sort_price": 900
+      "sort_price": 1100
     },
     {
       "name": "ウデッポウ 【AR】{083/078}[SV1V]",
@@ -3776,21 +3946,21 @@
       "name": "フシギダネ 【AR】{166/165}[SV2a]",
       "code": "166/165",
       "rarity": "AR",
-      "price_a": "¥3,600",
-      "price_a_minus": "¥2,200",
-      "price_rush": "¥3,500",
+      "price_a": "¥3,100",
+      "price_a_minus": "¥1,900",
+      "price_rush": "¥3,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/43825.webp",
-      "sort_price": 3600
+      "sort_price": 3100
     },
     {
       "name": "ミュウツー 【AR】{183/165}[SV2a]",
       "code": "183/165",
       "rarity": "AR",
-      "price_a": "¥5,200",
-      "price_a_minus": "¥3,300",
-      "price_rush": "¥5,200",
+      "price_a": "¥4,500",
+      "price_a_minus": "¥2,900",
+      "price_rush": "¥4,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/43842.webp",
-      "sort_price": 5200
+      "sort_price": 4500
     },
     {
       "name": "リザード 【AR】{169/165}[SV2a]",
@@ -3976,11 +4146,11 @@
       "name": "クサイハナ 【AR】{109/108}[SV3]",
       "code": "109/108",
       "rarity": "AR",
-      "price_a": "¥700",
-      "price_a_minus": "¥450",
-      "price_rush": "¥700",
+      "price_a": "¥800",
+      "price_a_minus": "¥520",
+      "price_rush": "¥800",
       "img": "https://files.cardrush.media/pokemon/ocha_products/45900.webp",
-      "sort_price": 700
+      "sort_price": 800
     },
     {
       "name": "デルビル 【AR】{115/108}[SV3]",
@@ -4116,11 +4286,11 @@
       "name": "プラスル 【AR】{065/062}[SV3a]",
       "code": "065/062",
       "rarity": "AR",
-      "price_a": "¥1,500",
-      "price_a_minus": "¥1,100",
-      "price_rush": "¥1,800",
+      "price_a": "¥1,600",
+      "price_a_minus": "¥1,200",
+      "price_rush": "¥1,900",
       "img": "https://files.cardrush.media/pokemon/ocha_products/47854.webp",
-      "sort_price": 1500
+      "sort_price": 1600
     },
     {
       "name": "マイナン 【AR】{066/062}[SV3a]",
@@ -4186,11 +4356,11 @@
       "name": "ミミッキュ 【AR】{341/190}[SV4a]",
       "code": "341/190",
       "rarity": "AR",
-      "price_a": "¥2,400",
-      "price_a_minus": "¥1,500",
-      "price_rush": "¥2,400",
+      "price_a": "¥2,500",
+      "price_a_minus": "¥1,600",
+      "price_rush": "¥2,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/51070.webp",
-      "sort_price": 2400
+      "sort_price": 2500
     },
     {
       "name": "イワパレス 【AR】{067/066}[SV4K]",
@@ -4256,11 +4426,11 @@
       "name": "モルペコ 【AR】{076/066}[SV4K]",
       "code": "076/066",
       "rarity": "AR",
-      "price_a": "¥850",
+      "price_a": "¥1,000",
       "price_a_minus": "¥650",
       "price_rush": "¥1,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/49639.webp",
-      "sort_price": 850
+      "sort_price": 1000
     },
     {
       "name": "クエスパトラ 【AR】{073/066}[SV4M]",
@@ -4286,11 +4456,11 @@
       "name": "チルット 【AR】{076/066}[SV4M]",
       "code": "076/066",
       "rarity": "AR",
-      "price_a": "¥400",
+      "price_a": "¥500",
       "price_a_minus": "¥320",
       "price_rush": "¥500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/49668.webp",
-      "sort_price": 400
+      "sort_price": 500
     },
     {
       "name": "テツノツツミ 【AR】{071/066}[SV4M]",
@@ -4673,16 +4843,6 @@
       "sort_price": 1100
     },
     {
-      "name": "ヨマワル 【AR】{068/064}[SV6a]",
-      "code": "068/064",
-      "rarity": "AR",
-      "price_a": "¥850",
-      "price_a_minus": "¥650",
-      "price_rush": "¥1,000",
-      "img": "https://files.cardrush.media/pokemon/ocha_products/57357.webp",
-      "sort_price": 850
-    },
-    {
       "name": "アサナン 【AR】{111/102}[SV7]",
       "code": "111/102",
       "rarity": "AR",
@@ -4776,11 +4936,11 @@
       "name": "エアームド 【AR】{073/064}[SV7a]",
       "code": "073/064",
       "rarity": "AR",
-      "price_a": "¥250",
-      "price_a_minus": "¥160",
-      "price_rush": "¥250",
+      "price_a": "¥400",
+      "price_a_minus": "¥260",
+      "price_rush": "¥400",
       "img": "https://files.cardrush.media/pokemon/ocha_products/59561.webp",
-      "sort_price": 250
+      "sort_price": 400
     },
     {
       "name": "タマタマ 【AR】{065/064}[SV7a]",
@@ -4826,11 +4986,11 @@
       "name": "エムリット 【AR】{114/106}[SV8]",
       "code": "114/106",
       "rarity": "AR",
-      "price_a": "¥500",
-      "price_a_minus": "¥320",
-      "price_rush": "¥500",
+      "price_a": "¥600",
+      "price_a_minus": "¥390",
+      "price_rush": "¥600",
       "img": "https://files.cardrush.media/pokemon/ocha_products/60239.webp",
-      "sort_price": 500
+      "sort_price": 600
     },
     {
       "name": "カクレオン 【AR】{118/106}[SV8]",
@@ -5066,11 +5226,11 @@
       "name": "ザマゼンタ 【AR】{107/098}[SV10]",
       "code": "107/098",
       "rarity": "AR",
-      "price_a": "¥500",
+      "price_a": "¥400",
       "price_a_minus": "¥320",
       "price_rush": "¥500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/65267.webp",
-      "sort_price": 500
+      "sort_price": 400
     },
     {
       "name": "パールル 【AR】{102/098}[SV10]",
@@ -5106,11 +5266,11 @@
       "name": "ロケット団のニャース 【AR】{109/098}[SV10]",
       "code": "109/098",
       "rarity": "AR",
-      "price_a": "¥1,600",
-      "price_a_minus": "¥1,200",
-      "price_rush": "¥1,900",
+      "price_a": "¥1,200",
+      "price_a_minus": "¥970",
+      "price_rush": "¥1,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/65269.webp",
-      "sort_price": 1600
+      "sort_price": 1200
     },
     {
       "name": "ロケット団のヘルガー 【AR】{100/098}[SV10]",
@@ -5176,11 +5336,11 @@
       "name": "イシズマイ 【AR】{135/086}[SV11B]",
       "code": "135/086",
       "rarity": "AR",
-      "price_a": "¥850",
+      "price_a": "¥1,000",
       "price_a_minus": "¥650",
       "price_rush": "¥1,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67304.webp",
-      "sort_price": 850
+      "sort_price": 1000
     },
     {
       "name": "イワパレス 【AR】{136/086}[SV11B]",
@@ -5196,11 +5356,11 @@
       "name": "ウルガモス 【AR】{104/086}[SV11B]",
       "code": "104/086",
       "rarity": "AR",
-      "price_a": "¥1,500",
-      "price_a_minus": "¥970",
-      "price_rush": "¥1,500",
+      "price_a": "¥1,600",
+      "price_a_minus": "¥1,000",
+      "price_rush": "¥1,600",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67273.webp",
-      "sort_price": 1500
+      "sort_price": 1600
     },
     {
       "name": "エモンガ 【AR】{116/086}[SV11B]",
@@ -5346,11 +5506,11 @@
       "name": "チラーミィ 【AR】{157/086}[SV11B]",
       "code": "157/086",
       "rarity": "AR",
-      "price_a": "¥750",
+      "price_a": "¥900",
       "price_a_minus": "¥580",
       "price_rush": "¥900",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67326.webp",
-      "sort_price": 750
+      "sort_price": 900
     },
     {
       "name": "チラチーノ 【AR】{158/086}[SV11B]",
@@ -5411,16 +5571,6 @@
       "price_rush": "¥500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67303.webp",
       "sort_price": 400
-    },
-    {
-      "name": "バルジーナ 【AR】{145/086}[SV11B]",
-      "code": "145/086",
-      "rarity": "AR",
-      "price_a": "¥500",
-      "price_a_minus": "¥390",
-      "price_rush": "¥600",
-      "img": "https://files.cardrush.media/pokemon/ocha_products/67314.webp",
-      "sort_price": 500
     },
     {
       "name": "バルチャイ 【AR】{144/086}[SV11B]",
@@ -5526,11 +5676,11 @@
       "name": "メラルバ 【AR】{103/086}[SV11B]",
       "code": "103/086",
       "rarity": "AR",
-      "price_a": "¥400",
-      "price_a_minus": "¥260",
-      "price_rush": "¥400",
+      "price_a": "¥500",
+      "price_a_minus": "¥320",
+      "price_rush": "¥500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67272.webp",
-      "sort_price": 400
+      "sort_price": 500
     },
     {
       "name": "モグリュー 【AR】{130/086}[SV11B]",
@@ -5826,11 +5976,11 @@
       "name": "ダイケンキ 【AR】{104/086}[SV11W]",
       "code": "104/086",
       "rarity": "AR",
-      "price_a": "¥1,000",
-      "price_a_minus": "¥780",
-      "price_rush": "¥1,200",
+      "price_a": "¥1,100",
+      "price_a_minus": "¥840",
+      "price_rush": "¥1,300",
       "img": "https://files.cardrush.media/pokemon/ocha_products/67513.webp",
-      "sort_price": 1000
+      "sort_price": 1100
     },
     {
       "name": "ダゲキ 【AR】{128/086}[SV11W]",
@@ -6233,6 +6383,16 @@
       "sort_price": 400
     },
     {
+      "name": "ポッチャマ 【AR】{085/080}[M2]",
+      "code": "085/080",
+      "rarity": "AR",
+      "price_a": "¥650",
+      "price_a_minus": "¥520",
+      "price_rush": "¥800",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/71688.webp",
+      "sort_price": 650
+    },
+    {
       "name": "マメバッタ 【AR】{082/080}[M2]",
       "code": "082/080",
       "rarity": "AR",
@@ -6271,6 +6431,16 @@
       "price_rush": "¥200",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73706.webp",
       "sort_price": 150
+    },
+    {
+      "name": "コダック 【AR】{199/193}[M2a]",
+      "code": "199/193",
+      "rarity": "AR",
+      "price_a": "¥2,600",
+      "price_a_minus": "¥1,600",
+      "price_rush": "¥2,500",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/73696.webp",
+      "sort_price": 2600
     },
     {
       "name": "スピンロトム 【AR】{213/193}[M2a]",
@@ -6366,11 +6536,11 @@
       "name": "ニャスパー 【AR】{087/080}[M3]",
       "code": "087/080",
       "rarity": "AR",
-      "price_a": "¥250",
-      "price_a_minus": "¥160",
-      "price_rush": "¥250",
+      "price_a": "¥300",
+      "price_a_minus": "¥190",
+      "price_rush": "¥300",
       "img": "https://files.cardrush.media/pokemon/ocha_products/78714.webp",
-      "sort_price": 250
+      "sort_price": 300
     },
     {
       "name": "ピッピ 【AR】{086/080}[M3]",
@@ -6396,11 +6566,11 @@
       "name": "モクロー 【AR】{082/080}[M3]",
       "code": "082/080",
       "rarity": "AR",
-      "price_a": "¥400",
-      "price_a_minus": "¥260",
-      "price_rush": "¥400",
+      "price_a": "¥450",
+      "price_a_minus": "¥290",
+      "price_rush": "¥450",
       "img": "https://files.cardrush.media/pokemon/ocha_products/78709.webp",
-      "sort_price": 400
+      "sort_price": 450
     },
     {
       "name": "ラッタ 【AR】{092/080}[M3]",
@@ -6483,14 +6653,24 @@
       "sort_price": 200
     },
     {
+      "name": "ハリマロン 【AR】{084/083}[M4]",
+      "code": "084/083",
+      "rarity": "AR",
+      "price_a": "¥150",
+      "price_a_minus": "¥130",
+      "price_rush": "¥200",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/79869.webp",
+      "sort_price": 150
+    },
+    {
       "name": "フォッコ 【AR】{085/083}[M4]",
       "code": "085/083",
       "rarity": "AR",
-      "price_a": "¥250",
-      "price_a_minus": "¥190",
-      "price_rush": "¥300",
+      "price_a": "¥300",
+      "price_a_minus": "¥260",
+      "price_rush": "¥400",
       "img": "https://files.cardrush.media/pokemon/ocha_products/79870.webp",
-      "sort_price": 250
+      "sort_price": 300
     },
     {
       "name": "ミルホッグ 【AR】{095/083}[M4]",
@@ -6576,11 +6756,11 @@
       "name": "トサキント 【AR】{084/081}[M5]",
       "code": "084/081",
       "rarity": "AR",
-      "price_a": "¥600",
-      "price_a_minus": "¥390",
-      "price_rush": "¥600",
+      "price_a": "¥700",
+      "price_a_minus": "¥450",
+      "price_rush": "¥700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81495.webp",
-      "sort_price": 600
+      "sort_price": 700
     },
     {
       "name": "ドデカバシ 【AR】{092/081}[M5]",
@@ -6616,11 +6796,11 @@
       "name": "ヤドラン 【AR】{087/081}[M5]",
       "code": "087/081",
       "rarity": "AR",
-      "price_a": "¥2,000",
-      "price_a_minus": "¥1,300",
-      "price_rush": "¥2,000",
+      "price_a": "¥2,300",
+      "price_a_minus": "¥1,400",
+      "price_rush": "¥2,300",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81498.webp",
-      "sort_price": 2000
+      "sort_price": 2300
     },
     {
       "name": "ライボルト 【AR】{086/081}[M5]",
@@ -6641,6 +6821,16 @@
       "price_rush": "¥900",
       "img": "https://files.cardrush.media/pokemon/ocha_products/5191.webp",
       "sort_price": 900
+    },
+    {
+      "name": "コイル 【CHR】{055/049}[sm11b]",
+      "code": "055/049",
+      "rarity": "CHR",
+      "price_a": "¥1,400",
+      "price_a_minus": "¥910",
+      "price_rush": "¥1,400",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/5189.webp",
+      "sort_price": 1400
     },
     {
       "name": "コータス 【CHR】{050/049}[sm11b]",
@@ -6673,6 +6863,36 @@
       "sort_price": 400
     },
     {
+      "name": "ハガネール 【CHR】{060/049}[sm11b]",
+      "code": "060/049",
+      "rarity": "CHR",
+      "price_a": "¥2,400",
+      "price_a_minus": "¥1,400",
+      "price_rush": "¥2,300",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/5194.webp",
+      "sort_price": 2400
+    },
+    {
+      "name": "ピカチュウ 【CHR】{054/049}[sm11b]",
+      "code": "054/049",
+      "rarity": "CHR",
+      "price_a": "¥36,000",
+      "price_a_minus": "¥22,000",
+      "price_rush": "¥35,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/5188.webp",
+      "sort_price": 36000
+    },
+    {
+      "name": "ピカチュウ 【CHR】{054/049}[sm11b]",
+      "code": "054/049",
+      "rarity": "CHR",
+      "price_a": "¥36,000",
+      "price_a_minus": "¥22,000",
+      "price_rush": "¥35,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/5188.webp",
+      "sort_price": 36000
+    },
+    {
       "name": "ポッチャマ 【CHR】{052/049}[sm11b]",
       "code": "052/049",
       "rarity": "CHR",
@@ -6683,14 +6903,34 @@
       "sort_price": 7600
     },
     {
+      "name": "マニューラ 【CHR】{051/049}[sm11b]",
+      "code": "051/049",
+      "rarity": "CHR",
+      "price_a": "¥800",
+      "price_a_minus": "¥520",
+      "price_rush": "¥800",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/5185.webp",
+      "sort_price": 800
+    },
+    {
       "name": "ミミッキュ 【CHR】{058/049}[sm11b]",
       "code": "058/049",
       "rarity": "CHR",
-      "price_a": "¥9,000",
-      "price_a_minus": "¥5,800",
-      "price_rush": "¥9,000",
+      "price_a": "¥8,000",
+      "price_a_minus": "¥5,200",
+      "price_rush": "¥8,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/5192.webp",
-      "sort_price": 9000
+      "sort_price": 8000
+    },
+    {
+      "name": "ムーランド 【CHR】{061/049}[sm11b]",
+      "code": "061/049",
+      "rarity": "CHR",
+      "price_a": "¥500",
+      "price_a_minus": "¥320",
+      "price_rush": "¥500",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/5195.webp",
+      "sort_price": 500
     },
     {
       "name": "ヨワシ 【CHR】{053/049}[sm11b]",
@@ -6766,11 +7006,11 @@
       "name": "ガラルタチフサグマ 【CHR】{207/184}[S8b]",
       "code": "207/184",
       "rarity": "CHR",
-      "price_a": "¥200",
-      "price_a_minus": "¥130",
-      "price_rush": "¥200",
+      "price_a": "¥300",
+      "price_a_minus": "¥190",
+      "price_rush": "¥300",
       "img": "https://files.cardrush.media/pokemon/ocha_products/22986.webp",
-      "sort_price": 200
+      "sort_price": 300
     },
     {
       "name": "クリムガン 【CHR】{209/184}[S8b]",
@@ -6796,11 +7036,11 @@
       "name": "ジュペッタ 【CHR】{197/184}[S8b]",
       "code": "197/184",
       "rarity": "CHR",
-      "price_a": "¥200",
-      "price_a_minus": "¥130",
-      "price_rush": "¥200",
+      "price_a": "¥300",
+      "price_a_minus": "¥190",
+      "price_rush": "¥300",
       "img": "https://files.cardrush.media/pokemon/ocha_products/22976.webp",
-      "sort_price": 200
+      "sort_price": 300
     },
     {
       "name": "ゼクロム 【CHR】{195/184}[S8b]",
@@ -6946,11 +7186,11 @@
       "name": "シャンデラ 【CHR】{069/067}[S9a]",
       "code": "069/067",
       "rarity": "CHR",
-      "price_a": "¥400",
+      "price_a": "¥300",
       "price_a_minus": "¥260",
       "price_rush": "¥400",
       "img": "https://files.cardrush.media/pokemon/ocha_products/33693.webp",
-      "sort_price": 400
+      "sort_price": 300
     },
     {
       "name": "バサギリ 【CHR】{071/067}[S9a]",
@@ -7016,11 +7256,11 @@
       "name": "ピカチュウ 【CHR】{073/071}[S10a]",
       "code": "073/071",
       "rarity": "CHR",
-      "price_a": "¥10,000",
-      "price_a_minus": "¥6,500",
-      "price_rush": "¥10,000",
+      "price_a": "¥9,000",
+      "price_a_minus": "¥5,800",
+      "price_rush": "¥9,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/35352.webp",
-      "sort_price": 10000
+      "sort_price": 9000
     },
     {
       "name": "ミカルゲ 【CHR】{076/071}[S10a]",
@@ -7036,31 +7276,31 @@
       "name": "サーナイト 【CHR】{072/068}[S11a]",
       "code": "072/068",
       "rarity": "CHR",
-      "price_a": "¥400",
-      "price_a_minus": "¥320",
-      "price_rush": "¥500",
+      "price_a": "¥500",
+      "price_a_minus": "¥390",
+      "price_rush": "¥600",
       "img": "https://files.cardrush.media/pokemon/ocha_products/37011.webp",
-      "sort_price": 400
+      "sort_price": 500
     },
     {
       "name": "テールナー 【CHR】{069/068}[S11a]",
       "code": "069/068",
       "rarity": "CHR",
-      "price_a": "¥500",
-      "price_a_minus": "¥320",
-      "price_rush": "¥500",
+      "price_a": "¥700",
+      "price_a_minus": "¥450",
+      "price_rush": "¥700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/37008.webp",
-      "sort_price": 500
+      "sort_price": 700
     },
     {
       "name": "ドーブル 【CHR】{073/068}[S11a]",
       "code": "073/068",
       "rarity": "CHR",
-      "price_a": "¥300",
-      "price_a_minus": "¥190",
-      "price_rush": "¥300",
+      "price_a": "¥400",
+      "price_a_minus": "¥260",
+      "price_rush": "¥400",
       "img": "https://files.cardrush.media/pokemon/ocha_products/37012.webp",
-      "sort_price": 300
+      "sort_price": 400
     },
     {
       "name": "ミロカロス 【CHR】{070/068}[S11a]",
@@ -7123,16 +7363,6 @@
       "sort_price": 1300
     },
     {
-      "name": "クロバットV 【CSR】{243/184}[S8b]",
-      "code": "243/184",
-      "rarity": "CSR",
-      "price_a": "¥1,000",
-      "price_a_minus": "¥780",
-      "price_rush": "¥1,200",
-      "img": "https://files.cardrush.media/pokemon/ocha_products/23019.webp",
-      "sort_price": 1000
-    },
-    {
       "name": "こくばバドレックスV 【CSR】{235/184}[S8b]",
       "code": "235/184",
       "rarity": "CSR",
@@ -7141,16 +7371,6 @@
       "price_rush": "¥800",
       "img": "https://files.cardrush.media/pokemon/ocha_products/23011.webp",
       "sort_price": 800
-    },
-    {
-      "name": "こくばバドレックスVMAX 【CSR】{236/184}[S8b]",
-      "code": "236/184",
-      "rarity": "CSR",
-      "price_a": "¥1,000",
-      "price_a_minus": "¥780",
-      "price_rush": "¥1,200",
-      "img": "https://files.cardrush.media/pokemon/ocha_products/23012.webp",
-      "sort_price": 1000
     },
     {
       "name": "コロトックV 【CSR】{213/184}[S8b]",
@@ -7216,11 +7436,11 @@
       "name": "はくばバドレックスV 【CSR】{220/184}[S8b]",
       "code": "220/184",
       "rarity": "CSR",
-      "price_a": "¥550",
-      "price_a_minus": "¥450",
-      "price_rush": "¥700",
+      "price_a": "¥650",
+      "price_a_minus": "¥520",
+      "price_rush": "¥800",
       "img": "https://files.cardrush.media/pokemon/ocha_products/22999.webp",
-      "sort_price": 550
+      "sort_price": 650
     },
     {
       "name": "バシャーモV 【CSR】{216/184}[S8b]",
@@ -7276,41 +7496,41 @@
       "name": "ブラッキーV 【CSR】{244/184}[S8b]",
       "code": "244/184",
       "rarity": "CSR",
-      "price_a": "¥9,000",
-      "price_a_minus": "¥5,800",
-      "price_rush": "¥9,000",
+      "price_a": "¥8,000",
+      "price_a_minus": "¥5,200",
+      "price_rush": "¥8,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/23020.webp",
-      "sort_price": 9000
+      "sort_price": 8000
     },
     {
       "name": "ブラッキーVMAX 【CSR】{245/184}[S8b]",
       "code": "245/184",
       "rarity": "CSR",
-      "price_a": "¥13,000",
-      "price_a_minus": "¥8,400",
-      "price_rush": "¥13,000",
+      "price_a": "¥11,000",
+      "price_a_minus": "¥7,100",
+      "price_rush": "¥11,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/23021.webp",
-      "sort_price": 13000
+      "sort_price": 11000
     },
     {
       "name": "ミミッキュV 【CSR】{233/184}[S8b]",
       "code": "233/184",
       "rarity": "CSR",
-      "price_a": "¥5,100",
-      "price_a_minus": "¥3,900",
-      "price_rush": "¥6,000",
+      "price_a": "¥4,900",
+      "price_a_minus": "¥3,700",
+      "price_rush": "¥5,800",
       "img": "https://files.cardrush.media/pokemon/ocha_products/23009.webp",
-      "sort_price": 5100
+      "sort_price": 4900
     },
     {
       "name": "ミミッキュVMAX 【CSR】{234/184}[S8b]",
       "code": "234/184",
       "rarity": "CSR",
-      "price_a": "¥8,500",
-      "price_a_minus": "¥5,500",
-      "price_rush": "¥8,500",
+      "price_a": "¥8,000",
+      "price_a_minus": "¥5,200",
+      "price_rush": "¥8,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/23010.webp",
-      "sort_price": 8500
+      "sort_price": 8000
     },
     {
       "name": "ムゲンダイナV 【CSR】{246/184}[S8b]",
@@ -7406,31 +7626,31 @@
       "name": "メガゲンガーex 【MA】{230/193}[M2a]",
       "code": "230/193",
       "rarity": "MA",
-      "price_a": "¥3,500",
-      "price_a_minus": "¥2,200",
-      "price_rush": "¥3,500",
+      "price_a": "¥4,000",
+      "price_a_minus": "¥2,600",
+      "price_rush": "¥4,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73727.webp",
-      "sort_price": 3500
+      "sort_price": 4000
     },
     {
       "name": "メガサーナイトex 【MA】{226/193}[M2a]",
       "code": "226/193",
       "rarity": "MA",
-      "price_a": "¥750",
+      "price_a": "¥900",
       "price_a_minus": "¥580",
       "price_rush": "¥900",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73723.webp",
-      "sort_price": 750
+      "sort_price": 900
     },
     {
       "name": "メガシビルドンex 【MA】{225/193}[M2a]",
       "code": "225/193",
       "rarity": "MA",
-      "price_a": "¥300",
+      "price_a": "¥400",
       "price_a_minus": "¥260",
       "price_rush": "¥400",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73722.webp",
-      "sort_price": 300
+      "sort_price": 400
     },
     {
       "name": "メガズルズキンex 【MA】{231/193}[M2a]",
@@ -7446,31 +7666,31 @@
       "name": "メガディアンシーex 【MA】{227/193}[M2a]",
       "code": "227/193",
       "rarity": "MA",
-      "price_a": "¥400",
+      "price_a": "¥500",
       "price_a_minus": "¥320",
       "price_rush": "¥500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73724.webp",
-      "sort_price": 400
+      "sort_price": 500
     },
     {
       "name": "メガユキメノコex 【MA】{224/193}[M2a]",
       "code": "224/193",
       "rarity": "MA",
-      "price_a": "¥400",
+      "price_a": "¥500",
       "price_a_minus": "¥320",
       "price_rush": "¥500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73721.webp",
-      "sort_price": 400
+      "sort_price": 500
     },
     {
       "name": "メガリザードンXex 【MA】{223/193}[M2a]",
       "code": "223/193",
       "rarity": "MA",
-      "price_a": "¥9,400",
-      "price_a_minus": "¥5,800",
-      "price_rush": "¥9,000",
+      "price_a": "¥8,400",
+      "price_a_minus": "¥5,200",
+      "price_rush": "¥8,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73720.webp",
-      "sort_price": 9400
+      "sort_price": 8400
     },
     {
       "name": "メガルチャブルex 【MA】{229/193}[M2a]",
@@ -7481,6 +7701,36 @@
       "price_rush": "¥400",
       "img": "https://files.cardrush.media/pokemon/ocha_products/73726.webp",
       "sort_price": 400
+    },
+    {
+      "name": "メガルカリオex 【MUR】{092/063}[M1L]",
+      "code": "092/063",
+      "rarity": "MUR",
+      "price_a": "¥57,000",
+      "price_a_minus": "¥35,000",
+      "price_rush": "¥55,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/70051.webp",
+      "sort_price": 57000
+    },
+    {
+      "name": "メガルカリオex 【MUR】{092/063}[M1L]",
+      "code": "092/063",
+      "rarity": "MUR",
+      "price_a": "¥57,000",
+      "price_a_minus": "¥35,000",
+      "price_rush": "¥55,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/70051.webp",
+      "sort_price": 57000
+    },
+    {
+      "name": "メガサーナイトex 【MUR】{092/063}[M1S]",
+      "code": "092/063",
+      "rarity": "MUR",
+      "price_a": "¥50,000",
+      "price_a_minus": "¥32,000",
+      "price_rush": "¥50,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/70080.webp",
+      "sort_price": 50000
     },
     {
       "name": "メガサーナイトex 【MUR】{092/063}[M1S]",
@@ -7501,6 +7751,26 @@
       "price_rush": "¥210,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/71719.webp",
       "sort_price": 220000
+    },
+    {
+      "name": "メガリザードンXex 【MUR】{116/080}[M2]",
+      "code": "116/080",
+      "rarity": "MUR",
+      "price_a": "¥220,000",
+      "price_a_minus": "¥130,000",
+      "price_rush": "¥210,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/71719.webp",
+      "sort_price": 220000
+    },
+    {
+      "name": "メガカイリューex 【MUR】{250/193}[M2a]",
+      "code": "250/193",
+      "rarity": "MUR",
+      "price_a": "¥40,000",
+      "price_a_minus": "¥26,000",
+      "price_rush": "¥40,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/73747.webp",
+      "sort_price": 40000
     },
     {
       "name": "メガカイリューex 【MUR】{250/193}[M2a]",
@@ -7526,11 +7796,21 @@
       "name": "メガゲッコウガex 【MUR】{120/083}[M4]",
       "code": "120/083",
       "rarity": "MUR",
-      "price_a": "¥125,000",
-      "price_a_minus": "¥81,000",
-      "price_rush": "¥125,000",
+      "price_a": "¥110,000",
+      "price_a_minus": "¥71,000",
+      "price_rush": "¥110,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/79905.webp",
-      "sort_price": 125000
+      "sort_price": 110000
+    },
+    {
+      "name": "メガゲッコウガex 【MUR】{120/083}[M4]",
+      "code": "120/083",
+      "rarity": "MUR",
+      "price_a": "¥110,000",
+      "price_a_minus": "¥71,000",
+      "price_rush": "¥110,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/79905.webp",
+      "sort_price": 110000
     },
     {
       "name": "メガダークライex 【MUR】{118/081}[M5]",
@@ -7541,6 +7821,16 @@
       "price_rush": "¥155,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/81468.webp",
       "sort_price": 155000
+    },
+    {
+      "name": "メガダークライex 【MUR】{118/081}[M5]",
+      "code": "118/081",
+      "rarity": "MUR",
+      "price_a": "¥140,000",
+      "price_a_minus": "¥91,000",
+      "price_rush": "¥140,000",
+      "img": "https://files.cardrush.media/pokemon/ocha_products/81468.webp",
+      "sort_price": 140000
     },
     {
       "name": "ブラッキーVMAX 【RRR】{048/069}[S6a]",
@@ -7556,11 +7846,11 @@
       "name": "ミュウVMAX 【RRR】{040/100}[S8]",
       "code": "040/100",
       "rarity": "RRR",
-      "price_a": "¥1,200",
-      "price_a_minus": "¥780",
-      "price_rush": "¥1,200",
+      "price_a": "¥1,300",
+      "price_a_minus": "¥840",
+      "price_rush": "¥1,300",
       "img": "https://files.cardrush.media/pokemon/ocha_products/22115.webp",
-      "sort_price": 1200
+      "sort_price": 1300
     },
     {
       "name": "ピカチュウVMAX 【RRR】{046/184}[S8b]",
@@ -7626,11 +7916,11 @@
       "name": "ミュウVMAX 【RRR】{054/172}[S12a]",
       "code": "054/172",
       "rarity": "RRR",
-      "price_a": "¥1,200",
-      "price_a_minus": "¥780",
-      "price_rush": "¥1,200",
+      "price_a": "¥1,300",
+      "price_a_minus": "¥840",
+      "price_rush": "¥1,300",
       "img": "https://files.cardrush.media/pokemon/ocha_products/38138.webp",
-      "sort_price": 1200
+      "sort_price": 1300
     },
     {
       "name": "レックウザVMAX 【RRR】{108/172}[S12a]",
@@ -7706,11 +7996,11 @@
       "name": "メガリザードンXex 【RR】{013/080}[M2]",
       "code": "013/080",
       "rarity": "RR",
-      "price_a": "¥650",
-      "price_a_minus": "¥520",
-      "price_rush": "¥800",
+      "price_a": "¥550",
+      "price_a_minus": "¥450",
+      "price_rush": "¥700",
       "img": "https://files.cardrush.media/pokemon/ocha_products/71614.webp",
-      "sort_price": 650
+      "sort_price": 550
     },
     {
       "name": "なみのりピカチュウV 25th【RR】{021/028}[その他]",
@@ -7736,11 +8026,11 @@
       "name": "アルセウスV SA【P】{267/S-P}[S9]",
       "code": "267/S-P",
       "rarity": "P",
-      "price_a": "¥1,700",
-      "price_a_minus": "¥1,100",
-      "price_rush": "¥1,700",
+      "price_a": "¥1,500",
+      "price_a_minus": "¥970",
+      "price_rush": "¥1,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/24602.webp",
-      "sort_price": 1700
+      "sort_price": 1500
     },
     {
       "name": "ナンジャモのカイデン 【P】{232/SV-P}[その他]",
@@ -7756,11 +8046,11 @@
       "name": "ピカチュウ 【P】{216/SV-P}[その他]",
       "code": "216/SV-P",
       "rarity": "P",
-      "price_a": "¥2,300",
-      "price_a_minus": "¥1,400",
-      "price_rush": "¥2,200",
+      "price_a": "¥2,600",
+      "price_a_minus": "¥1,600",
+      "price_rush": "¥2,500",
       "img": "https://files.cardrush.media/pokemon/ocha_products/58430.webp",
-      "sort_price": 2300
+      "sort_price": 2600
     },
     {
       "name": "ピカチュウ 【P】{291/SV-P}[その他]",
@@ -7776,11 +8066,11 @@
       "name": "カビゴンGX 【P】{001/SM-P}[その他]",
       "code": "001/SM-P",
       "rarity": "P",
-      "price_a": "¥2,500",
-      "price_a_minus": "¥1,600",
-      "price_rush": "¥2,500",
+      "price_a": "¥2,000",
+      "price_a_minus": "¥1,300",
+      "price_rush": "¥2,000",
       "img": "https://files.cardrush.media/pokemon/ocha_products/1795.webp",
-      "sort_price": 2500
+      "sort_price": 2000
     },
     {
       "name": "コダック 【P】{262/SV-P}[その他]",
