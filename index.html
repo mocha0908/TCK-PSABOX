@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>トレカキングダム 従業員用買取額検索</title>
+  <title>トレカキングダム 買取一覧</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
@@ -10,7 +10,7 @@
       --primary: #0066cc; --primary-light: #e6f0ff; --accent: #e60012; --accent-bg: #fff0f0;
       --bg: #f0f2f5; --card-bg: #ffffff; --text: #222; --text-sub: #555;
       --border: #dfe3e8; --radius: 12px; --shadow: 0 2px 8px rgba(0,0,0,0.06);
-      --f-size: 15px; --search-height: 76px;
+      --search-height: 76px;
     }
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     body { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); padding-bottom: 80px; }
@@ -27,61 +27,56 @@
     .controls-area { max-width: 1200px; margin: 0 auto; padding: 16px; }
     .filter-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; white-space: nowrap; -webkit-overflow-scrolling: touch; }
     .filter-scroll::-webkit-scrollbar { display: none; }
-    .chip { padding: 0 16px; border-radius: 24px; background: #fff; border: 1px solid var(--border); font-size: 14px; height: 44px; display: flex; align-items: center; cursor: pointer; flex-shrink: 0; }
+    .chip { padding: 0 16px; border-radius: 24px; background: #fff; border: 1px solid var(--border); font-size: 14px; height: 44px; display: flex; align-items: center; cursor: pointer; flex-shrink: 0; font-weight: 500; }
     .chip.active { background: var(--primary); color: #fff; }
-    .chip select, .chip input { border: none; background: transparent; color: inherit; font: inherit; outline: none; }
 
     .card-grid { display: grid; gap: 16px; }
-    .card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 100px 1fr; }
-    .card-img { width: 100px; height: 130px; background: #fafafa; display: flex; align-items: center; justify-content: center; }
+    .card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 100px 1fr; position: relative; }
+    .card-img { width: 100px; height: 140px; background: #fafafa; display: flex; align-items: center; justify-content: center; }
     .card-img img { width: 100%; height: 100%; object-fit: contain; padding: 4px; cursor: zoom-in; }
-    .card-body { padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; }
-    .card-title { font-size: 14px; font-weight: 700; line-height: 1.4; }
-    .rarity-tag { font-size: 10px; background: #eee; padding: 2px 6px; border-radius: 4px; margin-right: 5px; color: #666; }
-    .king-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; background: var(--primary-light); padding: 8px; border-radius: 8px; margin-top: 4px; }
-    .kp-val { font-weight: 700; color: #333; text-align: center; font-size: 13px; }
-    .kp-label { font-size: 9px; color: var(--primary); display: block; }
+    .card-body { padding: 12px 16px; display: flex; flex-direction: column; gap: 4px; justify-content: center; }
+    .card-title { font-size: 14px; font-weight: 700; line-height: 1.4; padding-right: 10px; color: #111; }
+    .status-tag { position: absolute; top: 12px; right: 16px; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; background: #2ecc71; color: white; }
+    .status-tag.stop { background: #e74c3c; }
+    .card-meta { font-size: 11px; color: var(--text-sub); }
     
-    .btn-rush-search { display: block; text-align: center; background: #fff; border: 1px solid #ff4444; color: #ff4444; text-decoration: none; padding: 5px; border-radius: 6px; font-size: 11px; font-weight: bold; margin-top: 5px; }
+    .king-prices { background: var(--primary-light); padding: 8px 12px; border-radius: 8px; margin-top: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: center; }
+    .sotai-prices { background: #f4f6f9; padding: 8px 12px; border-radius: 8px; margin-top: 4px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; text-align: center; }
+    .kp-block { display: flex; flex-direction: column; }
+    .kp-label { font-size: 9px; color: var(--primary); font-weight: bold; }
+    .kp-val { font-size: 13px; font-weight: 900; color: #222; }
     
-    .rush-row { grid-column: 1 / -1; border-top: 1px dashed #ddd; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; background: #fffbfc; }
-    .rush-val { font-size: 18px; color: var(--accent); font-weight: 900; }
+    .card-reduce-row { grid-column: 1 / -1; border-top: 1px dashed #ddd; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; background: #fffbfc; font-size: 12px; }
+    .card-reduce-val { font-weight: bold; color: var(--accent); }
 
     .desktop-table-wrap { display: none; }
+    
     @media (min-width: 768px) {
       .card-grid { display: none; }
-      .desktop-table-wrap { display: block; background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid #eee; }
+      .desktop-table-wrap { display: block; background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
       table { width: 100%; border-collapse: collapse; }
-      th { background: #f8f9fa; padding: 15px; border-bottom: 2px solid #eee; white-space: nowrap; }
-      td { padding: 12px; text-align: center; border-bottom: 1px solid #eee; }
-      .rush-col { background: var(--accent-bg); color: var(--accent); font-weight: bold; font-size: 18px; }
-      .btn-table-search { color: #ff4444; text-decoration: none; font-weight: bold; border: 1px solid #ff4444; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+      th { background: #f8f9fa; padding: 15px; border-bottom: 2px solid #eee; white-space: nowrap; font-size: 14px; color: var(--text-sub); }
+      td { padding: 12px; text-align: center; border-bottom: 1px solid #eee; font-size: 14px; }
+      .td-left { text-align: left; font-weight: bold; }
+      .table-price-max { font-weight: 900; color: #0066cc; font-size: 15px; }
+      .table-price-reduce { color: #888; font-size: 12px; font-weight: 500; }
+      .table-price-after { font-weight: 900; color: var(--accent); font-size: 15px; background: var(--accent-bg); }
     }
+    
     #modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; }
-    #modal img { max-width: 90%; max-height: 90%; }
-    mark { background: rgba(255, 213, 0, 0.4); }
-  
-.copyable{cursor:pointer}
-.copy-btn{margin-left:6px;font-size:12px;cursor:pointer;color:#0066cc}
-.last-update-row{display:flex;justify-content:center;gap:10px;margin-top:8px;font-size:12px}
-.refresh-btn{border:none;background:#0066cc;color:#fff;padding:6px 12px;border-radius:6px;cursor:pointer}
-</style>
+    #modal img { max-width: 90%; max-height: 90%; object-fit: contain; }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>トレカキングダム <span>買取価格比較</span></h1>
-
-<div class="last-update-row">
-<span id="lastVisit">初回アクセス</span>
-<button class="refresh-btn" onclick="refreshPage()">更新</button>
-</div>
+  <h1>トレカキングダム <span>買取価格一覧</span></h1>
 </header>
 
 <div class="search-sticky">
   <div class="search-bar">
     <div class="input-wrapper">
-      <input type="text" id="keyword" placeholder="カード名・型番を入力..." enterkeyhint="search">
+      <input type="text" id="keyword" placeholder="カード名・商品名・型番を入力..." enterkeyhint="search">
     </div>
     <button class="btn-search" onclick="applyLocalFilter()">🔍</button>
   </div>
@@ -89,159 +84,254 @@
 
 <div class="controls-area">
   <div class="filter-scroll">
-    <div class="chip">📂 <select id="categorySelect"><option value="">全レアリティ</option></select></div>
-    <div class="chip" id="thresholdChip">🚫 <input type="number" id="thresholdInput" style="width:80px;" placeholder="下限(円)"></div>
+    <div class="chip active" id="tab-psa" onclick="switchTab('psa')">PSA鑑定品</div>
+    <div class="chip" id="tab-box" onclick="switchTab('box')">未開封BOX</div>
+    <div class="chip" id="tab-sotai" onclick="switchTab('sotai')">素体</div>
     <div class="chip" onclick="toggleSort()">⇅ <span id="sortLabel">標準順</span></div>
   </div>
+  
   <div class="filter-scroll" id="initialBar"></div>
+  <div class="filter-scroll" id="rarityBar" style="display: none; margin-top: -4px;"></div>
+  
+  <div id="spinner" style="text-align:center; padding:40px; color:#666; font-weight: bold;">データを取得中...</div>
 
-  <div id="spinner" style="text-align:center; padding:40px; color:#666;">データを取得中...</div>
-
-  <div id="result-container">
+  <div id="result-container" style="display: none;">
     <div id="cardView" class="card-grid"></div>
     <div id="tableView" class="desktop-table-wrap"></div>
   </div>
 </div>
 
-<div id="modal" onclick="this.style.display='none'"><img id="modalImage" src=""></div>
+<div id="modal" onclick="this.style.display='none'"><img id="modalImage" src="" referrerpolicy="no-referrer"></div>
 
 <script>
-  // ★ デプロイしたウェブアプリのURLをここに貼ってください
-  const API_URL = "https://script.google.com/macros/s/AKfycbxiEhzvD3adMFE6XQzb7e3I9-DgRJdIWaFQP7Ikx3-WUiUjRYBnp9eve3x9TCr5uXTQ/exec";
-  
-  let masterData = [];
-  const state = { filteredRows: [], sort: { idx: 7, dir: 'asc' }, thresholdA: null, initialKey: 'ALL' };
-  const INITIALS = [{k:'ALL',l:'全て'}, {k:'A',l:'あ'}, {k:'K',l:'か'}, {k:'S',l:'さ'}, {k:'T',l:'た'}, {k:'N',l:'な'}, {k:'H',l:'は'}, {k:'M',l:'ま'}, {k:'Y',l:'や'}, {k:'R',l:'ら'}, {k:'W',l:'わ'}];
+  let database = { psa: [], box: [], sotai: [] };
+  const state = { currentTab: 'psa', filteredRows: [], sortByPrice: false, initialKey: 'ALL', rarityKey: 'ALL' };
+  const INITIALS = [{k:'ALL',l:'全'}, {k:'A',l:'あ'}, {k:'K',l:'か'}, {k:'S',l:'さ'}, {k:'T',l:'た'}, {k:'N',l:'な'}, {k:'H',l:'は'}, {k:'M',l:'ま'}, {k:'Y',l:'や'}, {k:'R',l:'ら'}, {k:'W',l:'わ'}];
 
-  
-function copyText(text){
- navigator.clipboard.writeText(String(text||''));
- showToast('コピーしました');
-}
-function copyCard(r){
- const txt=`${r[7]||''}\n型番:${r[1]||''}\n状態A:¥${(r[9]||0).toLocaleString()}\n状態A-:¥${(r[10]||0).toLocaleString()}\nラッシュ:¥${(r[6]||0).toLocaleString()}`;
- copyText(txt);
-}
-function showToast(msg){
- const d=document.createElement('div');
- d.textContent=msg;
- d.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 15px;border-radius:8px;z-index:99999';
- document.body.appendChild(d);
- setTimeout(()=>d.remove(),1200);
-}
-function showLastVisit(){
- const v=localStorage.getItem('lastVisit');
- const e=document.getElementById('lastVisit');
- if(e)e.textContent=v?`前回更新：${v}`:'初回アクセス';
-}
-function refreshPage(){
- localStorage.setItem('lastVisit',new Date().toLocaleString('ja-JP'));
- location.reload();
-}
+  const fallbackImg = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='140' viewBox='0 0 100 140'%3E%3Crect fill='%23eeeeee' width='100' height='140'/%3E%3Ctext fill='%23999999' x='50' y='70' font-family='sans-serif' font-size='14' text-anchor='middle' dominant-baseline='middle'%3ENo Image%3C/text%3E%3C/svg%3E";
 
-document.addEventListener('DOMContentLoaded', () => {showLastVisit();
+  document.addEventListener('DOMContentLoaded', () => {
     buildInitialBar();
     loadAllData();
     document.getElementById('keyword').addEventListener('input', () => applyLocalFilter());
-    document.getElementById('categorySelect').addEventListener('change', () => applyLocalFilter());
-    document.getElementById('thresholdInput').addEventListener('input', e => {
-      state.thresholdA = e.target.value ? Number(e.target.value) : null;
-      document.getElementById('thresholdChip').classList.toggle('active', !!state.thresholdA);
-      applyLocalFilter();
-    });
   });
 
   async function loadAllData() {
     try {
-      const [resData, resCat] = await Promise.all([
-        fetch(`${API_URL}?action=search`).then(r => r.json()),
-        fetch(`${API_URL}?action=categories`).then(r => r.json())
-      ]);
-      masterData = resData.rows || [];
-      const sel = document.getElementById('categorySelect');
-      resCat.forEach(c => {
-        const opt = document.createElement('option'); opt.value = opt.text = c;
-        sel.appendChild(opt);
-      });
+      const response = await fetch('data.json?v=' + new Date().getTime());
+      if (!response.ok) throw new Error('データが読み込めません');
+      database = await response.json();
+      if (!database.sotai) database.sotai = [];
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('result-container').style.display = 'block';
+      buildRarityBar();
       applyLocalFilter();
-    } catch (e) { console.error(e); } finally { document.getElementById('spinner').style.display = 'none'; }
+    } catch (e) { 
+      console.error(e); 
+      document.getElementById('spinner').innerText = "データの読み込みに失敗しました。";
+    }
+  }
+
+  function switchTab(tabName) {
+    state.currentTab = tabName;
+    document.getElementById('tab-psa').classList.toggle('active', tabName === 'psa');
+    document.getElementById('tab-box').classList.toggle('active', tabName === 'box');
+    document.getElementById('tab-sotai').classList.toggle('active', tabName === 'sotai');
+    state.initialKey = 'ALL';
+    state.rarityKey = 'ALL';
+    buildInitialBar();
+    buildRarityBar();
+    document.getElementById('keyword').value = '';
+    applyLocalFilter();
   }
 
   function applyLocalFilter() {
-    const kw = document.getElementById('keyword').value.toLowerCase();
-    const cat = document.getElementById('categorySelect').value;
+    const kw = document.getElementById('keyword').value.toLowerCase().trim();
+    const currentData = database[state.currentTab] || [];
 
-    state.filteredRows = masterData.filter(r => {
-      // 0:レア(A), 1:B列, 6:ラッシュ(G), 7:名(H), 9:A(J), 10:A-(K), 11:画像(L)
-      const name = String(r[7] || "");
-      const bCol = String(r[1] || "");
-      if (cat && r[0] !== cat) return false;
-      if (kw && !name.toLowerCase().includes(kw) && !bCol.toLowerCase().includes(kw)) return false;
-      if (state.thresholdA && (Number(r[9]) || 0) < state.thresholdA) return false;
+    state.filteredRows = currentData.filter(item => {
+      const name = String(item.name || "");
+      const code = String(item.code || "");
+      const rarity = String(item.rarity || "");
+      if (kw && !name.toLowerCase().includes(kw) && !code.toLowerCase().includes(kw) && !rarity.toLowerCase().includes(kw)) return false;
       if (state.initialKey !== 'ALL' && getInitialGroup(name) !== state.initialKey) return false;
+      if (state.currentTab === 'sotai' && state.rarityKey !== 'ALL' && rarity !== state.rarityKey) return false;
       return true;
     });
 
-    state.filteredRows.sort((a, b) => {
-      const va = a[state.sort.idx], vb = b[state.sort.idx];
-      if (state.sort.idx === 9) return (vb - va) * (state.sort.dir === 'asc' ? 1 : -1);
-      return String(va).localeCompare(String(vb), 'ja') * (state.sort.dir === 'asc' ? 1 : -1);
-    });
+    // ★ 未開封BOXタブのときだけ、標準順のソート（名前あいうえお順）をスキップします
+    if (state.sortByPrice) {
+      state.filteredRows.sort((a, b) => (b.sort_price || 0) - (a.sort_price || 0));
+    } else if (state.currentTab !== 'box') {
+      // BOX以外のタブ（PSA・素体）は、標準順のときはこれまで通り名前のあいうえお順で並び替えます
+      state.filteredRows.sort((a, b) => String(a.name).localeCompare(String(b.name), 'ja'));
+    } // BOXタブで標準順の場合は、何もせずスプレッドシートに登録された順番（元の配列のまま）にします
 
     render();
+  }
+
+  function formatImageUrl(rawUrl) {
+    if (!rawUrl) return fallbackImg;
+    if (rawUrl.startsWith('data:image')) return rawUrl;
+    if (rawUrl.includes('drive.google.com')) {
+      const matches = rawUrl.match(/(?:id=|\/d\/)([a-zA-Z0-9-_]+)/);
+      if (matches && matches[1]) {
+        return `https://drive.google.com/thumbnail?id=${matches[1]}`;
+      }
+    }
+    return rawUrl;
   }
 
   function render() {
     const mobileContainer = document.getElementById('cardView');
     const desktopContainer = document.getElementById('tableView');
     
-    // モバイル
-    mobileContainer.innerHTML = state.filteredRows.map(r => {
-      const rushSearchUrl = `https://www.cardrush-pokemon.jp/product-list?keyword=${encodeURIComponent(r[0] + ' ' + r[1])}`;
-      return `
-      <div class="card">
-        <div class="card-img"><img src="${r[11]}" onclick="copyCard(r)" title="カード情報をコピー" onerror="this.src='https://via.placeholder.com/100?text=No+Image'"></div>
-        <div class="card-body">
-          <div class="card-title">
-<span class="rarity-tag copyable" onclick="copyText('${r[0] || '-'}')">${r[0] || '-'}</span>
-<span class="copyable" onclick="copyText('${r[7]}')">${r[7]}</span>
-<span class="copy-btn" onclick="copyCard(r)">📋</span>
-<div class="copyable" onclick="copyText('${"${r[1]||''}"}')" style="font-size:11px;color:#666;">${r[1]||''}</div>
-</div>
-          <div class="king-prices">
-            <div class="kp-val"><span class="kp-label">状態A</span>¥${(r[9]||0).toLocaleString()}</div>
-            <div class="kp-val"><span class="kp-label">状態A-</span>¥${(r[10]||0).toLocaleString()}</div>
-          </div>
-          <a href="${rushSearchUrl}" target="_blank" class="btn-rush-search">ラッシュ販売検索</a>
-        </div>
-        <div class="rush-row">
-          <span style="font-size:12px;color:var(--accent);font-weight:bold;">🔥 ラッシュ買取</span>
-          <span class="rush-val">¥${(r[6]||0).toLocaleString()}</span>
-        </div>
-      </div>`;
-    }).join('');
+    if (state.filteredRows.length === 0) {
+      const noDataHtml = '<div style="text-align:center; padding:40px; color:#999; grid-column:1/-1;">該当するデータが見つかりません。</div>';
+      mobileContainer.innerHTML = noDataHtml;
+      desktopContainer.innerHTML = noDataHtml;
+      return;
+    }
 
-    // デスクトップ
-    desktopContainer.innerHTML = `<table>
-      <thead><tr><th>レア</th><th>カード名</th><th>画像</th><th>状態A</th><th>状態A-</th><th>ラッシュ買取</th><th>販売検索</th></tr></thead>
-      <tbody>${state.filteredRows.map(r => {
-        const rushSearchUrl = `https://www.cardrush-pokemon.jp/product-list?keyword=${encodeURIComponent(r[0] + ' ' + r[1])}`;
+    if (state.currentTab === 'sotai') {
+      mobileContainer.innerHTML = state.filteredRows.map(item => {
+        const imgSrc = formatImageUrl(item.img);
         return `
-        <tr>
-          <td class='copyable' onclick="copyText('${r[0]}')">${r[0]}</td>
-          <td style="text-align:left;" class='copyable' onclick="copyText('${r[7]}')">${r[7]} 📋</td>
-          <td><img src="${r[11]}" style="height:50px;cursor:pointer;" onclick="showModal('${r[11]}')"></td>
-          <td style="font-weight:bold;" class='copyable' onclick="copyText(`¥${(r[9]||0).toLocaleString()}`)">¥${(r[9]||0).toLocaleString()}</td>
-          <td>¥${(r[10]||0).toLocaleString()}</td>
-          <td class="rush-col">¥${(r[6]||0).toLocaleString()}</td>
-          <td><a href="${rushSearchUrl}" target="_blank" class="btn-table-search">🔍 検索</a></td>
-        </tr>`}).join('')}
-      </tbody></table>`;
+        <div class="card">
+          <div class="card-img">
+            <img src="${imgSrc}" referrerpolicy="no-referrer" onclick="showModal('${imgSrc}')" onerror="this.onerror=null; this.src='${fallbackImg}'">
+          </div>
+          <div class="card-body">
+            <div class="card-title">${item.name}</div>
+            <div class="card-meta">型番: ${item.code} | レア: ${item.rarity}</div>
+            <div class="sotai-prices">
+              <div class="kp-block">
+                <span class="kp-label" style="color:#2ecc71;">状態A</span>
+                <span class="kp-val">${item.price_a}</span>
+              </div>
+              <div class="kp-block">
+                <span class="kp-label" style="color:#f39c12;">状態A-</span>
+                <span class="kp-val">${item.price_a_minus}</span>
+              </div>
+              <div class="kp-block">
+                <span class="kp-label" style="color:var(--accent);">ラッシュ</span>
+                <span class="kp-val" style="color:var(--accent);">${item.price_rush}</span>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    } else {
+      mobileContainer.innerHTML = state.filteredRows.map(item => {
+        const isLive = item.status === "掲載";
+        const badgeClass = isLive ? "status-tag" : "status-tag stop";
+        const imgSrc = formatImageUrl(item.img);
+        const isFixed = item.price_reduce === "定額設定";
+        const reduceText = isFixed ? "（定額設定適用）" : item.price_reduce;
+
+        return `
+        <div class="card">
+          <span class="${badgeClass}">${item.status || '未掲載'}</span>
+          <div class="card-img">
+            <img src="${imgSrc}" referrerpolicy="no-referrer" onclick="showModal('${imgSrc}')" onerror="this.onerror=null; this.src='${fallbackImg}'">
+          </div>
+          <div class="card-body">
+            <div class="card-title">${item.name}</div>
+            <div class="card-meta">型番: ${item.code || '-'} | 種別: ${item.spec || '-'}</div>
+            <div class="king-prices">
+              <div class="kp-block">
+                <span class="kp-label">上限買取金額</span>
+                <span class="kp-val">${item.price_max}</span>
+              </div>
+              <div class="kp-block">
+                <span class="kp-label">減額後の金額</span>
+                <span class="kp-val" style="color:var(--accent);">${item.price_after}</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-reduce-row">
+            <span style="color:#666; font-weight:bold;">📈 減額幅 / 上限</span>
+            <span class="card-reduce-val">幅: ${reduceText} | 上限: ${item.price_limit || '-'}</span>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    if (state.currentTab === 'sotai') {
+      desktopContainer.innerHTML = `<table>
+        <thead>
+          <tr>
+            <th style="text-align:left; padding-left:20px;">カード名</th>
+            <th>型番 / レアリティ</th>
+            <th>画像</th>
+            <th>状態A 買取</th>
+            <th>状態A- 買取</th>
+            <th>ラッシュ 買取</th>
+          </tr>
+        </thead>
+        <tbody>${state.filteredRows.map(item => {
+          const imgSrc = formatImageUrl(item.img);
+          return `
+          <tr>
+            <td class="td-left" style="padding-left:20px;">${item.name}</td>
+            <td>${item.code} <br><small style="color:#888">${item.rarity}</small></td>
+            <td><img src="${imgSrc}" referrerpolicy="no-referrer" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.onerror=null; this.src='${fallbackImg}'"></td>
+            <td style="font-weight:bold; color:#2ecc71;">${item.price_a}</td>
+            <td style="font-weight:bold; color:#f39c12;">${item.price_a_minus}</td>
+            <td style="font-weight:900; color:var(--accent); background:var(--accent-bg);">${item.price_rush}</td>
+          </tr>`}).join('')}
+        </tbody></table>`;
+    } else {
+      desktopContainer.innerHTML = `<table>
+        <thead>
+          <tr>
+            <th>掲載状況</th>
+            <th>マスタID</th>
+            <th style="text-align:left;">商品名 / カード名</th>
+            <th>型番 / 種別</th>
+            <th>画像</th>
+            <th>上限買取金額</th>
+            <th>減額幅</th>
+            <th>上限</th>
+            <th>減額後の金額</th>
+          </tr>
+        </thead>
+        <tbody>${state.filteredRows.map(item => {
+          const isLive = item.status === "掲載";
+          const statusClass = isLive ? "table-status" : "table-status stop";
+          const imgSrc = formatImageUrl(item.img);
+          const isFixed = item.price_reduce === "定額設定";
+          const reduceText = isFixed ? "<small style='color:#999'>定額適用</small>" : item.price_reduce;
+          return `
+          <tr>
+            <td class="${statusClass}" style="font-weight:bold; color:${isLive?'#2ecc71':'#e74c3c'}">${item.status || '-'}</td>
+            <td>${item.id || '-'}</td>
+            <td class="td-left">${item.name}</td>
+            <td>${item.code || '-'} <br><small style="color:#888">${item.spec || ''}</small></td>
+            <td><img src="${imgSrc}" referrerpolicy="no-referrer" style="height:50px; width:40px; object-fit:contain; cursor:pointer;" onclick="showModal('${imgSrc}')" onerror="this.onerror=null; this.src='${fallbackImg}'"></td>
+            <td class="table-price-max">${item.price_max}</td>
+            <td class="table-price-reduce">${reduceText}</td>
+            <td style="font-weight:bold; color:#666;">${item.price_limit || '-'}</td>
+            <td class="table-price-after">${item.price_after}</td>
+          </tr>`}).join('')}
+        </tbody></table>`;
+    }
   }
 
   function getInitialGroup(name){
-    const c = (name || "").charAt(0);
-    if(/[あ-おア-オ]/.test(c)) return 'A'; if(/[か-ごカ-ゴ]/.test(c)) return 'K'; if(/[さ-ぞサ-ゾ]/.test(c)) return 'S'; if(/[た-どタ-ド]/.test(c)) return 'T'; if(/[な-のナ-ノ]/.test(c)) return 'N'; if(/[は-ぽハ-ポ]/.test(c)) return 'H'; if(/[ま-もマ-モ]/.test(c)) return 'M'; if(/[や-よヤ-ヨ]/.test(c)) return 'Y'; if(/[ら-ろラ-ロ]/.test(c)) return 'R'; if(/[わ-んワ-ン]/.test(c)) return 'W'; return 'ALL';
+    const cleanName = name.replace(/^【[^】]+】/, "").trim();
+    const firstChar = cleanName.charAt(0);
+    if(/[あ-おア-オ]/.test(firstChar)) return 'A'; 
+    if(/[か-ごカ-ゴ]/.test(firstChar)) return 'K'; 
+    if(/[さ-ぞサ-ゾ]/.test(firstChar)) return 'S'; 
+    if(/[た-どタ-ド]/.test(firstChar)) return 'T'; 
+    if(/[な-のナ-ノ]/.test(firstChar)) return 'N'; 
+    if(/[は-ぽハ-ポ]/.test(firstChar)) return 'H'; 
+    if(/[ま-もマ-モ]/.test(firstChar)) return 'M'; 
+    if(/[や-よヤ-ヨ]/.test(firstChar)) return 'Y'; 
+    if(/[ら-ろラ-ロ]/.test(firstChar)) return 'R'; 
+    if(/[わ-んワ-ン]/.test(firstChar)) return 'W'; 
+    return 'ALL';
   }
 
   function buildInitialBar(){
@@ -249,13 +339,32 @@ document.addEventListener('DOMContentLoaded', () => {showLastVisit();
     bar.innerHTML = INITIALS.map(i => `<div class="chip ${state.initialKey===i.k?'active':''}" onclick="state.initialKey='${i.k}';buildInitialBar();applyLocalFilter();">${i.l}</div>`).join('');
   }
 
+  function buildRarityBar(){
+    const bar = document.getElementById('rarityBar');
+    if (state.currentTab !== 'sotai' || database.sotai.length === 0) {
+      bar.style.display = 'none';
+      return;
+    }
+    bar.style.display = 'flex';
+    const rarities = [...new Set(database.sotai.map(item => item.rarity))].filter(r => r && r !== '-').sort();
+    let html = `<div class="chip ${state.rarityKey === 'ALL' ? 'active' : ''}" onclick="state.rarityKey='ALL';buildRarityBar();applyLocalFilter();">全レア</div>`;
+    rarities.forEach(r => {
+      html += `<div class="chip ${state.rarityKey === r ? 'active' : ''}" onclick="state.rarityKey='${r}';buildRarityBar();applyLocalFilter();">${r}</div>`;
+    });
+    bar.innerHTML = html;
+  }
+
   function toggleSort(){
-    if(state.sort.idx === 7){ state.sort = {idx:9, dir:'desc'}; document.getElementById('sortLabel').innerText = "価格順"; }
-    else { state.sort = {idx:7, dir:'asc'}; document.getElementById('sortLabel').innerText = "標準順"; }
+    state.sortByPrice = !state.sortByPrice;
+    document.getElementById('sortLabel').innerText = state.sortByPrice ? "価格順" : "標準順";
     applyLocalFilter();
   }
 
-  function showModal(src){ if(!src)return; document.getElementById('modalImage').src = src; document.getElementById('modal').style.display='flex'; }
+  function showModal(src){ 
+    if(!src || src.includes('via.placeholder') || src.includes('data:image/svg')) return; 
+    document.getElementById('modalImage').src = src; 
+    document.getElementById('modal').style.display='flex'; 
+  }
 </script>
 </body>
 </html>
