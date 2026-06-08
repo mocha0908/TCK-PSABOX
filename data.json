@@ -23,11 +23,11 @@
       "spec": "未開封",
       "img": "https://production-recore-public-files.s3.ap-northeast-1.amazonaws.com/R7Cpfu6iWcMFAehMzsJHSIpAyHFqkLS9PygPmYNK.png",
       "is_ask": false,
-      "price_max": "¥10,000",
+      "price_max": "¥11,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥10,000",
-      "sort_price": 10000
+      "price_after": "¥11,000",
+      "sort_price": 11000
     },
     {
       "status": "掲載",
@@ -37,11 +37,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/fa7467a1-9e85-4ff7-90e8-d96677ce368f.png",
       "is_ask": false,
-      "price_max": "¥11,200",
+      "price_max": "¥11,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥11,200",
-      "sort_price": 11200
+      "price_after": "¥11,000",
+      "sort_price": 11000
     },
     {
       "status": "掲載",
@@ -51,11 +51,11 @@
       "spec": "未開封",
       "img": "https://production-recore-public-files.s3.ap-northeast-1.amazonaws.com/ZxXFmPXnlk03JxS2zs91tZ0YGFO5xIOCHs6b4utG.png",
       "is_ask": false,
-      "price_max": "¥7,500",
+      "price_max": "¥8,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥7,500",
-      "sort_price": 7500
+      "price_after": "¥8,000",
+      "sort_price": 8000
     },
     {
       "status": "掲載",
@@ -65,11 +65,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/7f53de36-f70c-41ae-834d-d0d1e95da47c.png",
       "is_ask": false,
-      "price_max": "¥8,000",
+      "price_max": "¥8,300",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥8,000",
-      "sort_price": 8000
+      "price_after": "¥8,300",
+      "sort_price": 8300
     },
     {
       "status": "掲載",
@@ -79,11 +79,11 @@
       "spec": "未開封",
       "img": "https://production-recore-public-files.s3.ap-northeast-1.amazonaws.com/CR6i8BBA8KSdCDb6XzsJIknWE3Dw2ljhEg7F62LE.png",
       "is_ask": false,
-      "price_max": "¥6,500",
+      "price_max": "¥7,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥6,500",
-      "sort_price": 6500
+      "price_after": "¥7,000",
+      "sort_price": 7000
     },
     {
       "status": "掲載",
@@ -199,34 +199,6 @@
     },
     {
       "status": "掲載",
-      "id": 215873,
-      "name": "ブラックボルト(1BOX)",
-      "code": "-",
-      "spec": "未開封",
-      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/0b0b1b11-ddaf-46cd-b2f7-8e28270fdaeb.jpg",
-      "is_ask": false,
-      "price_max": "¥22,000",
-      "price_limit": "-",
-      "price_reduce": "-",
-      "price_after": "¥22,000",
-      "sort_price": 22000
-    },
-    {
-      "status": "掲載",
-      "id": 215884,
-      "name": "ホワイトフレア(1BOX)",
-      "code": "-",
-      "spec": "未開封",
-      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/d4b0ec67-abaa-45cf-8ce7-6f58fcfd7cec.jpg",
-      "is_ask": false,
-      "price_max": "¥20,000",
-      "price_limit": "-",
-      "price_reduce": "-",
-      "price_after": "¥20,000",
-      "sort_price": 20000
-    },
-    {
-      "status": "掲載",
       "id": 213922,
       "name": "熱風のアリーナ",
       "code": "sv9a",
@@ -247,11 +219,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/57898e88-34c7-4120-b8f3-f2e86dc09be7.jpg",
       "is_ask": false,
-      "price_max": "¥10,800",
+      "price_max": "¥10,500",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥10,800",
-      "sort_price": 10800
+      "price_after": "¥10,500",
+      "sort_price": 10500
     },
     {
       "status": "掲載",
@@ -266,6 +238,34 @@
       "price_reduce": "-",
       "price_after": "¥8,000",
       "sort_price": 8000
+    },
+    {
+      "status": "掲載",
+      "id": 211818,
+      "name": "超電ブレイカー(1BOX)",
+      "code": "-",
+      "spec": "未開封",
+      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/66d66e7f-928b-4ba4-b382-9546f2e2d712.jpg",
+      "is_ask": false,
+      "price_max": "¥30,000",
+      "price_limit": "-",
+      "price_reduce": "-",
+      "price_after": "¥30,000",
+      "sort_price": 30000
+    },
+    {
+      "status": "掲載",
+      "id": 211621,
+      "name": "楽園ドラゴーナ(1BOX)",
+      "code": "-",
+      "spec": "未開封",
+      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/087411e6-effd-4051-9e96-ba05fc92d79b.jpg",
+      "is_ask": false,
+      "price_max": "¥15,000",
+      "price_limit": "-",
+      "price_reduce": "-",
+      "price_after": "¥15,000",
+      "sort_price": 15000
     },
     {
       "status": "掲載",
@@ -311,6 +311,20 @@
     },
     {
       "status": "掲載",
+      "id": 208405,
+      "name": "クリムゾンヘイズ",
+      "code": "sv5a",
+      "spec": "未開封",
+      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/b51826e1-7776-4837-907a-747a9b16a7a4.jpg",
+      "is_ask": false,
+      "price_max": "¥13,000",
+      "price_limit": "-",
+      "price_reduce": "-",
+      "price_after": "¥13,000",
+      "sort_price": 13000
+    },
+    {
+      "status": "掲載",
       "id": 20066,
       "name": "シャイニートレジャーex(1BOX)",
       "code": "-",
@@ -322,6 +336,34 @@
       "price_reduce": "-",
       "price_after": "¥17,000",
       "sort_price": 17000
+    },
+    {
+      "status": "掲載",
+      "id": 19387,
+      "name": "黒炎の支配者(1BOX)",
+      "code": "-",
+      "spec": "未開封",
+      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/f1162542-711a-4d8b-879c-367d52135dd7.jpg",
+      "is_ask": false,
+      "price_max": "¥18,500",
+      "price_limit": "-",
+      "price_reduce": "-",
+      "price_after": "¥18,500",
+      "sort_price": 18500
+    },
+    {
+      "status": "掲載",
+      "id": 18624,
+      "name": "ポケモンカード151(1BOX)",
+      "code": "-",
+      "spec": "未開封",
+      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/b3c84e7d-bf84-4a87-81db-de68fa041599.png",
+      "is_ask": false,
+      "price_max": "¥60,000",
+      "price_limit": "-",
+      "price_reduce": "-",
+      "price_after": "¥60,000",
+      "sort_price": 60000
     },
     {
       "status": "掲載",
@@ -401,11 +443,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/cd634768-1050-456c-a7df-36acd0a5ecd9.jpg",
       "is_ask": false,
-      "price_max": "¥31,000",
+      "price_max": "¥29,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥31,000",
-      "sort_price": 31000
+      "price_after": "¥29,000",
+      "sort_price": 29000
     },
     {
       "status": "掲載",
@@ -415,11 +457,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/a2c2817d-da29-45f4-b0b8-da479f8e16ec.jpg",
       "is_ask": false,
-      "price_max": "¥38,500",
+      "price_max": "¥37,500",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥38,500",
-      "sort_price": 38500
+      "price_after": "¥37,500",
+      "sort_price": 37500
     },
     {
       "status": "掲載",
@@ -429,11 +471,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/c7bb3596-9b4b-4e92-911d-2cc40b908c32.jpg",
       "is_ask": false,
-      "price_max": "¥330,000",
-      "price_limit": "-",
+      "price_max": "¥300,000",
+      "price_limit": "5",
       "price_reduce": "-",
-      "price_after": "¥330,000",
-      "sort_price": 330000
+      "price_after": "¥300,000",
+      "sort_price": 300000
     },
     {
       "status": "掲載",
@@ -443,11 +485,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/ee638230-694d-474f-8dfa-2b9fb92d0931.jpg",
       "is_ask": false,
-      "price_max": "¥160,000",
+      "price_max": "¥150,000",
       "price_limit": "20",
       "price_reduce": "-",
-      "price_after": "¥160,000",
-      "sort_price": 160000
+      "price_after": "¥150,000",
+      "sort_price": 150000
     },
     {
       "status": "掲載",
@@ -457,11 +499,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/80bcc699-18ff-4493-9c36-8531a4bd6b1d.png",
       "is_ask": false,
-      "price_max": "¥23,000",
+      "price_max": "¥22,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥23,000",
-      "sort_price": 23000
+      "price_after": "¥22,000",
+      "sort_price": 22000
     },
     {
       "status": "掲載",
@@ -479,17 +521,31 @@
     },
     {
       "status": "掲載",
+      "id": 19693,
+      "name": "ドリームリーグ",
+      "code": "sm11b",
+      "spec": "未開封",
+      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/e6591b29-7862-4bbc-ad7d-4369cf6c7274.jpg",
+      "is_ask": false,
+      "price_max": "¥150,000",
+      "price_limit": "-",
+      "price_reduce": "-",
+      "price_after": "¥150,000",
+      "sort_price": 150000
+    },
+    {
+      "status": "掲載",
       "id": 19666,
       "name": "タッグボルト",
       "code": "sm9",
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/acb2d57d-c9cb-44ad-8213-8f4b4e6a31fa.png",
       "is_ask": false,
-      "price_max": "¥420,000",
+      "price_max": "¥400,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥420,000",
-      "sort_price": 420000
+      "price_after": "¥400,000",
+      "sort_price": 400000
     },
     {
       "status": "掲載",
@@ -499,11 +555,25 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/09ca38d4-0860-4057-9f7b-03ad8f29c2a7.jpg",
       "is_ask": false,
-      "price_max": "¥880,000",
+      "price_max": "¥850,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥880,000",
-      "sort_price": 880000
+      "price_after": "¥850,000",
+      "sort_price": 850000
+    },
+    {
+      "status": "掲載",
+      "id": 216040,
+      "name": "プロモカードパック 25th ANNIVERSARY edition",
+      "code": "",
+      "spec": "未開封",
+      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/724b7271-f3d5-4501-a48f-aa95b21530ef.jpg",
+      "is_ask": false,
+      "price_max": "¥15,000",
+      "price_limit": "-",
+      "price_reduce": "-",
+      "price_after": "¥15,000",
+      "sort_price": 15000
     },
     {
       "status": "掲載",
@@ -513,11 +583,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/00d61fa9-6123-4757-bfdd-97f4ca8a0075.jpg",
       "is_ask": false,
-      "price_max": "¥3,800",
+      "price_max": "¥4,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥3,800",
-      "sort_price": 3800
+      "price_after": "¥4,000",
+      "sort_price": 4000
     },
     {
       "status": "掲載",
@@ -527,11 +597,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/pokemon/a6b95d85-96b3-4379-b25d-b22fbac97e94.png",
       "is_ask": false,
-      "price_max": "¥480,000",
+      "price_max": "¥500,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥480,000",
-      "sort_price": 480000
+      "price_after": "¥500,000",
+      "sort_price": 500000
     },
     {
       "status": "掲載",
