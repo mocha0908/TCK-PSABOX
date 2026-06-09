@@ -142,7 +142,11 @@
     if (!text || text === '-' || text.trim() === '') return;
     
     // 金額等の不要な文字列（円など）をトリミングしたい場合はここで行えますが、今回はそのままコピーします
-    const cleanText = text.replace(/円$/, '').trim();
+    const cleanText = String(text)
+    .replace(/[¥￥]/g, '')
+    .replace(/円/g, '')
+    .replace(/,/g, '')
+    .trim();
 
     navigator.clipboard.writeText(cleanText).then(() => {
       const toast = document.getElementById('toast');
