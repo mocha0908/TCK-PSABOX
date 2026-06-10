@@ -989,11 +989,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/mtg/5eb0a9a5-47cf-4716-aa1a-6377db0ba2da.jpg",
       "is_ask": false,
-      "price_max": "¥70,000",
+      "price_max": "¥80,000",
       "price_limit": "-",
       "price_reduce": "-",
-      "price_after": "¥70,000",
-      "sort_price": 70000
+      "price_after": "¥80,000",
+      "sort_price": 80000
     },
     {
       "status": "掲載",
