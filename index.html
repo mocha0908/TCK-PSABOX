@@ -47,23 +47,12 @@
 
     .status-group { display: flex; gap: 10px; align-items: center; margin-left: auto; padding-left: 10px; }
     .hit-count { font-size: 12px; color: var(--text-sub); font-weight: bold; white-space: nowrap; background: var(--border); padding: 6px 12px; border-radius: 20px; }
-    .btn-view { font-size: 12px; background: var(--card-bg); color: var(--text); border: 1px solid var(--border); padding: 6px 12px; border-radius: 20px; cursor: pointer; font-weight: bold; white-space: nowrap; }
 
     .card-grid { display: grid; gap: 16px; }
     .card { background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 100px 1fr; position: relative; border: 1px solid transparent; }
     .card-img { width: 100px; height: 140px; background: #fafafa; display: flex; align-items: center; justify-content: center; position: relative; }
     .card-img img { width: 100%; height: 100%; object-fit: contain; padding: 4px; cursor: zoom-in; }
     .card-body { padding: 12px 16px; display: flex; flex-direction: column; gap: 4px; justify-content: center; }
-    
-    /* スマホグリッド切替時 */
-    .card-grid.grid-mode { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
-    .card-grid.grid-mode .card { display: flex; flex-direction: column; padding: 10px; }
-    .card-grid.grid-mode .card-img { width: 100%; height: 150px; background: transparent; }
-    .card-grid.grid-mode .card-body { padding: 8px 0 0 0; }
-    .card-grid.grid-mode .card-title { font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 36px; padding-right: 0; }
-    .card-grid.grid-mode .card-meta { font-size: 10px; margin-bottom: 4px; }
-    .card-grid.grid-mode .king-prices, .card-grid.grid-mode .sotai-prices { padding: 6px; }
-    .card-grid.grid-mode .card-reduce-row { padding: 8px 0 0 0; font-size: 10px; border-top: none; background: transparent; flex-direction: column; align-items: flex-start; gap: 4px; }
 
     .clickable-copy { cursor: pointer; position: relative; transition: background-color 0.2s; border-radius: 4px; }
     .clickable-copy:hover { opacity: 0.7; text-decoration: underline dashed 1px; }
@@ -76,7 +65,7 @@
     .status-tag.stop { background: #e74c3c; }
     
     .btn-fav { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,0.8); border: 1px solid #ddd; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #ccc; cursor: pointer; z-index: 2; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .card:has(.status-tag) .btn-fav { top: 32px; } /* ステータスタグがある場合は下へずらす */
+    .card:has(.status-tag) .btn-fav { top: 32px; }
     .btn-fav.active { color: var(--fav); border-color: var(--fav); }
 
     .card-meta { font-size: 11px; color: var(--text-sub); }
@@ -104,7 +93,6 @@
       .card-grid { display: none !important; }
       .desktop-table-wrap { display: block; background: var(--card-bg); border-radius: var(--radius); overflow: auto; border: 1px solid var(--border); box-shadow: var(--shadow); max-height: 75vh; }
       table { width: 100%; border-collapse: collapse; }
-      /* テーブルヘッダー固定 */
       th { position: sticky; top: 0; background: var(--border); padding: 15px; border-bottom: 2px solid #ccc; white-space: nowrap; font-size: 14px; color: var(--text-sub); z-index: 10; }
       td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text); }
       .td-left { text-align: left; font-weight: bold; }
@@ -135,6 +123,7 @@
       th { background: #2c2c2c; border-bottom: 2px solid #444; }
       td { border-bottom: 1px solid #333; }
       .btn-fav { background: rgba(30,30,30,0.8); border-color: #444; }
+      .filter-row select { background: #2d2d2d; color: #fff; border-color: #444; }
     }
   </style>
 </head>
@@ -170,7 +159,6 @@
     
     <div class="status-group">
       <div class="hit-count" id="hitCount">0 件</div>
-      <button class="btn-view" id="viewToggleBtn" onclick="toggleView()">画像のみ</button>
     </div>
   </div>
   
@@ -190,7 +178,6 @@
         <tbody id="tableBody"></tbody>
       </table>
     </div>
-    <!-- 無限スクロール検知用 -->
     <div id="sentinel" style="height: 20px;"></div>
   </div>
 </div>
@@ -212,18 +199,16 @@
   let timer;
   
   // 設定の復元
-  let isGrid = localStorage.getItem('tck_view') === 'grid';
   let searchHistory = JSON.parse(localStorage.getItem('tck_history') || '[]');
   let favorites = JSON.parse(localStorage.getItem('tck_favs') || '[]');
 
   document.addEventListener('DOMContentLoaded', () => {
     buildInitialBar();
-    applyViewState();
     renderHistory();
     loadAllData();
   });
 
-  // 全角/半角、ひらがな/カタカナの正規化（検索用）
+  // 全角/半角、ひらがな/カタカナの正規化
   function normalizeText(str) {
     if (!str) return "";
     let s = String(str).replace(/[\u30a1-\u30f6]/g, match => String.fromCharCode(match.charCodeAt(0) - 0x60));
@@ -237,7 +222,6 @@
     const cleanText = String(text).replace(/[¥￥円,]/g, '').trim();
     
     navigator.clipboard.writeText(cleanText).then(() => {
-      // ピカッと光るエフェクト
       if (element) {
         element.classList.remove('flash');
         void element.offsetWidth; // リフロー強制
@@ -333,7 +317,6 @@
     localStorage.setItem('tck_favs', JSON.stringify(favorites));
     updateTabCounts();
     
-    // アイコンの即時切替
     document.querySelectorAll(`.fav-btn-${CSS.escape(favId)}`).forEach(btn => {
       btn.classList.toggle('active', favorites.includes(favId));
       btn.innerText = favorites.includes(favId) ? '★' : '☆';
@@ -342,7 +325,6 @@
     if (state.currentTab === 'fav') applyLocalFilter();
   }
 
-  // 検索メインロジック（AND検索対応）
   function applyLocalFilter() {
     const rawKw = document.getElementById('keyword').value.trim();
     document.getElementById('btnClear').style.display = rawKw ? 'flex' : 'none';
@@ -351,7 +333,6 @@
     let currentData = database[state.currentTab] || [];
     if (state.currentTab === 'fav') {
       currentData = database.all.filter(i => favorites.includes(i.favId));
-      // 重複排除
       currentData = Array.from(new Map(currentData.map(i => [i.favId, i])).values());
     }
 
@@ -394,7 +375,6 @@
     applyLocalFilter();
   }
 
-  // 履歴機能
   function saveHistory(kw) {
     searchHistory = searchHistory.filter(h => h !== kw);
     searchHistory.unshift(kw);
@@ -421,26 +401,6 @@
     renderHistory();
   }
 
-  // 表示切替
-  function toggleView() {
-    isGrid = !isGrid;
-    localStorage.setItem('tck_view', isGrid ? 'grid' : 'list');
-    applyViewState();
-  }
-
-  function applyViewState() {
-    const viewBtn = document.getElementById('viewToggleBtn');
-    const cardView = document.getElementById('cardView');
-    if (isGrid) {
-      cardView.classList.add('grid-mode');
-      viewBtn.innerText = 'リスト表示';
-    } else {
-      cardView.classList.remove('grid-mode');
-      viewBtn.innerText = '画像表示';
-    }
-  }
-
-  // テーブルヘッダーの描画
   function renderHead() {
     const thead = document.getElementById('tableHead');
     const isSotai = state.currentTab === 'sotai' || (state.currentTab === 'fav' && state.filteredRows.some(i => i.type === 'sotai'));
@@ -452,7 +412,6 @@
     }
   }
 
-  // 無限スクロール用チャンク描画
   function renderChunk(isReset = false) {
     const mobileContainer = document.getElementById('cardView');
     const tableBody = document.getElementById('tableBody');
@@ -548,7 +507,7 @@
       const isLive = item.status === "掲載";
       const reduceText = item.price_reduce === "定額設定" ? "<small style='color:var(--text-sub)'>定額適用</small>" : (item.price_reduce || '-');
       const maxPrice = item.price_max || '-';
-      const afterPrice = item.price_after || item.price_a || '-'; // お気に入り混在時のフォールバック
+      const afterPrice = item.price_after || item.price_a || '-'; 
       return `
       <tr>
         ${favTd}
@@ -607,11 +566,6 @@
       if (matches && matches[1]) return `https://drive.google.com/thumbnail?id=${matches[1]}`;
     }
     return rawUrl;
-  }
-
-  function toggleSort(){
-    state.sortByPrice = !state.sortByPrice;
-    applyLocalFilter();
   }
 
   function showModal(src){ 
