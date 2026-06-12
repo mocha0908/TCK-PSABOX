@@ -563,17 +563,17 @@
     },
     {
       "status": "掲載",
-      "id": 231011,
-      "name": "オーバーラッシュパック4(1BOX)",
+      "id": 212125,
+      "name": "QUARTER CENTURY LIMITED PACK(1BOX)",
       "code": "-",
       "spec": "未開封",
-      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/yugioh/37a1d92a-2db2-4007-8a72-5ffc2f752440.png",
+      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/yugioh/ee960fb4-069b-4059-8e8d-7eb4b753c51c.jpg",
       "is_ask": false,
-      "price_max": "¥4,500",
-      "price_limit": "200",
-      "price_reduce": "定額設定",
-      "price_after": "¥4,000",
-      "sort_price": 4500
+      "price_max": "¥8,700",
+      "price_limit": "300",
+      "price_reduce": "-",
+      "price_after": "¥8,700",
+      "sort_price": 8700
     },
     {
       "status": "掲載",
@@ -583,11 +583,11 @@
       "spec": "未開封",
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/yugioh/e50b8e2c-0cc9-43b0-be22-333ef543693a.jpg",
       "is_ask": false,
-      "price_max": "¥5,500",
+      "price_max": "¥5,800",
       "price_limit": "300",
       "price_reduce": "-",
-      "price_after": "¥5,500",
-      "sort_price": 5500
+      "price_after": "¥5,800",
+      "sort_price": 5800
     },
     {
       "status": "掲載",
@@ -598,38 +598,10 @@
       "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/yugioh/e50d56f6-5fd9-4b47-8f05-51cd7b69da9a.jpg",
       "is_ask": false,
       "price_max": "¥4,200",
-      "price_limit": "9,999",
+      "price_limit": "300",
       "price_reduce": "-",
       "price_after": "¥4,200",
       "sort_price": 4200
-    },
-    {
-      "status": "掲載",
-      "id": 222395,
-      "name": "LIMITED PACK GX －オシリスレッド－(1BOX)",
-      "code": "-",
-      "spec": "未開封",
-      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/yugioh/0e3eda8d-96f6-4895-adbf-7e37e189105b.png",
-      "is_ask": false,
-      "price_max": "¥9,500",
-      "price_limit": "100",
-      "price_reduce": "-",
-      "price_after": "¥9,500",
-      "sort_price": 9500
-    },
-    {
-      "status": "掲載",
-      "id": 223751,
-      "name": "オーバーラッシュパック3(1BOX)",
-      "code": "-",
-      "spec": "未開封",
-      "img": "https://japan-toreca.s3.ap-northeast-1.amazonaws.com/images/yugioh/c2cf2602-35c5-433d-b330-c1a365b192f0.png",
-      "is_ask": false,
-      "price_max": "¥5,000",
-      "price_limit": "100",
-      "price_reduce": "-",
-      "price_after": "¥5,000",
-      "sort_price": 5000
     },
     {
       "status": "掲載",
