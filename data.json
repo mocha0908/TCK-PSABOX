@@ -16,7 +16,7 @@
       "sort_price": 11000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 229068,
       "name": "【シュリンクなし】ニンジャスピナー(1BOX)",
       "code": "-",
@@ -44,7 +44,7 @@
       "sort_price": 8800
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 227511,
       "name": "【シュリンクなし】ムニキスゼロ(1BOX)",
       "code": "-",
@@ -58,7 +58,7 @@
       "sort_price": 7000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 224926,
       "name": "MEGAドリームex(1BOX)",
       "code": "-",
@@ -72,7 +72,7 @@
       "sort_price": 14500
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 224932,
       "name": "【シュリンクなし】MEGAドリームex(1BOX)",
       "code": "-",
@@ -86,7 +86,7 @@
       "sort_price": 10000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 222890,
       "name": "インフェルノX(1BOX)",
       "code": "-",
@@ -100,7 +100,7 @@
       "sort_price": 22500
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 222896,
       "name": "【シュリンクなし】インフェルノX(1BOX)",
       "code": "-",
@@ -128,7 +128,7 @@
       "sort_price": 11500
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 221119,
       "name": "【シュリンクなし】メガブレイブ(1BOX)",
       "code": "-",
@@ -156,7 +156,7 @@
       "sort_price": 10000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 221130,
       "name": "【シュリンクなし】メガシンフォニア(1BOX)",
       "code": "-",
@@ -170,7 +170,7 @@
       "sort_price": 7000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 213922,
       "name": "熱風のアリーナ",
       "code": "sv9a",
@@ -198,7 +198,7 @@
       "sort_price": 10500
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 212842,
       "name": "【シュリンクなし】バトルパートナーズ(1BOX)",
       "code": "-",
@@ -212,7 +212,7 @@
       "sort_price": 8000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 211818,
       "name": "超電ブレイカー(1BOX)",
       "code": "-",
@@ -226,7 +226,7 @@
       "sort_price": 31000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 211621,
       "name": "楽園ドラゴーナ(1BOX)",
       "code": "-",
@@ -268,7 +268,7 @@
       "sort_price": 11000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 208843,
       "name": "変幻の仮面",
       "code": "sv6",
@@ -282,7 +282,7 @@
       "sort_price": 12500
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 208405,
       "name": "クリムゾンヘイズ",
       "code": "sv5a",
@@ -296,7 +296,7 @@
       "sort_price": 13000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 20066,
       "name": "シャイニートレジャーex(1BOX)",
       "code": "-",
@@ -310,7 +310,7 @@
       "sort_price": 16000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 19387,
       "name": "黒炎の支配者(1BOX)",
       "code": "-",
@@ -338,7 +338,7 @@
       "sort_price": 12500
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 19001,
       "name": "スノーハザード",
       "code": "sv2P",
@@ -352,7 +352,7 @@
       "sort_price": 12000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 208602,
       "name": "トリプレットビート",
       "code": "sv1a",
@@ -380,7 +380,7 @@
       "sort_price": 10500
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 18593,
       "name": "スカーレットex",
       "code": "sv1S",
@@ -394,7 +394,7 @@
       "sort_price": 13000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 18999,
       "name": "VSTARユニバース(1BOX)",
       "code": "-",
@@ -408,7 +408,7 @@
       "sort_price": 28000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 19234,
       "name": "VMAXクライマックス(1BOX)",
       "code": "-",
@@ -422,7 +422,7 @@
       "sort_price": 35000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 19713,
       "name": "蒼空ストリーム(1BOX)",
       "code": "-",
@@ -436,7 +436,7 @@
       "sort_price": 300000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 19031,
       "name": "イーブイヒーローズ(1BOX)",
       "code": "-",
@@ -450,7 +450,7 @@
       "sort_price": 150000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 19235,
       "name": "シャイニースターV",
       "code": "s4a",
@@ -492,7 +492,7 @@
       "sort_price": 150000
     },
     {
-      "status": "掲載",
+      "status": "無効",
       "id": 19666,
       "name": "タッグボルト",
       "code": "sm9",
